@@ -1,0 +1,79 @@
+shader_type canvas_item;
+
+/* ---------- TEXTURAS / COLORES ---------- */
+uniform sampler2D layer1;
+uniform sampler2D layer2;
+uniform sampler2D layer3;
+uniform sampler2D layer4;
+uniform sampler2D layer5;
+
+uniform vec4 color1 : source_color = vec4(1.0);
+uniform vec4 color2 : source_color = vec4(1.0);
+uniform vec4 color3 : source_color = vec4(1.0);
+uniform vec4 color4 : source_color = vec4(1.0);
+uniform vec4 color5 : source_color = vec4(1.0);
+
+uniform bool use_texture1 = false;
+uniform bool use_texture2 = false;
+uniform bool use_texture3 = false;
+uniform bool use_texture4 = false;
+uniform bool use_texture5 = false;
+
+/* ---------- ESTADOS ---------- */
+uniform bool hovered  = false;
+uniform bool focus    = false;
+uniform bool selected = false;
+
+/* ---------- PARÁMETROS ---------- */
+uniform float border_size  : hint_range(0.01, 0.5) = 0.10;
+uniform float fade_between : hint_range(0.0, 0.1)  = 0.02;
+uniform float aa_strength  : hint_range(0.5, 3.0)  = 1.5;   // un poquito más fuerte
+
+void fragment() {
+	vec2  uv = UV * 2.0 - 1.0;
+	float r  = length(uv);
+
+	/* ---------- ANTIALIAS GLOBAL ---------- */
+	float aa  = fwidth(r) * aa_strength;          // ancho de 1 px en coords radiales
+	float edge = smoothstep(1.0 - aa, 1.0 + aa, r); // 0 = dentro, 1 = fuera
+	float inside = 1.0 - edge;                      // máscara suave del círculo
+
+	/* ---------- CAPAS ---------- */
+	const float step = 0.2;
+	vec4 c1 = use_texture1 ? texture(layer1, UV) : color1;
+	vec4 c2 = use_texture2 ? texture(layer2, UV) : color2;
+	vec4 c3 = use_texture3 ? texture(layer3, UV) : color3;
+	vec4 c4 = use_texture4 ? texture(layer4, UV) : color4;
+	vec4 c5 = use_texture5 ? texture(layer5, UV) : color5;
+
+	vec4 base;
+	if (r < step) {
+		base = c1;
+	} else if (r < step * 2.0) {
+		float t = smoothstep(step - fade_between, step + fade_between, r);
+		base = mix(c1, c2, t);
+	} else if (r < step * 3.0) {
+		float t = smoothstep(step * 2.0 - fade_between, step * 2.0 + fade_between, r);
+		base = mix(c2, c3, t);
+	} else if (r < step * 4.0) {
+		float t = smoothstep(step * 3.0 - fade_between, step * 3.0 + fade_between, r);
+		base = mix(c3, c4, t);
+	} else {
+		float t = smoothstep(step * 4.0 - fade_between, step * 4.0 + fade_between, r);
+		base = mix(c4, c5, t);
+	}
+
+	/* ---------- BORDE EXTERNO ---------- */
+	float border = smoothstep(1.0 - border_size - aa, 1.0 + aa, r);
+	if (selected) {
+		base = vec4(1.0);
+	} else if (focus) {
+		base = mix(base, vec4(1.0), border);
+	} else if (hovered) {
+		base = mix(base, vec4(0.8, 0.8, 0.8, 1.0), border);
+	}
+
+	/* ---------- APLICAR MÁSCARA DE AA ---------- */
+	COLOR = base;
+	COLOR.a *= inside;   // el borde se funde; nada de discard
+}

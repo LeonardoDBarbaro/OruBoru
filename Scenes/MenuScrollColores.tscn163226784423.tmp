@@ -1,0 +1,274 @@
+[gd_scene load_steps=11 format=3 uid="uid://c6xp7mpdcwqy8"]
+
+[ext_resource type="Texture2D" uid="uid://bxvhhtemta44c" path="res://HUD/path41-3-5.png" id="1_iajse"]
+[ext_resource type="Script" uid="uid://ccxkqyrlsjgvl" path="res://ScrollEquipos.gd" id="1_pqdeh"]
+[ext_resource type="Script" uid="uid://bf655knt3iugb" path="res://CargadorEquipos.gd" id="1_w5cdf"]
+[ext_resource type="Texture2D" uid="uid://sibxxlx5tmlu" path="res://HUD/flechas.png" id="2_f12wh"]
+[ext_resource type="Script" uid="uid://xf7tgsl0v8v3" path="res://EquipoIndividual.gd" id="4_dqv1p"]
+
+[sub_resource type="Shader" id="Shader_pqdeh"]
+code = "shader_type canvas_item;
+
+/* ────────── Parámetros ────────── */
+uniform float inner_radius      : hint_range(0.0, 0.5) = 0.28;
+uniform float border_thickness  : hint_range(0.0, 0.5) = 0.08;
+uniform float aa_width          : hint_range(0.0, 0.05) = 0.003;
+
+/*  Desfase en grados: 90 ° = punta hacia arriba            */
+uniform float angle_offset_deg  : hint_range(0.0,360.0) = 90.0;
+
+/* ─ Colores ─ */
+uniform vec4 center_color : source_color = vec4(0.20,0.60,1.00,1.0);
+uniform vec4 slice0_color : source_color = vec4(1.00,0.40,0.40,1.0);
+uniform vec4 slice1_color : source_color = vec4(1.00,0.80,0.40,1.0);
+uniform vec4 slice2_color : source_color = vec4(0.40,1.00,0.40,1.0);
+uniform vec4 slice3_color : source_color = vec4(0.40,0.80,1.00,1.0);
+uniform vec4 slice4_color : source_color = vec4(0.80,0.40,1.00,1.0);
+
+/* ────────── Aux ────────── */
+vec4 get_slice_color(int slice) {
+	if      (slice == 0) return slice0_color;
+	else if (slice == 1) return slice1_color;
+	else if (slice == 2) return slice2_color;
+	else if (slice == 3) return slice3_color;
+	else                 return slice4_color;
+}
+
+/* ────────── Fragment ────────── */
+void fragment() {
+	/* 1. Coordenadas centradas y corrección de aspecto */
+	vec2  uv     = UV * 2.0 - 1.0;
+	uv.x        *= TEXTURE_PIXEL_SIZE.x / TEXTURE_PIXEL_SIZE.y;
+
+	/* 2. Distancias */
+	float dist   = length(uv);
+	float r_in   = inner_radius;
+	float r_out  = inner_radius + border_thickness;
+
+	/* 3. Ángulo normalizado + rotación ------------------------------------- */
+	float angle      = atan(uv.y, uv.x);                   // −π … π
+	float offset_rad = radians(angle_offset_deg);          // grados → rad
+	float angle_norm = fract((angle + offset_rad + PI)     // 0 … 1  después de fract
+	                         / (2.0 * PI));
+	int   slice_idx  = int(floor(angle_norm * 5.0));       // 0-4
+
+	/* 4. Coloreo según la región ------------------------------------------- */
+	if (dist < r_in - aa_width) {
+		COLOR = center_color;
+
+	} else if (dist < r_in + aa_width) {
+		float t = smoothstep(r_in + aa_width, r_in - aa_width, dist);
+		COLOR   = mix(get_slice_color(slice_idx), center_color, t);
+
+	} else if (dist < r_out - aa_width) {
+		COLOR = get_slice_color(slice_idx);
+
+	} else if (dist < r_out + aa_width) {
+		float t = smoothstep(r_out - aa_width, r_out + aa_width, dist);
+		COLOR   = mix(get_slice_color(slice_idx), vec4(0.0), t);
+
+	} else {
+		COLOR = vec4(0.0);
+	}
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w5cdf"]
+shader = SubResource("Shader_pqdeh")
+shader_parameter/inner_radius = 0.5
+shader_parameter/border_thickness = 0.3
+shader_parameter/aa_width = 0.003
+shader_parameter/angle_offset_deg = 90.0
+shader_parameter/center_color = Color(0.423651, 0.423651, 0.423651, 1)
+shader_parameter/slice0_color = Color(0.423529, 0.423529, 0.423529, 1)
+shader_parameter/slice1_color = Color(0.423529, 0.423529, 0.423529, 1)
+shader_parameter/slice2_color = Color(0.423529, 0.423529, 0.423529, 1)
+shader_parameter/slice3_color = Color(0.423529, 0.423529, 0.423529, 1)
+shader_parameter/slice4_color = Color(0.423529, 0.423529, 0.423529, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pqdeh"]
+shader = SubResource("Shader_pqdeh")
+shader_parameter/inner_radius = 0.5
+shader_parameter/border_thickness = 0.3
+shader_parameter/aa_width = 0.003
+shader_parameter/angle_offset_deg = 90.0
+shader_parameter/center_color = Color(0, 0.499502, 0.270588, 1)
+shader_parameter/slice0_color = Color(1, 0.4, 0.4, 1)
+shader_parameter/slice1_color = Color(1, 0.8, 0.4, 1)
+shader_parameter/slice2_color = Color(0.4, 1, 0.4, 1)
+shader_parameter/slice3_color = Color(0.4, 0.8, 1, 1)
+shader_parameter/slice4_color = Color(0.8, 0.4, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f12wh"]
+shader = SubResource("Shader_pqdeh")
+shader_parameter/inner_radius = 0.5
+shader_parameter/border_thickness = 0.3
+shader_parameter/aa_width = 0.003
+shader_parameter/angle_offset_deg = 90.0
+shader_parameter/center_color = Color(0.729598, 0.150091, 0.344212, 1)
+shader_parameter/slice0_color = Color(1, 0.4, 0.4, 1)
+shader_parameter/slice1_color = Color(1, 0.8, 0.4, 1)
+shader_parameter/slice2_color = Color(0.4, 1, 0.4, 1)
+shader_parameter/slice3_color = Color(0.4, 0.8, 1, 1)
+shader_parameter/slice4_color = Color(0.8, 0.4, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iajse"]
+shader = SubResource("Shader_pqdeh")
+shader_parameter/inner_radius = 0.5
+shader_parameter/border_thickness = 0.3
+shader_parameter/aa_width = 0.003
+shader_parameter/angle_offset_deg = 90.0
+shader_parameter/center_color = Color(0.133333, 0, 0.5, 1)
+shader_parameter/slice0_color = Color(1, 0.4, 0.4, 1)
+shader_parameter/slice1_color = Color(1, 0.8, 0.4, 1)
+shader_parameter/slice2_color = Color(0.4, 1, 0.4, 1)
+shader_parameter/slice3_color = Color(0.4, 0.8, 1, 1)
+shader_parameter/slice4_color = Color(0.8, 0.4, 1, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 0.999998
+offset_right = 2.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(10, 10)
+script = ExtResource("1_w5cdf")
+
+[node name="Izq" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 10.5
+offset_right = 103.0
+offset_bottom = 50.5
+scale = Vector2(0.195, 0.195)
+texture_normal = ExtResource("1_iajse")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 10.0
+offset_right = 60.0
+offset_bottom = 18.0
+follow_focus = true
+horizontal_scroll_mode = 3
+script = ExtResource("1_pqdeh")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+
+[node name="BordeIzq" type="Control" parent="ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+
+[node name="1" type="ColorRect" parent="ScrollContainer/HBoxContainer/BordeIzq"]
+material = SubResource("ShaderMaterial_w5cdf")
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = -0.900001
+offset_top = -1.2
+offset_right = 99.1
+offset_bottom = 98.8
+scale = Vector2(0.1, 0.1)
+color = Color(0, 0.166239, 0.166725, 1)
+
+[node name="Template" type="Control" parent="ScrollContainer/HBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+script = ExtResource("4_dqv1p")
+
+[node name="1" type="ColorRect" parent="ScrollContainer/HBoxContainer/Template"]
+material = SubResource("ShaderMaterial_pqdeh")
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = -0.900001
+offset_top = -1.2
+offset_right = 99.1
+offset_bottom = 98.8
+scale = Vector2(0.1, 0.1)
+color = Color(0, 0.166239, 0.166725, 1)
+
+[node name="nombre" type="Label" parent="ScrollContainer/HBoxContainer/Template"]
+visible = false
+layout_mode = 0
+offset_left = -0.899998
+offset_top = -1.2
+offset_right = 39.1
+offset_bottom = 21.8
+
+[node name="abreviacion" type="Label" parent="ScrollContainer/HBoxContainer/Template"]
+visible = false
+layout_mode = 0
+offset_left = -0.899998
+offset_top = -1.2
+offset_right = 39.1
+offset_bottom = 21.8
+
+[node name="Control2" type="Control" parent="ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+
+[node name="1" type="ColorRect" parent="ScrollContainer/HBoxContainer/Control2"]
+material = SubResource("ShaderMaterial_f12wh")
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = -0.900001
+offset_top = -1.2
+offset_right = 99.1
+offset_bottom = 98.8
+scale = Vector2(0.1, 0.1)
+color = Color(0.780392, 0.192157, 0.733333, 1)
+
+[node name="Control3" type="Control" parent="ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+
+[node name="1" type="ColorRect" parent="ScrollContainer/HBoxContainer/Control3"]
+material = SubResource("ShaderMaterial_iajse")
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = -0.900001
+offset_top = -1.2
+offset_right = 99.1
+offset_bottom = 98.8
+scale = Vector2(0.1, 0.1)
+color = Color(0.780392, 0.192157, 0.733333, 1)
+
+[node name="BordeDer" type="Control" parent="ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+
+[node name="1" type="ColorRect" parent="ScrollContainer/HBoxContainer/BordeDer"]
+material = SubResource("ShaderMaterial_w5cdf")
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = -0.900001
+offset_top = -1.2
+offset_right = 99.1
+offset_bottom = 98.8
+scale = Vector2(0.1, 0.1)
+color = Color(0, 0.166239, 0.166725, 1)
+
+[node name="Der" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 18.2
+offset_top = 10.5
+offset_right = 58.2
+offset_bottom = 50.5
+scale = Vector2(0.195, 0.195)
+texture_normal = ExtResource("1_iajse")
+flip_h = true
+
+[node name="Flechas" type="Sprite2D" parent="."]
+texture_filter = 6
+position = Vector2(44, 9.2)
+scale = Vector2(0.19, 0.19)
+texture = ExtResource("2_f12wh")
+
+[connection signal="pressed" from="Izq" to="ScrollContainer" method="_on_izq_pressed"]
+[connection signal="pressed" from="Der" to="ScrollContainer" method="_on_der_pressed"]

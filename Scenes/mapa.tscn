@@ -1,0 +1,82 @@
+[gd_scene load_steps=9 format=3 uid="uid://bfc04aevn37hu"]
+
+[ext_resource type="Script" uid="uid://bkwk15en7r2j1" path="res://Scripts/mapa.gd" id="1_q8ihy"]
+[ext_resource type="Texture2D" uid="uid://c4wkxtrp88vrr" path="res://Images/TEXT.png" id="2_q8ihy"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_a202f"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lrjei"]
+albedo_texture = ExtResource("2_q8ihy")
+uv1_scale = Vector3(2.805, 2.805, 2.805)
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_4xowi"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q8ihy"]
+sky_top_color = Color(0.431373, 0.721569, 0.933333, 1)
+sky_horizon_color = Color(0.937255, 0.529412, 0.388235, 1)
+
+[sub_resource type="Sky" id="Sky_sn0nk"]
+sky_material = SubResource("ProceduralSkyMaterial_q8ihy")
+
+[sub_resource type="Environment" id="Environment_lrjei"]
+background_mode = 2
+sky = SubResource("Sky_sn0nk")
+ambient_light_color = Color(0.341176, 0.694118, 0.847059, 1)
+fog_light_energy = 0.46
+fog_density = 0.0681
+volumetric_fog_density = 0.0242
+volumetric_fog_albedo = Color(0.964706, 0.698039, 0.431373, 1)
+volumetric_fog_length = 50.0
+
+[node name="Mapa" type="Node3D"]
+script = ExtResource("1_q8ihy")
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="."]
+transform = Transform3D(-9.72097e-07, -9.30302, 0, 22.239, -4.06648e-07, 0, 0, 0, 79.7935, 27.5536, 6.66359, 0)
+use_collision = true
+collision_priority = 0.0
+mesh = SubResource("BoxMesh_a202f")
+
+[node name="CSGMesh3D3" type="CSGMesh3D" parent="."]
+transform = Transform3D(-9.72097e-07, -5.00253, 0, 22.239, -2.18667e-07, 0, 0, 0, 79.7935, -27.3085, 6.66359, 0)
+use_collision = true
+collision_priority = 0.0
+mesh = SubResource("BoxMesh_a202f")
+
+[node name="CSGMesh3D4" type="CSGMesh3D" parent="."]
+transform = Transform3D(4.24917e-14, 1.84987e-07, 79.7935, 22.239, -1.84987e-07, 0, 9.72097e-07, 4.23201, -3.48788e-06, 1.94384, 5.93473, 35.0244)
+visible = false
+use_collision = true
+collision_priority = 0.0
+mesh = SubResource("BoxMesh_a202f")
+
+[node name="CSGMesh3D6" type="CSGMesh3D" parent="."]
+transform = Transform3D(4.37224e-13, 1.90498e-07, 287.887, 1.19015, -4.35802, 1.25838e-05, 228.828, 0.0226663, -6.54504e-08, 4.0516, -127.442, 169.915)
+visible = false
+use_collision = true
+collision_priority = 0.0
+mesh = SubResource("BoxMesh_a202f")
+
+[node name="CSGMesh3D5" type="CSGMesh3D" parent="."]
+transform = Transform3D(0.0679245, -0.0401952, 79.7923, 22.2386, -0.0473294, -0.245759, 0.122556, 8.61049, 0.371133, -1.68855, 6.66359, -38.2524)
+visible = false
+use_collision = true
+collision_priority = 0.0
+mesh = SubResource("BoxMesh_a202f")
+
+[node name="Suelo" type="CSGMesh3D" parent="."]
+transform = Transform3D(54.7774, 0, 0, 0, -6.19351, 0, 0, 0, 66.8783, 0, -7.82423, 0)
+material_override = SubResource("StandardMaterial3D_lrjei")
+use_collision = true
+mesh = SubResource("BoxMesh_4xowi")
+
+[node name="Atmosphere" type="Node3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Atmosphere"]
+transform = Transform3D(1, 0, 0, 0, 0.696001, 0.718041, 0, -0.718041, 0.696001, 0, 11.4862, 6.19946)
+light_color = Color(0.9457, 0.882, 0.98, 1)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Atmosphere"]
+environment = SubResource("Environment_lrjei")

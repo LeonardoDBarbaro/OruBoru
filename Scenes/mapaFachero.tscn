@@ -1,0 +1,102 @@
+[gd_scene load_steps=12 format=3 uid="uid://dpwdm7mkgm3qm"]
+
+[ext_resource type="Script" uid="uid://bkwk15en7r2j1" path="res://mapa.gd" id="1_5s6gy"]
+[ext_resource type="Shader" uid="uid://b1e1abwbec6wl" path="res://A/grass.gdshader" id="2_4jai6"]
+[ext_resource type="Script" uid="uid://bgjec10j7ijaq" path="res://addons/so_fluffy/so_fluffy.gd" id="4_fqgog"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_a202f"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_70f7c"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a0tk4"]
+render_priority = 0
+shader = ExtResource("2_4jai6")
+shader_parameter/color = Color(0.332052, 0.672079, 0.394089, 1)
+shader_parameter/color2 = Color(0.512526, 0.735233, 0.601022, 1)
+shader_parameter/noise = SubResource("NoiseTexture2D_70f7c")
+shader_parameter/noiseScale = 23.57
+
+[sub_resource type="BoxMesh" id="BoxMesh_4xowi"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_30hqb"]
+frequency = 0.0095
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_1x4p1"]
+as_normal_map = true
+noise = SubResource("FastNoiseLite_30hqb")
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_t0k0h"]
+as_normal_map = true
+noise = SubResource("FastNoiseLite_30hqb")
+
+[sub_resource type="Environment" id="Environment_jka67"]
+ambient_light_source = 3
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+ssil_radius = 1.3
+sdfgi_enabled = true
+sdfgi_use_occlusion = true
+sdfgi_cascades = 1
+sdfgi_min_cell_size = 7.8125
+sdfgi_y_scale = 0
+
+[node name="Mapa" type="Node3D"]
+script = ExtResource("1_5s6gy")
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="."]
+transform = Transform3D(-9.72097e-07, -9.30302, 0, 22.239, -4.06648e-07, 0, 0, 0, 79.7935, 27.5536, 6.66359, 0)
+use_collision = true
+collision_priority = 0.0
+mesh = SubResource("BoxMesh_a202f")
+
+[node name="CSGMesh3D3" type="CSGMesh3D" parent="."]
+transform = Transform3D(-9.72097e-07, -5.00253, 0, 22.239, -2.18667e-07, 0, 0, 0, 79.7935, -27.3085, 6.66359, 0)
+use_collision = true
+collision_priority = 0.0
+mesh = SubResource("BoxMesh_a202f")
+
+[node name="CSGMesh3D4" type="CSGMesh3D" parent="."]
+transform = Transform3D(4.24917e-14, 1.84987e-07, 79.7935, 22.239, -1.84987e-07, 0, 9.72097e-07, 4.23201, -3.48788e-06, -1.68855, 6.66359, 36.318)
+visible = false
+use_collision = true
+collision_priority = 0.0
+mesh = SubResource("BoxMesh_a202f")
+
+[node name="CSGMesh3D5" type="CSGMesh3D" parent="."]
+transform = Transform3D(4.24917e-14, 3.76386e-07, 79.7935, 22.239, -3.76386e-07, 0, 9.72098e-07, 8.61071, -3.48788e-06, -1.68855, 6.66359, -38.2524)
+visible = false
+use_collision = true
+collision_priority = 0.0
+mesh = SubResource("BoxMesh_a202f")
+
+[node name="Suelo" type="CSGMesh3D" parent="."]
+transform = Transform3D(54.7373, 0, 0, 0, 1.33359, 0, 0, 0, 66.8288, 0, 0, 0)
+material_override = SubResource("ShaderMaterial_a0tk4")
+use_collision = true
+mesh = SubResource("BoxMesh_4xowi")
+
+[node name="Fur" type="Node" parent="Suelo"]
+script = ExtResource("4_fqgog")
+density = 10.0
+seed = 58391
+scruffiness = 0.599
+thickness_scale = 4.0
+curls_enabled = true
+curls_twist = 12.47
+curls_fill = 0.93
+turbulence_texture = SubResource("NoiseTexture2D_1x4p1")
+turbulence_strength = 0.334
+jitter_texture = SubResource("NoiseTexture2D_t0k0h")
+static_direction_world = Vector3(0, 2.695, 0)
+albedo_color = Color(1.07091e-06, 0.357992, 0.188977, 1)
+metadata/_custom_type_script = "uid://bgjec10j7ijaq"
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.100535, 0.994934, 0, -0.994934, -0.100535, 0, 39.7345, 0)
+light_indirect_energy = 2.0
+shadow_transmittance_bias = 4.575
+shadow_blur = 0.126
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_jka67")

@@ -1,0 +1,465 @@
+[gd_scene load_steps=25 format=3 uid="uid://he7yj364ffa2"]
+
+[ext_resource type="Script" uid="uid://c22xeas1srxw0" path="res://Scripts/ColorSelector.gd" id="1_1tjf6"]
+[ext_resource type="Theme" uid="uid://cbgvwxwy8i6v0" path="res://Resources/DROPDAUN.tres" id="2_82b74"]
+[ext_resource type="Script" uid="uid://b1n50ahiichu7" path="res://Scripts/color_picker.gd" id="2_lxt0o"]
+[ext_resource type="Script" uid="uid://d3bf4ftdkjl2d" path="res://Scripts/slider_numbers.gd" id="2_na5s3"]
+[ext_resource type="Script" uid="uid://b6pmn5cxhxn4o" path="res://Scripts/HexColor.gd" id="3_0vwcm"]
+[ext_resource type="FontFile" uid="uid://xs50ccwov8mq" path="res://Fonts/Comfortaa-VariableFont_wght.ttf" id="5_ycxxk"]
+[ext_resource type="FontVariation" uid="uid://byx5tb525k0mb" path="res://Fonts/FONT2.tres" id="7_25nvi"]
+[ext_resource type="StyleBox" uid="uid://btys1sr1h5wlr" path="res://Resources/stiloflat.tres" id="8_y2t5l"]
+[ext_resource type="Script" uid="uid://dlfmf2cur63jx" path="res://Scripts/animation_playerColors.gd" id="9_y2t5l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_25nvi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0vwcm"]
+bg_color = Color(0, 0, 0, 0.588235)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_82b74"]
+bg_color = Color(1, 0, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_stpin"]
+bg_color = Color(0, 1, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_na5s3"]
+bg_color = Color(0, 0, 1, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aggjg"]
+bg_color = Color(0.31, 0.31, 0.31, 0.588235)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.541176, 0.752941, 1, 1)
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i7eh4"]
+bg_color = Color(0.38, 0.38, 0.38, 0.588235)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_color = Color(0, 0, 0, 0.0588235)
+shadow_size = 6
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_78ylj"]
+bg_color = Color(0.24, 0.24, 0.24, 0.588235)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="Theme" id="Theme_0wpeh"]
+Button/font_sizes/font_size = 17
+Button/fonts/font = ExtResource("7_25nvi")
+Button/styles/focus = SubResource("StyleBoxFlat_aggjg")
+Button/styles/hover = SubResource("StyleBoxFlat_i7eh4")
+Button/styles/hover_pressed = ExtResource("8_y2t5l")
+Button/styles/normal = ExtResource("8_y2t5l")
+Button/styles/pressed = SubResource("StyleBoxFlat_78ylj")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lxt0o"]
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.533037, 0.533037, 0.533036, 1)
+border_blend = true
+corner_radius_top_left = 99999
+corner_radius_top_right = 99999
+corner_radius_bottom_right = 99999
+corner_radius_bottom_left = 99999
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_lxt0o"]
+
+[sub_resource type="Animation" id="Animation_y2t5l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mascara/ColorPicker:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1000, -60)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Mascara/ColorPicker:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_25nvi"]
+resource_name = "SlideInColores"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mascara/ColorPicker:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(0.15, 3),
+"update": 0,
+"values": [Vector2(-88.265, -319.61), Vector2(-88.265, -125)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Mascara/ColorPicker:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="Animation" id="Animation_0wpeh"]
+resource_name = "SlideOutColores"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mascara/ColorPicker:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(0.15, 3),
+"update": 0,
+"values": [Vector2(-88.265, -125), Vector2(-88.265, -319.61)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Mascara/ColorPicker:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0wpeh"]
+_data = {
+&"RESET": SubResource("Animation_y2t5l"),
+&"SlideInColores": SubResource("Animation_25nvi"),
+&"SlideOutColores": SubResource("Animation_0wpeh")
+}
+
+[node name="ColorPicker" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 294.0
+offset_top = 57.0
+offset_right = -755.0
+offset_bottom = -462.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1tjf6")
+
+[node name="Mascara" type="Panel" parent="."]
+clip_contents = true
+layout_mode = 0
+offset_left = -22.0
+offset_top = 65.0
+offset_right = 231.0
+offset_bottom = 263.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_25nvi")
+
+[node name="ColorPicker" type="Control" parent="Mascara"]
+anchors_preset = 0
+offset_left = -1000.0
+offset_top = -60.0
+offset_right = -960.0
+offset_bottom = -20.0001
+scale = Vector2(0.9, 0.9)
+script = ExtResource("2_lxt0o")
+
+[node name="Panel" type="Panel" parent="Mascara/ColorPicker"]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 148.0
+offset_right = 368.0
+offset_bottom = 309.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0vwcm")
+
+[node name="Color" type="VBoxContainer" parent="Mascara/ColorPicker"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_left = 144.0
+offset_top = 167.0
+offset_right = 194.0
+offset_bottom = 347.0
+scale = Vector2(0.46, 0.46)
+theme_override_constants/separation = 15
+
+[node name="Rojo" type="Panel" parent="Mascara/ColorPicker/Color"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_82b74")
+
+[node name="Rojo2" type="Panel" parent="Mascara/ColorPicker/Color"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_stpin")
+
+[node name="Rojo3" type="Panel" parent="Mascara/ColorPicker/Color"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_na5s3")
+
+[node name="SlidersColor" type="VBoxContainer" parent="Mascara/ColorPicker"]
+layout_mode = 0
+offset_left = 171.0
+offset_top = 157.0
+offset_right = 306.0
+offset_bottom = 285.0
+theme_override_constants/separation = -9
+
+[node name="SliderR" type="HSlider" parent="Mascara/ColorPicker/SlidersColor"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme = ExtResource("2_82b74")
+max_value = 255.0
+
+[node name="SliderG" type="HSlider" parent="Mascara/ColorPicker/SlidersColor"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme = ExtResource("2_82b74")
+max_value = 255.0
+
+[node name="SliderB" type="HSlider" parent="Mascara/ColorPicker/SlidersColor"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme = ExtResource("2_82b74")
+max_value = 255.0
+
+[node name="SliderNumbers" type="VBoxContainer" parent="Mascara/ColorPicker"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_left = 309.0
+offset_top = 167.0
+offset_right = 359.0
+offset_bottom = 252.0
+theme_override_constants/separation = 8
+script = ExtResource("2_na5s3")
+
+[node name="NumberR" type="Label" parent="Mascara/ColorPicker/SliderNumbers"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_ycxxk")
+theme_override_font_sizes/font_size = 21
+text = "0"
+clip_text = true
+text_overrun_behavior = 1
+
+[node name="NumberG" type="Label" parent="Mascara/ColorPicker/SliderNumbers"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_ycxxk")
+theme_override_font_sizes/font_size = 21
+text = "0"
+clip_text = true
+text_overrun_behavior = 1
+
+[node name="NumberB" type="Label" parent="Mascara/ColorPicker/SliderNumbers"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_ycxxk")
+theme_override_font_sizes/font_size = 21
+text = "0"
+clip_text = true
+text_overrun_behavior = 1
+
+[node name="NumberB2" type="Label" parent="Mascara/ColorPicker"]
+layout_mode = 2
+offset_left = 169.0
+offset_top = 262.692
+offset_right = 190.0
+offset_bottom = 294.026
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_ycxxk")
+theme_override_font_sizes/font_size = 28
+text = "#"
+
+[node name="Hex" type="LineEdit" parent="Mascara/ColorPicker"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 0
+offset_left = 190.0
+offset_top = 259.692
+offset_right = 318.0
+offset_bottom = 299.692
+scale = Vector2(0.86, 0.86)
+size_flags_vertical = 0
+theme = ExtResource("2_82b74")
+text = "FF"
+alignment = 1
+max_length = 6
+script = ExtResource("3_0vwcm")
+
+[node name="ColorBoton" type="Button" parent="Mascara/ColorPicker"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 0
+offset_left = 200.256
+offset_top = 314.274
+offset_right = 300.256
+offset_bottom = 349.274
+scale = Vector2(0.8, 0.8)
+theme = SubResource("Theme_0wpeh")
+text = "CERRAR"
+icon_alignment = 1
+
+[node name="Botones" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 15.0
+offset_right = 353.0
+offset_bottom = 67.0
+scale = Vector2(0.535, 0.535)
+
+[node name="0" type="Panel" parent="Botones"]
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lxt0o")
+
+[node name="Button" type="Button" parent="Botones/0"]
+layout_mode = 0
+offset_right = 52.0
+offset_bottom = 52.0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_lxt0o")
+flat = true
+
+[node name="1" type="Panel" parent="Botones"]
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lxt0o")
+
+[node name="Button" type="Button" parent="Botones/1"]
+layout_mode = 0
+offset_right = 52.0
+offset_bottom = 52.0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_lxt0o")
+flat = true
+
+[node name="2" type="Panel" parent="Botones"]
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lxt0o")
+
+[node name="Button" type="Button" parent="Botones/2"]
+layout_mode = 0
+offset_right = 52.0
+offset_bottom = 52.0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_lxt0o")
+flat = true
+
+[node name="3" type="Panel" parent="Botones"]
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lxt0o")
+
+[node name="Button" type="Button" parent="Botones/3"]
+layout_mode = 0
+offset_right = 52.0
+offset_bottom = 52.0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_lxt0o")
+flat = true
+
+[node name="4" type="Panel" parent="Botones"]
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lxt0o")
+
+[node name="Button" type="Button" parent="Botones/4"]
+layout_mode = 0
+offset_right = 52.0
+offset_bottom = 52.0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_lxt0o")
+flat = true
+
+[node name="5" type="Panel" parent="Botones"]
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lxt0o")
+
+[node name="Button" type="Button" parent="Botones/5"]
+layout_mode = 0
+offset_right = 52.0
+offset_bottom = 52.0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_lxt0o")
+flat = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_0wpeh")
+}
+script = ExtResource("9_y2t5l")
+
+[connection signal="drag_ended" from="Mascara/ColorPicker/SlidersColor/SliderR" to="." method="_on_slider_r_drag_ended"]
+[connection signal="value_changed" from="Mascara/ColorPicker/SlidersColor/SliderR" to="." method="_on_slider_r_value_changed"]
+[connection signal="value_changed" from="Mascara/ColorPicker/SlidersColor/SliderR" to="Mascara/ColorPicker/SliderNumbers" method="_on_slider_r_value_changed"]
+[connection signal="value_changed" from="Mascara/ColorPicker/SlidersColor/SliderR" to="Mascara/ColorPicker/Hex" method="_on_slider_r_value_changed"]
+[connection signal="drag_ended" from="Mascara/ColorPicker/SlidersColor/SliderG" to="." method="_on_slider_g_drag_ended"]
+[connection signal="value_changed" from="Mascara/ColorPicker/SlidersColor/SliderG" to="." method="_on_slider_g_value_changed"]
+[connection signal="value_changed" from="Mascara/ColorPicker/SlidersColor/SliderG" to="Mascara/ColorPicker/SliderNumbers" method="_on_slider_g_value_changed"]
+[connection signal="value_changed" from="Mascara/ColorPicker/SlidersColor/SliderG" to="Mascara/ColorPicker/Hex" method="_on_slider_g_value_changed"]
+[connection signal="drag_ended" from="Mascara/ColorPicker/SlidersColor/SliderB" to="." method="_on_slider_b_drag_ended"]
+[connection signal="value_changed" from="Mascara/ColorPicker/SlidersColor/SliderB" to="." method="_on_slider_b_value_changed"]
+[connection signal="value_changed" from="Mascara/ColorPicker/SlidersColor/SliderB" to="Mascara/ColorPicker/SliderNumbers" method="_on_slider_b_value_changed"]
+[connection signal="value_changed" from="Mascara/ColorPicker/SlidersColor/SliderB" to="Mascara/ColorPicker/Hex" method="_on_slider_b_value_changed"]
+[connection signal="editing_toggled" from="Mascara/ColorPicker/Hex" to="Mascara/ColorPicker" method="_on_hex_editing_toggled"]
+[connection signal="text_change_rejected" from="Mascara/ColorPicker/Hex" to="Mascara/ColorPicker/Hex" method="_on_text_change_rejected"]
+[connection signal="text_changed" from="Mascara/ColorPicker/Hex" to="." method="_on_hex_text_changed"]
+[connection signal="text_changed" from="Mascara/ColorPicker/Hex" to="Mascara/ColorPicker/Hex" method="_on_text_changed"]
+[connection signal="pressed" from="Mascara/ColorPicker/ColorBoton" to="AnimationPlayer" method="_on_color_boton_pressed"]
+[connection signal="pressed" from="Botones/0/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Botones/1/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Botones/2/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Botones/3/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Botones/4/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Botones/5/Button" to="." method="_on_button_pressed"]

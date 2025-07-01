@@ -1,0 +1,9 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://b5ej1i0wdy8xi"]
+
+[ext_resource type="FontFile" uid="uid://xs50ccwov8mq" path="res://Fonts/Comfortaa-VariableFont_wght.ttf" id="1_bk0rk"]
+
+[resource]
+base_font = ExtResource("1_bk0rk")
+variation_opentype = {
+2003265652: 400
+}

@@ -1,0 +1,4418 @@
+[gd_scene load_steps=92 format=3 uid="uid://bcyicvsuibmqh"]
+
+[ext_resource type="Shader" uid="uid://dgg8g6qf6oc7k" path="res://Shaders/checkerboard.gdshader" id="1_5e35a"]
+[ext_resource type="FontFile" uid="uid://xs50ccwov8mq" path="res://Fonts/Comfortaa-VariableFont_wght.ttf" id="1_lti8b"]
+[ext_resource type="Texture2D" uid="uid://bk4axunevju13" path="res://Images/Resources/fondoCuadrille.png" id="1_xhgcl"]
+[ext_resource type="Texture2D" uid="uid://barv80ebv01nb" path="res://Images/Resources/OruBoruLogo.png" id="1_ytr4m"]
+[ext_resource type="Texture2D" uid="uid://d2rmocw72jxd3" path="res://Images/PelotaPlaceHolder.png" id="2_k1fdc"]
+[ext_resource type="FontVariation" uid="uid://b5ej1i0wdy8xi" path="res://Resources/comfortabold.tres" id="2_l48gv"]
+[ext_resource type="Theme" uid="uid://800eqm0lkklw" path="res://Resources/new_theme.tres" id="2_nrnbx"]
+[ext_resource type="Script" uid="uid://cskhtviklnamb" path="res://Scripts/menu.gd" id="3_su4y3"]
+[ext_resource type="Theme" uid="uid://bkdvu4euewun5" path="res://Resources/DROPDAUN.tres" id="6_kk3ma"]
+[ext_resource type="Texture2D" uid="uid://sibxxlx5tmlu" path="res://Images/Resources/flechas.png" id="6_l48gv"]
+[ext_resource type="FontVariation" uid="uid://byx5tb525k0mb" path="res://Resources/FONT2.tres" id="7_kk3ma"]
+[ext_resource type="Script" uid="uid://b14v5qpyx1ssm" path="res://Scripts/CambiarNombreEquipo.gd" id="9_su4y3"]
+[ext_resource type="Script" uid="uid://b6it4m0k7djo2" path="res://Scripts/botonTexturizado.gd" id="12_dwrpx"]
+[ext_resource type="Material" uid="uid://576b2p8vsu8d" path="res://Resources/shaderCompletogro.tres" id="12_g7jxm"]
+[ext_resource type="Texture2D" uid="uid://bxvhhtemta44c" path="res://Images/Resources/path41-3-5.png" id="12_jspdm"]
+[ext_resource type="PackedScene" uid="uid://c6xp7mpdcwqy8" path="res://Scenes/MenuScrollColores.tscn" id="13_k1fdc"]
+[ext_resource type="Script" uid="uid://cm70r7qr225bd" path="res://Scripts/mapperControles.gd" id="13_t5jqm"]
+[ext_resource type="Script" uid="uid://bkbxrq2v6g3gt" path="res://Scripts/TecladoConfig.gd" id="14_rlonj"]
+[ext_resource type="Script" uid="uid://iwdlqruqu6e8" path="res://Scripts/ControlConfig.gd" id="16_rlonj"]
+[ext_resource type="Script" uid="uid://cq0n68ykswhgd" path="res://Scripts/opcionesMenuConfig.gd" id="21_8lmdq"]
+[ext_resource type="Script" uid="uid://cmawqdtgii6vs" path="res://Scripts/Resolucion.gd" id="23_m2id3"]
+[ext_resource type="Theme" uid="uid://b4t2kifjituts" path="res://Resources/contr321ol.tres" id="24_rkpqm"]
+[ext_resource type="FontFile" uid="uid://c4v3i7lvuuegf" path="res://Fonts/Poppins-Bold.ttf" id="26_rkpqm"]
+[ext_resource type="Texture2D" uid="uid://c1yrtlntbbbmr" path="res://Images/Botones/ControlA.png" id="26_xhgcl"]
+[ext_resource type="Texture2D" uid="uid://caofuhogl0ttv" path="res://Images/CLOCK.png" id="27_xhgcl"]
+[ext_resource type="PackedScene" uid="uid://he7yj364ffa2" path="res://Scenes/ColorPicker.tscn" id="30_rlonj"]
+[ext_resource type="Script" uid="uid://buymk2rb1ea41" path="res://Scripts/scroll_container.gd" id="31_c8pol"]
+[ext_resource type="PackedScene" uid="uid://cwqgjsrmcke15" path="res://Scenes/OruburinControl.tscn" id="31_m2id3"]
+[ext_resource type="Script" uid="uid://8313dy2mvpd4" path="res://Scripts/ServidorIndividual.gd" id="31_su4y3"]
+[ext_resource type="Theme" uid="uid://oqo7rrx8r3f6" path="res://Resources/new_theme2.tres" id="32_m2id3"]
+[ext_resource type="Script" uid="uid://rq0rmnkw6b68" path="res://Scripts/nueva_ip.gd" id="33_k1fdc"]
+[ext_resource type="Script" uid="uid://cbaypbajgcla5" path="res://Scripts/Animaciones.gd" id="35_su4y3"]
+[ext_resource type="Script" uid="uid://bs1wafiv82tch" path="res://Scripts/buscandogro.gd" id="35_xisss"]
+[ext_resource type="Texture2D" uid="uid://d2d6w1n53l658" path="res://Images/logo.png" id="36_c8pol"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c8pol"]
+shader = ExtResource("1_5e35a")
+shader_parameter/size = 40.0
+shader_parameter/color1 = Color(0.0509804, 0.572549, 0.956863, 1)
+shader_parameter/color2 = Color(0.105392, 0.601169, 0.991116, 1)
+shader_parameter/speed = 0.5
+shader_parameter/direction_x = 1.0
+shader_parameter/direction_y = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5e35a"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k5x1w"]
+bg_color = Color(0.67, 0.591387, 0.4556, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g7jxm"]
+bg_color = Color(0, 0, 0, 0.588235)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dwrpx"]
+bg_color = Color(0, 0, 0, 0.588235)
+corner_radius_top_left = 10
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 10
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_8tnp7"]
+viewport_path = NodePath("Control/Control")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rkpqm"]
+bg_color = Color(0, 0, 0, 0.392157)
+corner_radius_top_left = 10
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7wriu"]
+bg_color = Color(0, 0, 0, 0.392157)
+corner_radius_top_left = 10
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_8tnp7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ecwwl"]
+bg_color = Color(0, 0, 0, 0.588235)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kk3ma"]
+bg_color = Color(0, 0, 0, 0.588235)
+corner_radius_top_left = 30
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 30
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_5e35a"]
+allow_unpress = true
+
+[sub_resource type="Gradient" id="Gradient_oxnod"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gd0jp"]
+gradient = SubResource("Gradient_oxnod")
+width = 32
+height = 32
+fill_from = Vector2(1, 0)
+
+[sub_resource type="Gradient" id="Gradient_h1wq0"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dwrpx"]
+gradient = SubResource("Gradient_h1wq0")
+width = 32
+height = 32
+
+[sub_resource type="Gradient" id="Gradient_dwrpx"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_g7jxm"]
+gradient = SubResource("Gradient_dwrpx")
+width = 32
+height = 32
+
+[sub_resource type="Gradient" id="Gradient_g7jxm"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jspdm"]
+gradient = SubResource("Gradient_g7jxm")
+width = 32
+height = 32
+
+[sub_resource type="Shader" id="Shader_jspdm"]
+code = "shader_type canvas_item;
+
+/* ---------- TEXTURAS / COLORES ---------- */
+uniform sampler2D layer1;
+uniform sampler2D layer2;
+uniform sampler2D layer3;
+uniform sampler2D layer4;
+uniform sampler2D layer5;
+
+uniform vec4 color1 : source_color = vec4(1.0);
+uniform vec4 color2 : source_color = vec4(1.0);
+uniform vec4 color3 : source_color = vec4(1.0);
+uniform vec4 color4 : source_color = vec4(1.0);
+uniform vec4 color5 : source_color = vec4(1.0);
+
+uniform bool use_texture1 = false;
+uniform bool use_texture2 = false;
+uniform bool use_texture3 = false;
+uniform bool use_texture4 = false;
+uniform bool use_texture5 = false;
+
+/* ---------- ESTADOS ---------- */
+uniform bool hovered  = false;
+uniform bool focus    = false;
+uniform bool selected = false;
+
+/* ---------- PARÁMETROS ---------- */
+uniform float border_size  : hint_range(0.01, 0.5) = 0.10;
+uniform float fade_between : hint_range(0.0, 0.1)  = 0.02;
+uniform float aa_strength  : hint_range(0.5, 3.0)  = 1.5;   // un poquito más fuerte
+
+void fragment() {
+	vec2  uv = UV * 2.0 - 1.0;
+	float r  = length(uv);
+
+	/* ---------- ANTIALIAS GLOBAL ---------- */
+	float aa  = fwidth(r) * aa_strength;          // ancho de 1 px en coords radiales
+	float edge = smoothstep(1.0 - aa, 1.0 + aa, r); // 0 = dentro, 1 = fuera
+	float inside = 1.0 - edge;                      // máscara suave del círculo
+
+	/* ---------- CAPAS ---------- */
+	const float step = 0.2;
+	vec4 c1 = use_texture1 ? texture(layer1, UV) : color1;
+	vec4 c2 = use_texture2 ? texture(layer2, UV) : color2;
+	vec4 c3 = use_texture3 ? texture(layer3, UV) : color3;
+	vec4 c4 = use_texture4 ? texture(layer4, UV) : color4;
+	vec4 c5 = use_texture5 ? texture(layer5, UV) : color5;
+
+	vec4 base;
+	if (r < step) {
+		base = c1;
+	} else if (r < step * 2.0) {
+		float t = smoothstep(step - fade_between, step + fade_between, r);
+		base = mix(c1, c2, t);
+	} else if (r < step * 3.0) {
+		float t = smoothstep(step * 2.0 - fade_between, step * 2.0 + fade_between, r);
+		base = mix(c2, c3, t);
+	} else if (r < step * 4.0) {
+		float t = smoothstep(step * 3.0 - fade_between, step * 3.0 + fade_between, r);
+		base = mix(c3, c4, t);
+	} else {
+		float t = smoothstep(step * 4.0 - fade_between, step * 4.0 + fade_between, r);
+		base = mix(c4, c5, t);
+	}
+
+	/* ---------- BORDE EXTERNO ---------- */
+	float border = smoothstep(1.0 - border_size - aa, 1.0 + aa, r);
+	if (selected) {
+		base = vec4(1.0);
+	} else if (focus) {
+		base = mix(base, vec4(1.0), border);
+	} else if (hovered) {
+		base = mix(base, vec4(0.8, 0.8, 0.8, 1.0), border);
+	}
+
+	/* ---------- APLICAR MÁSCARA DE AA ---------- */
+	COLOR = base;
+	COLOR.a *= inside;   // el borde se funde; nada de discard
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oxnod"]
+shader = SubResource("Shader_jspdm")
+shader_parameter/color1 = Color(0.149851, 0.607879, 0.600348, 1)
+shader_parameter/color2 = Color(0.942573, 0.470943, 0.47466, 1)
+shader_parameter/color3 = Color(1, 0.8, 0.8, 1)
+shader_parameter/color4 = Color(1, 0.54, 0.54, 1)
+shader_parameter/color5 = Color(0.689963, 0, 0.199996, 1)
+shader_parameter/use_texture1 = false
+shader_parameter/use_texture2 = false
+shader_parameter/use_texture3 = false
+shader_parameter/use_texture4 = false
+shader_parameter/use_texture5 = false
+shader_parameter/hovered = false
+shader_parameter/focus = false
+shader_parameter/selected = false
+shader_parameter/border_size = 0.5
+shader_parameter/fade_between = 0.02
+shader_parameter/aa_strength = 1.0
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_8uog0"]
+viewport_path = NodePath("Control/EquipoIzq")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_t5jqm"]
+viewport_path = NodePath("Control/EquipoDer")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8tnp7"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m2id3"]
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color(0.687065, 0.55012, 1, 1)
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xhgcl"]
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color(0.535313, 0.979719, 1, 1)
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t5jqm"]
+bg_color = Color(0.39, 0.39, 0.39, 0.592157)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8lmdq"]
+bg_color = Color(1, 1, 1, 0)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_su4y3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rlonj"]
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="Animation" id="Animation_x5sqb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Logo:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_bhlom"]
+resource_name = "giro"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Logo:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ciy7n"]
+_data = {
+&"RESET": SubResource("Animation_x5sqb"),
+&"giro": SubResource("Animation_bhlom")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xisss"]
+bg_color = Color(0, 0, 0, 0.588235)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c8pol"]
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k1fdc"]
+corner_radius_top_left = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_su4y3"]
+bg_color = Color(0.419813, 0.419813, 0.419813, 1)
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_8tnp7"]
+color = Color(1, 1, 1, 1)
+
+[sub_resource type="Animation" id="Animation_rlonj"]
+resource_name = "ControlesSlideOff"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Opciones:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-150, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Controles/Controles:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(28.995, 46), Vector2(-267, 46)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Panel:mouse_filter")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 2]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Controles/Controles:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Opciones/HBoxContainer/Opciones/Controles:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Opciones/HBoxContainer/Opciones/Equipos:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_xhgcl"]
+resource_name = "ControlesSlideOn"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Opciones:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-150, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Panel:mouse_filter")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.233333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Controles/Controles:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-270.835, 46), Vector2(38, 46)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Controles/Controles:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Opciones/HBoxContainer/Opciones/Controles:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Opciones/HBoxContainer/Opciones/Equipos:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_xisss"]
+resource_name = "CrearPartida2IN"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../MenuCrearPartida2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.277393, 3.24902),
+"update": 0,
+"values": [Vector2(-976.185, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../MenuCrearPartida2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Panel:mouse_filter")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 2]
+}
+
+[sub_resource type="Animation" id="Animation_5e35a"]
+resource_name = "CrearPartida2OUT"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../MenuCrearPartida2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(3, 0.15),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1042.17, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../MenuCrearPartida2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Panel:mouse_filter")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 2]
+}
+
+[sub_resource type="Animation" id="Animation_8tnp7"]
+resource_name = "EquipoSlideOff"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Opciones:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-150, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Equipos/Equipos:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-930, -138), Vector2(-1248, -138)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Panel:mouse_filter")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 2]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Equipos/Equipos:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.433333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Opciones/HBoxContainer/Opciones/Controles:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Opciones/HBoxContainer/Opciones/Equipos:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_rkpqm"]
+resource_name = "EquipoSlideOn"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Opciones:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-150, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Equipos/Equipos:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1233.98, -138), Vector2(-925, -138)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Panel:mouse_filter")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.266667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 2]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Equipos/Equipos:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Opciones/HBoxContainer/Opciones/Controles:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Opciones/HBoxContainer/Opciones/Equipos:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_snj3a"]
+resource_name = "MenuBuscarPartida_Aparecer"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../MenuSelectorPartida:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.15, 3),
+"update": 0,
+"values": [Vector2(4, 688), Vector2(4, 83.965)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../MenuSelectorPartida:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Panel:mouse_filter")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.566667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 2]
+}
+
+[sub_resource type="Animation" id="Animation_c770m"]
+resource_name = "MenuBuscarPartida_Desaparecer"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../MenuSelectorPartida:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(3, 0.15),
+"update": 0,
+"values": [Vector2(4, 83.965), Vector2(4, -574.27)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../MenuSelectorPartida:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Panel:mouse_filter")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 2]
+}
+
+[sub_resource type="Animation" id="Animation_lo2je"]
+resource_name = "MenuConfiguracionOFF"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(3, 0.15),
+"update": 0,
+"values": [Vector2(138.835, 41.875), Vector2(138.835, 688)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Panel:mouse_filter")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 2]
+}
+
+[sub_resource type="Animation" id="Animation_3kqnc"]
+resource_name = "MenuConfiguracionON"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.15, 3),
+"update": 0,
+"values": [Vector2(138.835, 688), Vector2(138.835, 41.875)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Panel:mouse_filter")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 2]
+}
+
+[sub_resource type="Animation" id="Animation_k1fdc"]
+resource_name = "MenuCrearPartida1_Aparecer"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../MenuCrearPartida1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.277393, 3.24902),
+"update": 0,
+"values": [Vector2(-976.185, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../MenuCrearPartida1:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Panel:mouse_filter")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.566667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 2]
+}
+
+[sub_resource type="Animation" id="Animation_28d1b"]
+resource_name = "MenuCrearPartida1_DesaparecerNO"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../MenuCrearPartida1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(3, 0.277393),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-1000, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../MenuCrearPartida1:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Panel:mouse_filter")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 2]
+}
+
+[sub_resource type="Animation" id="Animation_c8pol"]
+resource_name = "MenuCrearPartida1_DesaparecerSI"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../MenuCrearPartida1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(3, 0.15),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1000, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../MenuCrearPartida1:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Panel:mouse_filter")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 2]
+}
+
+[sub_resource type="Animation" id="Animation_7wriu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Opciones:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Equipos/Equipos:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-457, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Controles/Controles:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(660, 184)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../PelotaPlaceHolder:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(824, 456)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../PelotaPlaceHolder:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.25, 0.25)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Panel:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../FondoCuadrille:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../PelotaPlaceHolder:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../MenuCrearPartida1:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../MenuCrearPartida1:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../MenuSelectorPartida:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("../MenuSelectorPartida:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4, 688)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("../MenuPrincipal/OruBoruLogo:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath(".:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("../MenuCrearPartida2:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("../Panel:mouse_filter")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Equipos/Equipos:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Controles/Controles:visible")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Opciones/HBoxContainer/Opciones/Controles:disabled")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_su4y3"]
+resource_name = "Transicion_MenuPrincipal"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../PelotaPlaceHolder:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(824, 456), Vector2(640, 360)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../PelotaPlaceHolder:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 2.54912),
+"update": 0,
+"values": [Vector2(0.25, 0.25), Vector2(4, 4)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Panel:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.466667, 0.6),
+"transitions": PackedFloat32Array(1.03526, 1, 2),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../FondoCuadrille:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../PelotaPlaceHolder:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../MenuPrincipal/OruBoruLogo:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../MenuPrincipal/Menu:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_w0s3i"]
+resource_name = "fadeIn"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Panel:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.84, 0.84, 0.84, 1), Color(0.843184, 0.843184, 0.843184, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xhgcl"]
+_data = {
+&"ControlesSlideOff": SubResource("Animation_rlonj"),
+&"ControlesSlideOn": SubResource("Animation_xhgcl"),
+&"CrearPartida2IN": SubResource("Animation_xisss"),
+&"CrearPartida2OUT": SubResource("Animation_5e35a"),
+&"EquipoSlideOff": SubResource("Animation_8tnp7"),
+&"EquipoSlideOn": SubResource("Animation_rkpqm"),
+&"MenuBuscarPartida_Aparecer": SubResource("Animation_snj3a"),
+&"MenuBuscarPartida_Desaparecer": SubResource("Animation_c770m"),
+&"MenuConfiguracionOFF": SubResource("Animation_lo2je"),
+&"MenuConfiguracionON": SubResource("Animation_3kqnc"),
+&"MenuCrearPartida1_Aparecer": SubResource("Animation_k1fdc"),
+&"MenuCrearPartida1_DesaparecerNO": SubResource("Animation_28d1b"),
+&"MenuCrearPartida1_DesaparecerSI": SubResource("Animation_c8pol"),
+&"RESET": SubResource("Animation_7wriu"),
+&"Transicion_MenuPrincipal": SubResource("Animation_su4y3"),
+&"fadeIn": SubResource("Animation_w0s3i")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_snj3a"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 24.0
+offset_right = 8.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FondoCuadrille" type="Sprite2D" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_c8pol")
+position = Vector2(632.25, 336.75)
+scale = Vector2(0.666754, 0.665894)
+texture = ExtResource("1_xhgcl")
+
+[node name="MenuPrincipal" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="OruBoruLogo" type="Sprite2D" parent="MenuPrincipal"]
+position = Vector2(347, 155)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_ytr4m")
+
+[node name="Menu" type="VBoxContainer" parent="MenuPrincipal"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 480.0
+offset_right = 394.965
+offset_bottom = 684.0
+scale = Vector2(0.75, 0.75)
+script = ExtResource("3_su4y3")
+
+[node name="CrearPartida" type="Button" parent="MenuPrincipal/Menu"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_hover_color = Color(0.333333, 0.333333, 0.333333, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.0509804, 0.572549, 0.956863, 1)
+theme_override_colors/font_pressed_color = Color(0.0509804, 0.572549, 0.956863, 1)
+theme_override_fonts/font = ExtResource("2_l48gv")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxFlat_5e35a")
+text = "CREAR PARTIDA"
+flat = true
+alignment = 0
+
+[node name="BuscarPartida" type="Button" parent="MenuPrincipal/Menu"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_hover_color = Color(0.333333, 0.333333, 0.333333, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.0509804, 0.572549, 0.956863, 1)
+theme_override_colors/font_pressed_color = Color(0.0509804, 0.572549, 0.956863, 1)
+theme_override_fonts/font = ExtResource("2_l48gv")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxFlat_5e35a")
+text = "BUSCAR PARTIDA"
+flat = true
+alignment = 0
+
+[node name="Opciones" type="Button" parent="MenuPrincipal/Menu"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_hover_color = Color(0.333333, 0.333333, 0.333333, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.0509804, 0.572549, 0.956863, 1)
+theme_override_colors/font_pressed_color = Color(0.0509804, 0.572549, 0.956863, 1)
+theme_override_fonts/font = ExtResource("2_l48gv")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxFlat_5e35a")
+text = "OPCIONES"
+flat = true
+alignment = 0
+
+[node name="Salir" type="Button" parent="MenuPrincipal/Menu"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_hover_color = Color(0.333333, 0.333333, 0.333333, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.0509804, 0.572549, 0.956863, 1)
+theme_override_colors/font_pressed_color = Color(0.0509804, 0.572549, 0.956863, 1)
+theme_override_fonts/font = ExtResource("2_l48gv")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxFlat_5e35a")
+text = "SALIR"
+flat = true
+alignment = 0
+
+[node name="PelotaPlaceHolder" type="Sprite2D" parent="."]
+position = Vector2(824, 456)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_k1fdc")
+
+[node name="MenuConfiguracion" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_left = 138.835
+offset_top = 41.875
+offset_right = 178.835
+offset_bottom = 81.875
+
+[node name="Equipos" type="Panel" parent="MenuConfiguracion"]
+clip_contents = true
+layout_mode = 0
+offset_left = 608.0
+offset_top = 106.0
+offset_right = 931.0
+offset_bottom = 744.0
+scale = Vector2(0.8, 0.8)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_k5x1w")
+
+[node name="Equipos" type="Control" parent="MenuConfiguracion/Equipos"]
+anchors_preset = 0
+offset_left = -457.0
+offset_right = -417.0
+offset_bottom = 40.0
+
+[node name="Selector" type="Control" parent="MenuConfiguracion/Equipos/Equipos"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel2" type="Panel" parent="MenuConfiguracion/Equipos/Equipos/Selector"]
+layout_mode = 0
+offset_left = 955.0
+offset_top = 168.0
+offset_right = 1200.0
+offset_bottom = 206.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_g7jxm")
+
+[node name="ScrollColores" parent="MenuConfiguracion/Equipos/Equipos/Selector" instance=ExtResource("13_k1fdc")]
+layout_mode = 1
+offset_left = 898.956
+offset_top = 129.406
+offset_right = 898.956
+offset_bottom = 129.406
+scale = Vector2(4.125, 4.125)
+
+[node name="Panel" type="Panel" parent="MenuConfiguracion/Equipos/Equipos"]
+layout_mode = 0
+offset_left = 939.0
+offset_top = 212.0
+offset_right = 1234.0
+offset_bottom = 538.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dwrpx")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuConfiguracion/Equipos/Equipos"]
+layout_mode = 0
+offset_left = 947.0
+offset_top = 223.0
+offset_right = 1219.0
+offset_bottom = 266.0
+theme_override_constants/separation = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MenuConfiguracion/Equipos/Equipos/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="Label" type="Label" parent="MenuConfiguracion/Equipos/Equipos/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 10
+text = "               NOMBRE DEL EQUIPO"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="MenuConfiguracion/Equipos/Equipos/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 10
+text = "ABRV."
+
+[node name="EquipoNombre" type="HBoxContainer" parent="MenuConfiguracion/Equipos/Equipos/VBoxContainer"]
+layout_mode = 2
+script = ExtResource("9_su4y3")
+
+[node name="Nombre" type="LineEdit" parent="MenuConfiguracion/Equipos/Equipos/VBoxContainer/EquipoNombre"]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("6_kk3ma")
+theme_override_font_sizes/font_size = 16
+text = "LOS COLORADOS"
+alignment = 1
+max_length = 40
+
+[node name="Abreviacion" type="LineEdit" parent="MenuConfiguracion/Equipos/Equipos/VBoxContainer/EquipoNombre"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("6_kk3ma")
+theme_override_font_sizes/font_size = 16
+text = "CLRA"
+alignment = 1
+max_length = 4
+
+[node name="ColorPicker" parent="MenuConfiguracion/Equipos/Equipos" instance=ExtResource("30_rlonj")]
+layout_mode = 1
+offset_left = 960.206
+offset_top = 456.906
+offset_right = 920.206
+offset_bottom = 416.906
+scale = Vector2(1.2, 1.2)
+
+[node name="Personaje" type="Control" parent="MenuConfiguracion/Equipos/Equipos"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="MenuConfiguracion/Equipos/Equipos/Personaje"]
+position = Vector2(1089, 333.25)
+scale = Vector2(0.75, 0.75)
+texture = SubResource("ViewportTexture_8tnp7")
+
+[node name="Controles" type="Panel" parent="MenuConfiguracion"]
+clip_contents = true
+layout_mode = 0
+offset_left = 612.0
+offset_top = 101.0
+offset_right = 1097.0
+offset_bottom = 613.0
+scale = Vector2(0.8, 0.8)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_k5x1w")
+
+[node name="Controles" type="Control" parent="MenuConfiguracion/Controles"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 660.0
+offset_top = 184.0
+offset_right = 700.0
+offset_bottom = 224.0
+scale = Vector2(1.1, 1.1)
+
+[node name="Panel4" type="Panel" parent="MenuConfiguracion/Controles/Controles"]
+layout_mode = 0
+offset_left = -30.0
+offset_top = -18.0
+offset_right = 263.0
+offset_bottom = 346.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_rkpqm")
+
+[node name="Panel" type="Panel" parent="MenuConfiguracion/Controles/Controles"]
+layout_mode = 0
+offset_left = -22.0
+offset_top = -11.0
+offset_right = 113.0
+offset_bottom = 333.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_7wriu")
+
+[node name="Panel2" type="Panel" parent="MenuConfiguracion/Controles/Controles"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = -11.0
+offset_right = 179.0
+offset_bottom = 333.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_7wriu")
+
+[node name="Panel3" type="Panel" parent="MenuConfiguracion/Controles/Controles"]
+layout_mode = 0
+offset_left = 189.0
+offset_top = -11.0
+offset_right = 248.0
+offset_bottom = 333.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_7wriu")
+
+[node name="Label" type="Label" parent="MenuConfiguracion/Controles/Controles"]
+layout_mode = 2
+offset_left = 20.0
+offset_top = 1.0
+offset_right = 75.0
+offset_bottom = 11.3333
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 9
+text = "ACCION "
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="MenuConfiguracion/Controles/Controles"]
+layout_mode = 2
+offset_left = 126.0
+offset_top = 1.0
+offset_right = 173.0
+offset_bottom = 11.3333
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 9
+text = "TECLADO"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="MenuConfiguracion/Controles/Controles"]
+layout_mode = 2
+offset_left = 194.0
+offset_top = 1.0
+offset_right = 243.0
+offset_bottom = 11.3333
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 9
+text = "CONTROL"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuConfiguracion/Controles/Controles"]
+layout_mode = 0
+offset_left = -10.0
+offset_top = 20.0
+offset_right = 243.0
+offset_bottom = 340.0
+script = ExtResource("13_t5jqm")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MenuConfiguracion/Controles/Controles/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 18
+alignment = 2
+
+[node name="Label" type="Label" parent="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 18
+text = "Adelante"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer3"]
+texture_filter = 4
+layout_mode = 2
+theme = ExtResource("24_rkpqm")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_8tnp7")
+text = "            "
+script = ExtResource("14_rlonj")
+
+[node name="Tecla" type="Sprite2D" parent="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer3/Button2"]
+position = Vector2(25, 11)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("26_xhgcl")
+
+[node name="Button3" type="Button" parent="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer3"]
+texture_filter = 4
+layout_mode = 2
+theme = ExtResource("24_rkpqm")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_8tnp7")
+text = "            "
+script = ExtResource("16_rlonj")
+
+[node name="Tecla" type="Sprite2D" parent="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer3/Button3"]
+position = Vector2(25, 11)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("26_xhgcl")
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="MenuConfiguracion/Controles/Controles/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 18
+alignment = 2
+
+[node name="Label" type="Label" parent="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 18
+text = "Izquierda"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer4"]
+texture_filter = 4
+layout_mode = 2
+theme = ExtResource("24_rkpqm")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_8tnp7")
+text = "            "
+script = ExtResource("14_rlonj")
+
+[node name="Tecla" type="Sprite2D" parent="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer4/Button2"]
+position = Vector2(25, 11)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("26_xhgcl")
+
+[node name="Button3" type="Button" parent="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer4"]
+texture_filter = 4
+layout_mode = 2
+theme = ExtResource("24_rkpqm")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_8tnp7")
+text = "            "
+script = ExtResource("16_rlonj")
+
+[node name="Tecla" type="Sprite2D" parent="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer4/Button3"]
+position = Vector2(25, 11)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("26_xhgcl")
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="MenuConfiguracion/Controles/Controles/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 18
+alignment = 2
+
+[node name="Label" type="Label" parent="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 18
+text = "Derecha"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer5"]
+texture_filter = 4
+layout_mode = 2
+theme = ExtResource("24_rkpqm")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_8tnp7")
+text = "            "
+script = ExtResource("14_rlonj")
+
+[node name="Tecla" type="Sprite2D" parent="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer5/Button2"]
+position = Vector2(25, 11)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("26_xhgcl")
+
+[node name="Button3" type="Button" parent="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer5"]
+texture_filter = 4
+layout_mode = 2
+theme = ExtResource("24_rkpqm")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_8tnp7")
+text = "            "
+script = ExtResource("16_rlonj")
+
+[node name="Tecla" type="Sprite2D" parent="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer5/Button3"]
+position = Vector2(25, 11)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("26_xhgcl")
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="MenuConfiguracion/Controles/Controles/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 18
+alignment = 2
+
+[node name="Label" type="Label" parent="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 18
+text = "Atras"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer6"]
+texture_filter = 4
+layout_mode = 2
+theme = ExtResource("24_rkpqm")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_8tnp7")
+text = "            "
+script = ExtResource("14_rlonj")
+
+[node name="Tecla" type="Sprite2D" parent="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer6/Button2"]
+position = Vector2(25, 11)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("26_xhgcl")
+
+[node name="Button3" type="Button" parent="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer6"]
+texture_filter = 4
+layout_mode = 2
+theme = ExtResource("24_rkpqm")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_8tnp7")
+text = "            "
+script = ExtResource("16_rlonj")
+
+[node name="Tecla" type="Sprite2D" parent="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer6/Button3"]
+position = Vector2(25, 11)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("26_xhgcl")
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="MenuConfiguracion/Controles/Controles/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 18
+alignment = 2
+
+[node name="Label" type="Label" parent="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 18
+text = "Patear"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer7"]
+texture_filter = 4
+layout_mode = 2
+theme = ExtResource("24_rkpqm")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_8tnp7")
+text = "            "
+script = ExtResource("14_rlonj")
+
+[node name="Tecla" type="Sprite2D" parent="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer7/Button2"]
+position = Vector2(25, 11)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("26_xhgcl")
+
+[node name="Button3" type="Button" parent="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer7"]
+texture_filter = 4
+layout_mode = 2
+theme = ExtResource("24_rkpqm")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_8tnp7")
+text = "            "
+script = ExtResource("16_rlonj")
+
+[node name="Tecla" type="Sprite2D" parent="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer7/Button3"]
+position = Vector2(25, 11)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("26_xhgcl")
+
+[node name="HBoxContainer8" type="HBoxContainer" parent="MenuConfiguracion/Controles/Controles/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 18
+alignment = 2
+
+[node name="Label" type="Label" parent="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 18
+text = "Tiro Alto"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer8"]
+texture_filter = 4
+layout_mode = 2
+theme = ExtResource("24_rkpqm")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_8tnp7")
+text = "            "
+script = ExtResource("14_rlonj")
+
+[node name="Tecla" type="Sprite2D" parent="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer8/Button2"]
+position = Vector2(25, 11)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("26_xhgcl")
+
+[node name="Button3" type="Button" parent="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer8"]
+texture_filter = 4
+layout_mode = 2
+theme = ExtResource("24_rkpqm")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_8tnp7")
+text = "            "
+script = ExtResource("16_rlonj")
+
+[node name="Tecla" type="Sprite2D" parent="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer8/Button3"]
+position = Vector2(25, 11)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("26_xhgcl")
+
+[node name="HBoxContainer9" type="HBoxContainer" parent="MenuConfiguracion/Controles/Controles/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 18
+alignment = 2
+
+[node name="Label" type="Label" parent="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer9"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 18
+text = "Saltar"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer9"]
+texture_filter = 4
+layout_mode = 2
+theme = ExtResource("24_rkpqm")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_8tnp7")
+text = "            "
+script = ExtResource("14_rlonj")
+
+[node name="Tecla" type="Sprite2D" parent="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer9/Button2"]
+position = Vector2(25, 11)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("26_xhgcl")
+
+[node name="Button3" type="Button" parent="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer9"]
+texture_filter = 4
+layout_mode = 2
+theme = ExtResource("24_rkpqm")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_8tnp7")
+text = "            "
+script = ExtResource("16_rlonj")
+
+[node name="Tecla" type="Sprite2D" parent="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer9/Button3"]
+position = Vector2(25, 11)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("26_xhgcl")
+
+[node name="HBoxContainer10" type="HBoxContainer" parent="MenuConfiguracion/Controles/Controles/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 18
+alignment = 2
+
+[node name="Label" type="Label" parent="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer10"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 18
+text = "Emote 1"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer10"]
+texture_filter = 4
+layout_mode = 2
+theme = ExtResource("24_rkpqm")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_8tnp7")
+text = "            "
+script = ExtResource("14_rlonj")
+
+[node name="Tecla" type="Sprite2D" parent="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer10/Button2"]
+position = Vector2(25, 11)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("26_xhgcl")
+
+[node name="Button3" type="Button" parent="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer10"]
+texture_filter = 4
+layout_mode = 2
+theme = ExtResource("24_rkpqm")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_8tnp7")
+text = "            "
+script = ExtResource("16_rlonj")
+
+[node name="Tecla" type="Sprite2D" parent="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer10/Button3"]
+position = Vector2(25, 11)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("26_xhgcl")
+
+[node name="HBoxContainer11" type="HBoxContainer" parent="MenuConfiguracion/Controles/Controles/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 18
+alignment = 2
+
+[node name="Label" type="Label" parent="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer11"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 18
+text = "Emote 2"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer11"]
+texture_filter = 4
+layout_mode = 2
+theme = ExtResource("24_rkpqm")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_8tnp7")
+text = "            "
+script = ExtResource("14_rlonj")
+
+[node name="Tecla" type="Sprite2D" parent="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer11/Button2"]
+position = Vector2(25, 11)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("26_xhgcl")
+
+[node name="Button3" type="Button" parent="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer11"]
+texture_filter = 4
+layout_mode = 2
+theme = ExtResource("24_rkpqm")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_8tnp7")
+text = "            "
+script = ExtResource("16_rlonj")
+
+[node name="Tecla" type="Sprite2D" parent="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer11/Button3"]
+position = Vector2(25, 11)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("26_xhgcl")
+
+[node name="HBoxContainer12" type="HBoxContainer" parent="MenuConfiguracion/Controles/Controles/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 18
+alignment = 2
+
+[node name="Label" type="Label" parent="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer12"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 18
+text = "Emote 3"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer12"]
+texture_filter = 4
+layout_mode = 2
+theme = ExtResource("24_rkpqm")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_8tnp7")
+text = "            "
+script = ExtResource("14_rlonj")
+
+[node name="Tecla" type="Sprite2D" parent="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer12/Button2"]
+position = Vector2(25, 11)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("26_xhgcl")
+
+[node name="Button3" type="Button" parent="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer12"]
+texture_filter = 4
+layout_mode = 2
+theme = ExtResource("24_rkpqm")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_8tnp7")
+text = "            "
+script = ExtResource("16_rlonj")
+
+[node name="Tecla" type="Sprite2D" parent="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer12/Button3"]
+position = Vector2(25, 11)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("26_xhgcl")
+
+[node name="HBoxContainer13" type="HBoxContainer" parent="MenuConfiguracion/Controles/Controles/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 18
+alignment = 2
+
+[node name="Label" type="Label" parent="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer13"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 18
+text = "Chat"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer13"]
+texture_filter = 4
+layout_mode = 2
+theme = ExtResource("24_rkpqm")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_8tnp7")
+text = "            "
+script = ExtResource("14_rlonj")
+
+[node name="Tecla" type="Sprite2D" parent="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer13/Button2"]
+position = Vector2(25, 11)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("26_xhgcl")
+
+[node name="Button3" type="Button" parent="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer13"]
+texture_filter = 4
+layout_mode = 2
+theme = ExtResource("24_rkpqm")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_8tnp7")
+text = "            "
+script = ExtResource("16_rlonj")
+
+[node name="Tecla" type="Sprite2D" parent="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer13/Button3"]
+position = Vector2(25, 11)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("26_xhgcl")
+
+[node name="Guardar" type="Button" parent="MenuConfiguracion/Controles/Controles"]
+custom_minimum_size = Vector2(110, 35)
+layout_mode = 0
+offset_left = -2.30794
+offset_top = 350.369
+offset_right = 136.692
+offset_bottom = 390.369
+scale = Vector2(0.8, 0.8)
+theme = ExtResource("2_nrnbx")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "GUARDAR"
+
+[node name="Reestablecer" type="Button" parent="MenuConfiguracion/Controles/Controles"]
+custom_minimum_size = Vector2(110, 35)
+layout_mode = 0
+offset_left = 117.01
+offset_top = 350.369
+offset_right = 256.01
+offset_bottom = 390.369
+scale = Vector2(0.8, 0.8)
+theme = ExtResource("2_nrnbx")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "REESTABLECER"
+
+[node name="Opciones" type="Control" parent="MenuConfiguracion"]
+z_index = 1
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.815, 0.815)
+
+[node name="Guardar" type="Button" parent="MenuConfiguracion/Opciones"]
+custom_minimum_size = Vector2(110, 35)
+layout_mode = 0
+offset_left = 497.0
+offset_top = 596.0
+offset_right = 607.0
+offset_bottom = 636.0
+scale = Vector2(1.1, 1.1)
+theme = ExtResource("2_nrnbx")
+text = "APLICAR"
+
+[node name="Salir" type="Button" parent="MenuConfiguracion/Opciones"]
+custom_minimum_size = Vector2(110, 35)
+layout_mode = 0
+offset_left = 629.0
+offset_top = 596.0
+offset_right = 739.0
+offset_bottom = 636.0
+scale = Vector2(1.1, 1.1)
+theme = ExtResource("2_nrnbx")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "CERRAR"
+
+[node name="Panel" type="Panel" parent="MenuConfiguracion/Opciones"]
+layout_mode = 0
+offset_left = 289.0
+offset_top = 88.0
+offset_right = 930.0
+offset_bottom = 127.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ecwwl")
+
+[node name="Panel2" type="Panel" parent="MenuConfiguracion/Opciones"]
+layout_mode = 0
+offset_left = 289.0
+offset_top = 140.0
+offset_right = 930.0
+offset_bottom = 586.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kk3ma")
+
+[node name="OPCIONES" type="Label" parent="MenuConfiguracion/Opciones"]
+layout_mode = 0
+offset_left = 512.0
+offset_top = 89.0
+offset_right = 726.0
+offset_bottom = 132.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_lti8b")
+theme_override_font_sizes/font_size = 36
+text = "OPCIONES"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MenuConfiguracion/Opciones"]
+layout_mode = 0
+offset_left = 312.0
+offset_top = 164.0
+offset_right = 1012.0
+offset_bottom = 637.0
+scale = Vector2(0.8, 0.8)
+theme_override_constants/separation = 50
+
+[node name="Labels" type="VBoxContainer" parent="MenuConfiguracion/Opciones/HBoxContainer"]
+layout_mode = 2
+
+[node name="Modo de pantalla" type="Label" parent="MenuConfiguracion/Opciones/HBoxContainer/Labels"]
+custom_minimum_size = Vector2(0, 49)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 10
+theme_override_fonts/font = ExtResource("1_lti8b")
+theme_override_font_sizes/font_size = 35
+text = "Modo de pantalla"
+horizontal_alignment = 2
+
+[node name="Calidad" type="Label" parent="MenuConfiguracion/Opciones/HBoxContainer/Labels"]
+custom_minimum_size = Vector2(0, 49)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 10
+theme_override_fonts/font = ExtResource("1_lti8b")
+theme_override_font_sizes/font_size = 35
+text = "Calidad"
+horizontal_alignment = 2
+
+[node name="Resolucion" type="Label" parent="MenuConfiguracion/Opciones/HBoxContainer/Labels"]
+custom_minimum_size = Vector2(0, 49)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 10
+theme_override_fonts/font = ExtResource("1_lti8b")
+theme_override_font_sizes/font_size = 35
+text = "Resolucion"
+horizontal_alignment = 2
+
+[node name="Musica" type="Label" parent="MenuConfiguracion/Opciones/HBoxContainer/Labels"]
+custom_minimum_size = Vector2(0, 49)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 10
+theme_override_fonts/font = ExtResource("1_lti8b")
+theme_override_font_sizes/font_size = 35
+text = "Musica"
+horizontal_alignment = 2
+
+[node name="Sonido" type="Label" parent="MenuConfiguracion/Opciones/HBoxContainer/Labels"]
+custom_minimum_size = Vector2(0, 49)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 10
+theme_override_fonts/font = ExtResource("1_lti8b")
+theme_override_font_sizes/font_size = 35
+text = "Sonido"
+horizontal_alignment = 2
+
+[node name="Controles" type="Label" parent="MenuConfiguracion/Opciones/HBoxContainer/Labels"]
+custom_minimum_size = Vector2(0, 49)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 10
+theme_override_fonts/font = ExtResource("1_lti8b")
+theme_override_font_sizes/font_size = 35
+text = "Controles"
+horizontal_alignment = 2
+
+[node name="Sensibilidad" type="Label" parent="MenuConfiguracion/Opciones/HBoxContainer/Labels"]
+custom_minimum_size = Vector2(0, 49)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 10
+theme_override_fonts/font = ExtResource("1_lti8b")
+theme_override_font_sizes/font_size = 35
+text = "Sensibilidad"
+horizontal_alignment = 2
+
+[node name="Nombre" type="Label" parent="MenuConfiguracion/Opciones/HBoxContainer/Labels"]
+custom_minimum_size = Vector2(0, 49)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 10
+theme_override_fonts/font = ExtResource("1_lti8b")
+theme_override_font_sizes/font_size = 35
+text = "Nombre"
+horizontal_alignment = 2
+
+[node name="Equipos" type="Label" parent="MenuConfiguracion/Opciones/HBoxContainer/Labels"]
+custom_minimum_size = Vector2(0, 49)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 10
+theme_override_fonts/font = ExtResource("1_lti8b")
+theme_override_font_sizes/font_size = 35
+text = "Equipos"
+horizontal_alignment = 2
+
+[node name="Opciones" type="VBoxContainer" parent="MenuConfiguracion/Opciones/HBoxContainer"]
+custom_minimum_size = Vector2(324, 109.635)
+layout_mode = 2
+theme_override_constants/separation = 13
+script = ExtResource("21_8lmdq")
+
+[node name="ModoPantalla" type="OptionButton" parent="MenuConfiguracion/Opciones/HBoxContainer/Opciones"]
+custom_minimum_size = Vector2(250, 40)
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("6_kk3ma")
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 25
+theme_override_constants/arrow_margin = 13
+theme_override_constants/modulate_arrow = 0
+theme_override_icons/arrow = ExtResource("6_l48gv")
+alignment = 1
+selected = 1
+fit_to_longest_item = false
+item_count = 3
+popup/item_0/text = "Ventana"
+popup/item_0/id = 0
+popup/item_1/text = "Completa"
+popup/item_1/id = 1
+popup/item_2/text = "Sin Bordes"
+popup/item_2/id = 2
+
+[node name="Calidad" type="OptionButton" parent="MenuConfiguracion/Opciones/HBoxContainer/Opciones"]
+custom_minimum_size = Vector2(250, 40)
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("6_kk3ma")
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 25
+theme_override_constants/arrow_margin = 13
+theme_override_constants/modulate_arrow = 0
+theme_override_icons/arrow = ExtResource("6_l48gv")
+alignment = 1
+selected = 1
+fit_to_longest_item = false
+item_count = 3
+popup/item_0/text = "Baja"
+popup/item_0/id = 0
+popup/item_1/text = "Media"
+popup/item_1/id = 1
+popup/item_2/text = "Alta"
+popup/item_2/id = 2
+
+[node name="Resolucion" type="OptionButton" parent="MenuConfiguracion/Opciones/HBoxContainer/Opciones"]
+custom_minimum_size = Vector2(250, 40)
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("6_kk3ma")
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 25
+theme_override_constants/arrow_margin = 13
+theme_override_constants/modulate_arrow = 0
+theme_override_icons/arrow = ExtResource("6_l48gv")
+alignment = 1
+selected = 1
+fit_to_longest_item = false
+item_count = 9
+popup/item_0/text = "1280 × 720"
+popup/item_0/id = 0
+popup/item_1/text = "1366 × 768"
+popup/item_1/id = 1
+popup/item_2/text = "1536 × 864"
+popup/item_2/id = 2
+popup/item_3/text = "1600 × 900"
+popup/item_3/id = 3
+popup/item_4/text = "1920 × 1080"
+popup/item_4/id = 4
+popup/item_5/text = "2048 × 1152"
+popup/item_5/id = 5
+popup/item_6/text = "2560 × 1440"
+popup/item_6/id = 6
+popup/item_7/text = "3200 × 1800"
+popup/item_7/id = 7
+popup/item_8/text = "3840 × 2160"
+popup/item_8/id = 8
+script = ExtResource("23_m2id3")
+
+[node name="Musica" type="HSlider" parent="MenuConfiguracion/Opciones/HBoxContainer/Opciones"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme = ExtResource("6_kk3ma")
+step = 5.0
+
+[node name="Sonido" type="HSlider" parent="MenuConfiguracion/Opciones/HBoxContainer/Opciones"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme = ExtResource("6_kk3ma")
+step = 5.0
+
+[node name="Controles" type="Button" parent="MenuConfiguracion/Opciones/HBoxContainer/Opciones"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("6_kk3ma")
+theme_override_colors/font_hover_pressed_color = Color(0.427493, 0.427493, 0.427493, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.0509804, 0.572549, 0.956863, 1)
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 25
+toggle_mode = true
+button_group = SubResource("ButtonGroup_5e35a")
+text = "Modificar"
+
+[node name="Sensibilidad" type="HSlider" parent="MenuConfiguracion/Opciones/HBoxContainer/Opciones"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme = ExtResource("6_kk3ma")
+step = 5.0
+
+[node name="Nombre" type="LineEdit" parent="MenuConfiguracion/Opciones/HBoxContainer/Opciones"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("6_kk3ma")
+text = "HOLA"
+alignment = 1
+
+[node name="Equipos" type="Button" parent="MenuConfiguracion/Opciones/HBoxContainer/Opciones"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("6_kk3ma")
+theme_override_colors/font_hover_pressed_color = Color(0.427493, 0.427493, 0.427493, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.0509804, 0.572549, 0.956863, 1)
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 25
+toggle_mode = true
+button_group = SubResource("ButtonGroup_5e35a")
+text = "Modificar"
+
+[node name="MenuCrearPartida1" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel2" type="Panel" parent="MenuCrearPartida1"]
+layout_mode = 0
+offset_left = 318.0
+offset_top = 216.0
+offset_right = 959.0
+offset_bottom = 447.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kk3ma")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuCrearPartida1"]
+layout_mode = 0
+offset_left = 345.0
+offset_top = 250.0
+offset_right = 927.0
+offset_bottom = 431.0
+theme_override_constants/separation = -5
+
+[node name="HBox" type="HBoxContainer" parent="MenuCrearPartida1/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="MenuCrearPartida1/VBoxContainer/HBox"]
+custom_minimum_size = Vector2(0, 49)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 10
+theme_override_fonts/font = ExtResource("1_lti8b")
+theme_override_font_sizes/font_size = 29
+text = "Nombre del servidor"
+horizontal_alignment = 2
+
+[node name="Nombre" type="LineEdit" parent="MenuCrearPartida1/VBoxContainer/HBox"]
+custom_minimum_size = Vector2(268, 35)
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("6_kk3ma")
+alignment = 1
+
+[node name="HBox2" type="HBoxContainer" parent="MenuCrearPartida1/VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="Label2" type="Label" parent="MenuCrearPartida1/VBoxContainer/HBox2"]
+custom_minimum_size = Vector2(0, 49)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 10
+theme_override_fonts/font = ExtResource("1_lti8b")
+theme_override_font_sizes/font_size = 29
+text = "Contraseña"
+horizontal_alignment = 2
+
+[node name="Nombre" type="LineEdit" parent="MenuCrearPartida1/VBoxContainer/HBox2"]
+custom_minimum_size = Vector2(268, 35)
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("6_kk3ma")
+alignment = 1
+
+[node name="HBox3" type="HBoxContainer" parent="MenuCrearPartida1/VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="Label2" type="Label" parent="MenuCrearPartida1/VBoxContainer/HBox3"]
+custom_minimum_size = Vector2(0, 49)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 10
+theme_override_fonts/font = ExtResource("1_lti8b")
+theme_override_font_sizes/font_size = 29
+text = "Max. Jugadores"
+horizontal_alignment = 2
+
+[node name="Modo de pantalla" type="OptionButton" parent="MenuCrearPartida1/VBoxContainer/HBox3"]
+custom_minimum_size = Vector2(120, 40)
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("6_kk3ma")
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 25
+theme_override_constants/arrow_margin = 13
+theme_override_constants/modulate_arrow = 0
+theme_override_icons/arrow = ExtResource("6_l48gv")
+alignment = 1
+selected = 1
+fit_to_longest_item = false
+item_count = 2
+popup/item_0/text = "123123"
+popup/item_0/id = 0
+popup/item_1/text = "16"
+popup/item_1/id = 1
+
+[node name="Label" type="Label" parent="MenuCrearPartida1/VBoxContainer/HBox3"]
+layout_mode = 2
+text = "                                  "
+
+[node name="HBox4" type="HBoxContainer" parent="MenuCrearPartida1/VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="Label2" type="Label" parent="MenuCrearPartida1/VBoxContainer/HBox4"]
+custom_minimum_size = Vector2(0, 49)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 10
+theme_override_fonts/font = ExtResource("1_lti8b")
+theme_override_font_sizes/font_size = 29
+text = "Tiempo de mitad"
+horizontal_alignment = 2
+
+[node name="Modo de pantalla" type="OptionButton" parent="MenuCrearPartida1/VBoxContainer/HBox4"]
+custom_minimum_size = Vector2(120, 40)
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("6_kk3ma")
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 25
+theme_override_constants/arrow_margin = 13
+theme_override_constants/modulate_arrow = 0
+theme_override_icons/arrow = ExtResource("6_l48gv")
+alignment = 1
+selected = 1
+fit_to_longest_item = false
+item_count = 2
+popup/item_0/text = "123123"
+popup/item_0/id = 0
+popup/item_1/text = "00:00"
+popup/item_1/id = 1
+
+[node name="Label" type="Label" parent="MenuCrearPartida1/VBoxContainer/HBox4"]
+layout_mode = 2
+text = "                                  "
+
+[node name="BotonContinuarMenuCrearPartida" type="Button" parent="MenuCrearPartida1"]
+custom_minimum_size = Vector2(110, 35)
+layout_mode = 0
+offset_left = 570.0
+offset_top = 453.0
+offset_right = 681.0
+offset_bottom = 493.0
+scale = Vector2(1.1, 1.1)
+theme = ExtResource("2_nrnbx")
+text = "CONTINUAR"
+
+[node name="MenuCrearPartida2" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_left = 1042.17
+offset_right = 1082.17
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="MenuCrearPartida2"]
+visible = false
+layout_mode = 0
+offset_left = 253.0
+offset_top = 43.0
+offset_right = 1044.0
+offset_bottom = 373.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ecwwl")
+
+[node name="Panel2" type="Panel" parent="MenuCrearPartida2"]
+layout_mode = 0
+offset_left = 404.0
+offset_top = 393.0
+offset_right = 910.0
+offset_bottom = 603.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ecwwl")
+
+[node name="Selector" type="Control" parent="MenuCrearPartida2"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -627.57
+offset_top = 146.0
+offset_right = -587.57
+offset_bottom = 186.0
+
+[node name="TextureButton6" type="TextureButton" parent="MenuCrearPartida2/Selector"]
+layout_mode = 2
+offset_left = 971.0
+offset_top = 174.0
+offset_right = 1006.0
+offset_bottom = 210.0
+scale = Vector2(0.75, 0.75)
+texture_normal = ExtResource("12_jspdm")
+flip_h = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MenuCrearPartida2/Selector"]
+layout_mode = 0
+offset_left = 1009.0
+offset_top = 171.0
+offset_right = 1149.0
+offset_bottom = 203.0
+
+[node name="TextureButton2" type="TextureButton" parent="MenuCrearPartida2/Selector/HBoxContainer2"]
+texture_filter = 3
+material = ExtResource("12_g7jxm")
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_gd0jp")
+texture_pressed = SubResource("GradientTexture2D_dwrpx")
+texture_hover = SubResource("GradientTexture2D_g7jxm")
+texture_focused = SubResource("GradientTexture2D_jspdm")
+script = ExtResource("12_dwrpx")
+
+[node name="TextureButton3" type="TextureButton" parent="MenuCrearPartida2/Selector/HBoxContainer2"]
+texture_filter = 3
+material = SubResource("ShaderMaterial_oxnod")
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_gd0jp")
+texture_pressed = SubResource("GradientTexture2D_dwrpx")
+texture_hover = SubResource("GradientTexture2D_g7jxm")
+texture_focused = SubResource("GradientTexture2D_jspdm")
+script = ExtResource("12_dwrpx")
+
+[node name="TextureButton4" type="TextureButton" parent="MenuCrearPartida2/Selector/HBoxContainer2"]
+texture_filter = 3
+material = SubResource("ShaderMaterial_oxnod")
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_gd0jp")
+texture_pressed = SubResource("GradientTexture2D_dwrpx")
+texture_hover = SubResource("GradientTexture2D_g7jxm")
+texture_focused = SubResource("GradientTexture2D_jspdm")
+script = ExtResource("12_dwrpx")
+
+[node name="TextureButton5" type="TextureButton" parent="MenuCrearPartida2/Selector/HBoxContainer2"]
+texture_filter = 3
+material = SubResource("ShaderMaterial_oxnod")
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_gd0jp")
+texture_pressed = SubResource("GradientTexture2D_dwrpx")
+texture_hover = SubResource("GradientTexture2D_g7jxm")
+texture_focused = SubResource("GradientTexture2D_jspdm")
+script = ExtResource("12_dwrpx")
+
+[node name="TextureButton5" type="TextureButton" parent="MenuCrearPartida2/Selector"]
+layout_mode = 2
+offset_left = 1160.0
+offset_top = 174.0
+offset_right = 1195.0
+offset_bottom = 210.0
+scale = Vector2(0.75, 0.75)
+texture_normal = ExtResource("12_jspdm")
+
+[node name="Selector2" type="Control" parent="MenuCrearPartida2"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -215.425
+offset_top = 146.0
+offset_right = -175.425
+offset_bottom = 186.0
+
+[node name="TextureButton6" type="TextureButton" parent="MenuCrearPartida2/Selector2"]
+layout_mode = 2
+offset_left = 971.0
+offset_top = 174.0
+offset_right = 1006.0
+offset_bottom = 210.0
+scale = Vector2(0.75, 0.75)
+texture_normal = ExtResource("12_jspdm")
+flip_h = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MenuCrearPartida2/Selector2"]
+layout_mode = 0
+offset_left = 1009.0
+offset_top = 171.0
+offset_right = 1149.0
+offset_bottom = 203.0
+
+[node name="TextureButton2" type="TextureButton" parent="MenuCrearPartida2/Selector2/HBoxContainer2"]
+texture_filter = 3
+material = ExtResource("12_g7jxm")
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_gd0jp")
+texture_pressed = SubResource("GradientTexture2D_dwrpx")
+texture_hover = SubResource("GradientTexture2D_g7jxm")
+texture_focused = SubResource("GradientTexture2D_jspdm")
+script = ExtResource("12_dwrpx")
+
+[node name="TextureButton3" type="TextureButton" parent="MenuCrearPartida2/Selector2/HBoxContainer2"]
+texture_filter = 3
+material = SubResource("ShaderMaterial_oxnod")
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_gd0jp")
+texture_pressed = SubResource("GradientTexture2D_dwrpx")
+texture_hover = SubResource("GradientTexture2D_g7jxm")
+texture_focused = SubResource("GradientTexture2D_jspdm")
+script = ExtResource("12_dwrpx")
+
+[node name="TextureButton4" type="TextureButton" parent="MenuCrearPartida2/Selector2/HBoxContainer2"]
+texture_filter = 3
+material = SubResource("ShaderMaterial_oxnod")
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_gd0jp")
+texture_pressed = SubResource("GradientTexture2D_dwrpx")
+texture_hover = SubResource("GradientTexture2D_g7jxm")
+texture_focused = SubResource("GradientTexture2D_jspdm")
+script = ExtResource("12_dwrpx")
+
+[node name="TextureButton5" type="TextureButton" parent="MenuCrearPartida2/Selector2/HBoxContainer2"]
+texture_filter = 3
+material = SubResource("ShaderMaterial_oxnod")
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_gd0jp")
+texture_pressed = SubResource("GradientTexture2D_dwrpx")
+texture_hover = SubResource("GradientTexture2D_g7jxm")
+texture_focused = SubResource("GradientTexture2D_jspdm")
+script = ExtResource("12_dwrpx")
+
+[node name="TextureButton5" type="TextureButton" parent="MenuCrearPartida2/Selector2"]
+layout_mode = 2
+offset_left = 1160.0
+offset_top = 174.0
+offset_right = 1195.0
+offset_bottom = 210.0
+scale = Vector2(0.75, 0.75)
+texture_normal = ExtResource("12_jspdm")
+
+[node name="Selector3" type="Control" parent="MenuCrearPartida2"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -399.0
+offset_top = 393.0
+offset_right = -359.0
+offset_bottom = 433.0
+
+[node name="TextureButton6" type="TextureButton" parent="MenuCrearPartida2/Selector3"]
+layout_mode = 2
+offset_left = 971.0
+offset_top = 174.0
+offset_right = 1006.0
+offset_bottom = 210.0
+scale = Vector2(0.75, 0.75)
+texture_normal = ExtResource("12_jspdm")
+flip_h = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MenuCrearPartida2/Selector3"]
+layout_mode = 0
+offset_left = 1009.0
+offset_top = 171.0
+offset_right = 1149.0
+offset_bottom = 203.0
+
+[node name="TextureButton2" type="TextureButton" parent="MenuCrearPartida2/Selector3/HBoxContainer2"]
+texture_filter = 3
+material = ExtResource("12_g7jxm")
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_gd0jp")
+texture_pressed = SubResource("GradientTexture2D_dwrpx")
+texture_hover = SubResource("GradientTexture2D_g7jxm")
+texture_focused = SubResource("GradientTexture2D_jspdm")
+script = ExtResource("12_dwrpx")
+
+[node name="TextureButton3" type="TextureButton" parent="MenuCrearPartida2/Selector3/HBoxContainer2"]
+texture_filter = 3
+material = SubResource("ShaderMaterial_oxnod")
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_gd0jp")
+texture_pressed = SubResource("GradientTexture2D_dwrpx")
+texture_hover = SubResource("GradientTexture2D_g7jxm")
+texture_focused = SubResource("GradientTexture2D_jspdm")
+script = ExtResource("12_dwrpx")
+
+[node name="TextureButton5" type="TextureButton" parent="MenuCrearPartida2/Selector3/HBoxContainer2"]
+texture_filter = 3
+material = SubResource("ShaderMaterial_oxnod")
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_gd0jp")
+texture_pressed = SubResource("GradientTexture2D_dwrpx")
+texture_hover = SubResource("GradientTexture2D_g7jxm")
+texture_focused = SubResource("GradientTexture2D_jspdm")
+script = ExtResource("12_dwrpx")
+
+[node name="TextureButton5" type="TextureButton" parent="MenuCrearPartida2/Selector3"]
+layout_mode = 2
+offset_left = 1128.0
+offset_top = 174.0
+offset_right = 1163.0
+offset_bottom = 210.0
+scale = Vector2(0.75, 0.75)
+texture_normal = ExtResource("12_jspdm")
+
+[node name="Label10" type="Label" parent="MenuCrearPartida2"]
+custom_minimum_size = Vector2(0, 49)
+layout_mode = 0
+offset_left = 585.0
+offset_top = 404.0
+offset_right = 735.0
+offset_bottom = 453.0
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 10
+theme_override_fonts/font = ExtResource("1_lti8b")
+theme_override_font_sizes/font_size = 34
+text = "Cancha1"
+horizontal_alignment = 1
+
+[node name="NombreEquipo1" type="VBoxContainer" parent="MenuCrearPartida2"]
+layout_mode = 0
+offset_left = 316.0
+offset_top = 74.0
+offset_right = 574.0
+offset_bottom = 176.0
+theme_override_constants/separation = -21
+
+[node name="Label9" type="Label" parent="MenuCrearPartida2/NombreEquipo1"]
+custom_minimum_size = Vector2(0, 49)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 10
+theme_override_fonts/font = ExtResource("1_lti8b")
+theme_override_font_sizes/font_size = 30
+text = "CLR"
+horizontal_alignment = 1
+
+[node name="Label10" type="Label" parent="MenuCrearPartida2/NombreEquipo1"]
+custom_minimum_size = Vector2(0, 49)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 10
+theme_override_fonts/font = ExtResource("1_lti8b")
+theme_override_font_sizes/font_size = 17
+text = "Los colorados"
+horizontal_alignment = 1
+
+[node name="NombreEquipo2" type="VBoxContainer" parent="MenuCrearPartida2"]
+layout_mode = 0
+offset_left = 726.0
+offset_top = 74.0
+offset_right = 984.0
+offset_bottom = 176.0
+theme_override_constants/separation = -21
+
+[node name="Label9" type="Label" parent="MenuCrearPartida2/NombreEquipo2"]
+custom_minimum_size = Vector2(0, 49)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 10
+theme_override_fonts/font = ExtResource("1_lti8b")
+theme_override_font_sizes/font_size = 30
+text = "CLR"
+horizontal_alignment = 1
+
+[node name="Label10" type="Label" parent="MenuCrearPartida2/NombreEquipo2"]
+custom_minimum_size = Vector2(0, 49)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 10
+theme_override_fonts/font = ExtResource("1_lti8b")
+theme_override_font_sizes/font_size = 17
+text = "Los colorados"
+horizontal_alignment = 1
+
+[node name="VS" type="Label" parent="MenuCrearPartida2"]
+custom_minimum_size = Vector2(0, 49)
+layout_mode = 0
+offset_left = 570.0
+offset_top = 29.0
+offset_right = 745.0
+offset_bottom = 212.0
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.0509804, 0.572549, 0.956863, 1)
+theme_override_constants/line_spacing = 10
+theme_override_fonts/font = ExtResource("26_rkpqm")
+theme_override_font_sizes/font_size = 130
+text = "VS"
+horizontal_alignment = 1
+
+[node name="VS2" type="Label" parent="MenuCrearPartida2"]
+custom_minimum_size = Vector2(0, 49)
+layout_mode = 0
+offset_left = 567.0
+offset_top = 36.0
+offset_right = 736.0
+offset_bottom = 214.0
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 10
+theme_override_fonts/font = ExtResource("26_rkpqm")
+theme_override_font_sizes/font_size = 126
+text = "VS"
+horizontal_alignment = 1
+
+[node name="Iniciar" type="Button" parent="MenuCrearPartida2"]
+custom_minimum_size = Vector2(110, 35)
+layout_mode = 0
+offset_left = 536.0
+offset_top = 614.0
+offset_right = 646.0
+offset_bottom = 654.0
+scale = Vector2(1.1, 1.1)
+theme = ExtResource("2_nrnbx")
+text = "INICIAR"
+
+[node name="Volver" type="Button" parent="MenuCrearPartida2"]
+custom_minimum_size = Vector2(110, 35)
+layout_mode = 0
+offset_left = 668.0
+offset_top = 614.0
+offset_right = 778.0
+offset_bottom = 654.0
+scale = Vector2(1.1, 1.1)
+theme = ExtResource("2_nrnbx")
+text = "VOLVER"
+
+[node name="IZQ" type="Sprite2D" parent="MenuCrearPartida2"]
+position = Vector2(449.185, 179)
+scale = Vector2(0.783, 0.783)
+texture = SubResource("ViewportTexture_8uog0")
+
+[node name="DER" type="Sprite2D" parent="MenuCrearPartida2"]
+position = Vector2(859.633, 178.448)
+scale = Vector2(0.783, 0.783)
+texture = SubResource("ViewportTexture_t5jqm")
+
+[node name="MenuSelectorPartida" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 4.0
+offset_top = 688.0
+offset_right = 44.0
+offset_bottom = 728.0
+
+[node name="Panel" type="Panel" parent="MenuSelectorPartida"]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 17.0
+offset_right = 972.0
+offset_bottom = 467.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ecwwl")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MenuSelectorPartida"]
+clip_contents = true
+layout_mode = 2
+offset_left = 302.0
+offset_top = 40.0
+offset_right = 956.0
+offset_bottom = 104.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MenuSelectorPartida/VBoxContainer2"]
+layout_mode = 2
+script = ExtResource("31_c8pol")
+
+[node name="Servidores" type="VBoxContainer" parent="MenuSelectorPartida/VBoxContainer2/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 44
+
+[node name="ServidorBase" type="Control" parent="MenuSelectorPartida/VBoxContainer2/ScrollContainer/Servidores"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+script = ExtResource("31_su4y3")
+
+[node name="Panel" type="Panel" parent="MenuSelectorPartida/VBoxContainer2/ScrollContainer/Servidores/ServidorBase"]
+layout_mode = 0
+offset_right = 641.0
+offset_bottom = 39.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_8tnp7")
+
+[node name="BotonSeleccionServidor" type="Button" parent="MenuSelectorPartida/VBoxContainer2/ScrollContainer/Servidores/ServidorBase"]
+layout_mode = 0
+offset_right = 641.0
+offset_bottom = 39.0
+theme_override_styles/focus = SubResource("StyleBoxFlat_m2id3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xhgcl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_t5jqm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8lmdq")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_su4y3")
+
+[node name="data" type="Control" parent="MenuSelectorPartida/VBoxContainer2/ScrollContainer/Servidores/ServidorBase"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel2" type="Panel" parent="MenuSelectorPartida/VBoxContainer2/ScrollContainer/Servidores/ServidorBase/data"]
+layout_mode = 0
+offset_left = 445.0
+offset_top = 5.0
+offset_right = 449.0
+offset_bottom = 33.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_rlonj")
+
+[node name="Equipos" type="Label" parent="MenuSelectorPartida/VBoxContainer2/ScrollContainer/Servidores/ServidorBase/data"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 6.0
+offset_right = 486.0
+offset_bottom = 20.0
+theme_override_colors/font_color = Color(0.0509804, 0.572549, 0.956863, 1)
+theme_override_fonts/font = ExtResource("1_lti8b")
+theme_override_font_sizes/font_size = 12
+text = "CLR - CLR  I Clb VS. Los Colorados"
+
+[node name="NombreServidor" type="Label" parent="MenuSelectorPartida/VBoxContainer2/ScrollContainer/Servidores/ServidorBase/data"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 20.0
+offset_right = 486.0
+offset_bottom = 34.0
+theme_override_colors/font_color = Color(0.351563, 0.351563, 0.351563, 1)
+theme_override_fonts/font = ExtResource("1_lti8b")
+theme_override_font_sizes/font_size = 12
+text = "El Servidor de los Gamers mas locos del mundo"
+
+[node name="Cancha" type="Label" parent="MenuSelectorPartida/VBoxContainer2/ScrollContainer/Servidores/ServidorBase/data"]
+layout_mode = 0
+offset_left = 452.531
+offset_top = 18.5312
+offset_right = 574.531
+offset_bottom = 34.5312
+theme_override_colors/font_color = Color(0.6, 0.6, 0.6, 1)
+theme_override_fonts/font = ExtResource("26_rkpqm")
+theme_override_font_sizes/font_size = 10
+text = "El callejon Abandonado"
+autowrap_mode = 2
+clip_text = true
+
+[node name="Estado" type="Label" parent="MenuSelectorPartida/VBoxContainer2/ScrollContainer/Servidores/ServidorBase/data"]
+layout_mode = 0
+offset_left = 585.0
+offset_top = 3.0
+offset_right = 672.0
+offset_bottom = 19.0
+theme_override_colors/font_color = Color(0.0509804, 0.572549, 0.956863, 1)
+theme_override_fonts/font = ExtResource("26_rkpqm")
+theme_override_font_sizes/font_size = 8
+text = "JUGANDO"
+
+[node name="Jugadores" type="Label" parent="MenuSelectorPartida/VBoxContainer2/ScrollContainer/Servidores/ServidorBase/data"]
+layout_mode = 0
+offset_left = 601.0
+offset_top = 27.0
+offset_right = 688.0
+offset_bottom = 47.0
+theme_override_colors/font_color = Color(0.0509804, 0.572549, 0.956863, 1)
+theme_override_fonts/font = ExtResource("26_rkpqm")
+theme_override_font_sizes/font_size = 9
+text = "99 / 99"
+
+[node name="Tiempo" type="Label" parent="MenuSelectorPartida/VBoxContainer2/ScrollContainer/Servidores/ServidorBase/data"]
+layout_mode = 0
+offset_left = 466.0
+offset_top = 6.0
+offset_right = 506.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(0.6, 0.6, 0.6, 1)
+theme_override_fonts/font = ExtResource("26_rkpqm")
+theme_override_font_sizes/font_size = 12
+text = "00 : 00"
+
+[node name="puntaje" type="Label" parent="MenuSelectorPartida/VBoxContainer2/ScrollContainer/Servidores/ServidorBase/data"]
+layout_mode = 0
+offset_left = 577.0
+offset_top = 9.0
+offset_right = 633.0
+offset_bottom = 31.6667
+theme_override_colors/font_color = Color(0.0509804, 0.572549, 0.956863, 1)
+theme_override_fonts/font = ExtResource("26_rkpqm")
+theme_override_font_sizes/font_size = 16
+text = "99 - 99"
+horizontal_alignment = 1
+
+[node name="Clock" type="Sprite2D" parent="MenuSelectorPartida/VBoxContainer2/ScrollContainer/Servidores/ServidorBase/data"]
+position = Vector2(458, 14)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("27_xhgcl")
+
+[node name="nodata" type="Control" parent="MenuSelectorPartida/VBoxContainer2/ScrollContainer/Servidores/ServidorBase"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Logo" type="Sprite2D" parent="MenuSelectorPartida/VBoxContainer2/ScrollContainer/Servidores/ServidorBase/nodata"]
+position = Vector2(324, 20)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("36_c8pol")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MenuSelectorPartida/VBoxContainer2/ScrollContainer/Servidores/ServidorBase/nodata"]
+libraries = {
+&"": SubResource("AnimationLibrary_ciy7n")
+}
+
+[node name="servidor" type="Label" parent="MenuSelectorPartida/VBoxContainer2/ScrollContainer/Servidores/ServidorBase/nodata"]
+layout_mode = 0
+offset_left = 486.0
+offset_top = 12.0
+offset_right = 592.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.0509804, 0.572549, 0.956863, 1)
+theme_override_fonts/font = ExtResource("26_rkpqm")
+theme_override_font_sizes/font_size = 12
+text = "192.168.0.39:8000"
+
+[node name="buscandogro" type="Label" parent="MenuSelectorPartida/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/paragraph_spacing = 0
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("1_lti8b")
+theme_override_font_sizes/font_size = 14
+text = "Buscando servidores locales"
+horizontal_alignment = 1
+script = ExtResource("35_xisss")
+
+[node name="NUEVA IP" type="Control" parent="MenuSelectorPartida"]
+visible = false
+anchors_preset = 0
+offset_left = 302.0
+offset_top = 184.0
+offset_right = 1131.0
+offset_bottom = 795.0
+scale = Vector2(1.04, 1.04)
+script = ExtResource("33_k1fdc")
+
+[node name="Panel2" type="Panel" parent="MenuSelectorPartida/NUEVA IP"]
+layout_mode = 0
+offset_left = 155.0
+offset_top = -6.0
+offset_right = 459.0
+offset_bottom = 84.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ecwwl")
+
+[node name="DirIP" type="LineEdit" parent="MenuSelectorPartida/NUEVA IP"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 0
+offset_left = 265.0
+offset_top = 5.0
+offset_right = 450.0
+offset_bottom = 45.0
+scale = Vector2(0.75, 0.75)
+size_flags_vertical = 0
+theme = ExtResource("6_kk3ma")
+theme_override_font_sizes/font_size = 22
+text = "999.999.999.999"
+alignment = 1
+max_length = 15
+
+[node name="Label8" type="Label" parent="MenuSelectorPartida/NUEVA IP"]
+layout_mode = 0
+offset_left = 171.0
+offset_top = 11.0
+offset_right = 259.0
+offset_bottom = 30.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/paragraph_spacing = 0
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("1_lti8b")
+theme_override_font_sizes/font_size = 13
+text = "Direccion IP"
+horizontal_alignment = 1
+
+[node name="PUERTO" type="LineEdit" parent="MenuSelectorPartida/NUEVA IP"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 0
+offset_left = 265.0
+offset_top = 41.0
+offset_right = 357.0
+offset_bottom = 81.0
+scale = Vector2(0.75, 0.75)
+size_flags_vertical = 0
+theme = ExtResource("6_kk3ma")
+theme_override_font_sizes/font_size = 22
+text = "65535"
+alignment = 1
+max_length = 5
+
+[node name="Label9" type="Label" parent="MenuSelectorPartida/NUEVA IP"]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 49.0
+offset_right = 261.0
+offset_bottom = 68.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/paragraph_spacing = 0
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("1_lti8b")
+theme_override_font_sizes/font_size = 13
+text = "Puerto"
+horizontal_alignment = 1
+
+[node name="BotonAñadirIP" type="Button" parent="MenuSelectorPartida/NUEVA IP"]
+custom_minimum_size = Vector2(110, 35)
+layout_mode = 0
+offset_left = 228.846
+offset_top = 93.2692
+offset_right = 338.846
+offset_bottom = 133.27
+scale = Vector2(0.7, 0.7)
+theme = ExtResource("2_nrnbx")
+text = "AÑADIR"
+
+[node name="BotonCerrarMenuIP" type="Button" parent="MenuSelectorPartida/NUEVA IP"]
+custom_minimum_size = Vector2(110, 35)
+layout_mode = 0
+offset_left = 314.18
+offset_top = 93.2692
+offset_right = 424.18
+offset_bottom = 133.27
+scale = Vector2(0.7, 0.7)
+theme = ExtResource("32_m2id3")
+text = "CERRAR"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MenuSelectorPartida"]
+layout_mode = 0
+offset_left = 452.0
+offset_top = 472.0
+offset_right = 790.0
+offset_bottom = 512.0
+
+[node name="BotonNuevoMenuBuscarServidores" type="Button" parent="MenuSelectorPartida/HBoxContainer"]
+custom_minimum_size = Vector2(110, 35)
+layout_mode = 2
+theme = ExtResource("2_nrnbx")
+text = "NUEVA"
+
+[node name="BotonConectarMenuBuscarServidores" type="Button" parent="MenuSelectorPartida/HBoxContainer"]
+custom_minimum_size = Vector2(110, 35)
+layout_mode = 2
+theme = ExtResource("2_nrnbx")
+text = "CONECTAR"
+
+[node name="BotonBorrarMenuBuscarServidores" type="Button" parent="MenuSelectorPartida/HBoxContainer"]
+custom_minimum_size = Vector2(110, 35)
+layout_mode = 2
+theme = ExtResource("2_nrnbx")
+text = "BORRAR"
+
+[node name="MenuTab" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_left = -96.0
+offset_top = -32.0
+offset_right = -56.0
+offset_bottom = 8.0
+
+[node name="OruburisEquipos" type="Panel" parent="MenuTab"]
+self_modulate = Color(1, 1, 1, 0)
+clip_contents = true
+layout_mode = 0
+offset_left = 509.0
+offset_top = 120.0
+offset_right = 984.0
+offset_bottom = 644.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xisss")
+
+[node name="IZQ" type="Sprite2D" parent="MenuTab/OruburisEquipos"]
+position = Vector2(32, 79)
+scale = Vector2(0.783, 0.783)
+texture = SubResource("ViewportTexture_8uog0")
+
+[node name="DER" type="Sprite2D" parent="MenuTab/OruburisEquipos"]
+position = Vector2(444, 83)
+scale = Vector2(0.783, 0.783)
+texture = SubResource("ViewportTexture_t5jqm")
+
+[node name="Panel" type="Panel" parent="MenuTab"]
+layout_mode = 0
+offset_left = 509.0
+offset_top = 120.0
+offset_right = 984.0
+offset_bottom = 644.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xisss")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MenuTab"]
+layout_mode = 0
+offset_left = 560.0
+offset_top = 120.0
+offset_right = 932.0
+offset_bottom = 274.0
+
+[node name="Label" type="Label" parent="MenuTab/HBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("26_rkpqm")
+theme_override_font_sizes/font_size = 110
+text = "02"
+horizontal_alignment = 2
+
+[node name="Label2" type="Label" parent="MenuTab/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("26_rkpqm")
+theme_override_font_sizes/font_size = 110
+text = "-"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="MenuTab/HBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("26_rkpqm")
+theme_override_font_sizes/font_size = 110
+text = "00"
+
+[node name="ListaEspectadores" type="Control" parent="MenuTab"]
+anchors_preset = 0
+offset_left = 160.0
+offset_top = -16.0
+offset_right = 200.0
+offset_bottom = 24.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuTab/ListaEspectadores"]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 171.0
+offset_right = 341.0
+offset_bottom = 211.0
+
+[node name="Label" type="Label" parent="MenuTab/ListaEspectadores/VBoxContainer"]
+custom_minimum_size = Vector2(165, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_c8pol")
+text = "MILANESA DE POLLO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MenuTab/ListaEspectadores/VBoxContainer"]
+custom_minimum_size = Vector2(165, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_c8pol")
+text = "MILANESA DE POLLO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="MenuTab/ListaEspectadores/VBoxContainer"]
+custom_minimum_size = Vector2(165, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_c8pol")
+text = "MILANESA DE POLLO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="MenuTab/ListaEspectadores/VBoxContainer"]
+custom_minimum_size = Vector2(165, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_c8pol")
+text = "MILANESA DE POLLO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="MenuTab/ListaEspectadores/VBoxContainer"]
+custom_minimum_size = Vector2(165, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_c8pol")
+text = "MILANESA DE POLLO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label6" type="Label" parent="MenuTab/ListaEspectadores/VBoxContainer"]
+custom_minimum_size = Vector2(165, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_c8pol")
+text = "MILANESA DE POLLO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label7" type="Label" parent="MenuTab/ListaEspectadores/VBoxContainer"]
+custom_minimum_size = Vector2(165, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_c8pol")
+text = "MILANESA DE POLLO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label8" type="Label" parent="MenuTab/ListaEspectadores/VBoxContainer"]
+custom_minimum_size = Vector2(165, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_c8pol")
+text = "MILANESA DE POLLO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label9" type="Label" parent="MenuTab/ListaEspectadores/VBoxContainer"]
+custom_minimum_size = Vector2(165, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_c8pol")
+text = "MILANESA DE POLLO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label10" type="Label" parent="MenuTab/ListaEspectadores/VBoxContainer"]
+custom_minimum_size = Vector2(165, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_c8pol")
+text = "MILANESA DE POLLO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label11" type="Label" parent="MenuTab/ListaEspectadores/VBoxContainer"]
+custom_minimum_size = Vector2(165, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_c8pol")
+text = "MILANESA DE POLLO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label12" type="Label" parent="MenuTab/ListaEspectadores/VBoxContainer"]
+custom_minimum_size = Vector2(165, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_c8pol")
+text = "MILANESA DE POLLO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label13" type="Label" parent="MenuTab/ListaEspectadores/VBoxContainer"]
+custom_minimum_size = Vector2(165, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_c8pol")
+text = "MILANESA DE POLLO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label14" type="Label" parent="MenuTab/ListaEspectadores/VBoxContainer"]
+custom_minimum_size = Vector2(165, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_c8pol")
+text = "MILANESA DE POLLO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label15" type="Label" parent="MenuTab/ListaEspectadores/VBoxContainer"]
+custom_minimum_size = Vector2(165, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_c8pol")
+text = "MILANESA DE POLLO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label16" type="Label" parent="MenuTab/ListaEspectadores/VBoxContainer"]
+custom_minimum_size = Vector2(165, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_c8pol")
+text = "MILANESA DE POLLO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label17" type="Label" parent="MenuTab/ListaEspectadores/VBoxContainer"]
+custom_minimum_size = Vector2(165, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_c8pol")
+text = "MILANESA DE POLLO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label18" type="Label" parent="MenuTab/ListaEspectadores/VBoxContainer"]
+custom_minimum_size = Vector2(165, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_c8pol")
+text = "MILANESA DE POLLO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label19" type="Label" parent="MenuTab/ListaEspectadores/VBoxContainer"]
+custom_minimum_size = Vector2(165, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_c8pol")
+text = "MILANESA DE POLLO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label20" type="Label" parent="MenuTab/ListaEspectadores/VBoxContainer"]
+custom_minimum_size = Vector2(165, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_c8pol")
+text = "MILANESA DE POLLO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="MenuTab/ListaEspectadores"]
+layout_mode = 0
+offset_left = 215.0
+offset_top = 153.0
+offset_right = 302.0
+offset_bottom = 173.0
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+text = "espectadores"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EquipoIzq" type="Control" parent="MenuTab"]
+anchors_preset = 0
+offset_left = 120.0
+offset_top = 8.0
+offset_right = 160.0
+offset_bottom = 48.0
+
+[node name="Label5" type="Label" parent="MenuTab/EquipoIzq"]
+custom_minimum_size = Vector2(142, 56)
+layout_mode = 2
+offset_left = 430.0
+offset_top = 241.0
+offset_right = 618.0
+offset_bottom = 297.333
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 50
+text = "MMMM"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label6" type="Label" parent="MenuTab/EquipoIzq"]
+custom_minimum_size = Vector2(142.535, 0)
+layout_mode = 2
+offset_left = 431.0
+offset_top = 292.0
+offset_right = 619.625
+offset_bottom = 326.0
+theme_override_constants/line_spacing = -4
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 17
+text = "Club Atlético y Social Villa Calzada"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+clip_text = true
+
+[node name="Jugadores" type="Control" parent="MenuTab/EquipoIzq"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label3" type="Label" parent="MenuTab/EquipoIzq/Jugadores"]
+layout_mode = 2
+offset_left = 421.0
+offset_top = 335.0
+offset_right = 484.0
+offset_bottom = 355.0
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+text = "nombre"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="MenuTab/EquipoIzq/Jugadores"]
+layout_mode = 2
+offset_left = 579.0
+offset_top = 335.0
+offset_right = 642.0
+offset_bottom = 355.0
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+text = "goles"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MenuTab/EquipoIzq/Jugadores"]
+layout_mode = 0
+offset_left = 430.0
+offset_top = 353.0
+offset_right = 679.0
+offset_bottom = 393.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MenuTab/EquipoIzq/Jugadores/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="MenuTab/EquipoIzq/Jugadores/VBoxContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(165, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_k1fdc")
+text = "MILANESA DE POLLO"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MenuTab/EquipoIzq/Jugadores/VBoxContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(30, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_su4y3")
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MenuTab/EquipoIzq/Jugadores/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="MenuTab/EquipoIzq/Jugadores/VBoxContainer2/HBoxContainer2"]
+custom_minimum_size = Vector2(165, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_k1fdc")
+text = "MILANES ADE POLO"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MenuTab/EquipoIzq/Jugadores/VBoxContainer2/HBoxContainer2"]
+custom_minimum_size = Vector2(30, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_su4y3")
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MenuTab/EquipoIzq/Jugadores/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="MenuTab/EquipoIzq/Jugadores/VBoxContainer2/HBoxContainer3"]
+custom_minimum_size = Vector2(165, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_k1fdc")
+text = "MILANESA DE POLLO"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MenuTab/EquipoIzq/Jugadores/VBoxContainer2/HBoxContainer3"]
+custom_minimum_size = Vector2(30, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_su4y3")
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="MenuTab/EquipoIzq/Jugadores/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="MenuTab/EquipoIzq/Jugadores/VBoxContainer2/HBoxContainer4"]
+custom_minimum_size = Vector2(165, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_k1fdc")
+text = "MILANESA DE POLLO"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MenuTab/EquipoIzq/Jugadores/VBoxContainer2/HBoxContainer4"]
+custom_minimum_size = Vector2(30, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_su4y3")
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="MenuTab/EquipoIzq/Jugadores/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="MenuTab/EquipoIzq/Jugadores/VBoxContainer2/HBoxContainer5"]
+custom_minimum_size = Vector2(165, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_k1fdc")
+text = "MILANESA DE POLLO"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MenuTab/EquipoIzq/Jugadores/VBoxContainer2/HBoxContainer5"]
+custom_minimum_size = Vector2(30, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_su4y3")
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="MenuTab/EquipoIzq/Jugadores/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="MenuTab/EquipoIzq/Jugadores/VBoxContainer2/HBoxContainer6"]
+custom_minimum_size = Vector2(165, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_k1fdc")
+text = "MILANESA DE POLLO"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MenuTab/EquipoIzq/Jugadores/VBoxContainer2/HBoxContainer6"]
+custom_minimum_size = Vector2(30, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_su4y3")
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="MenuTab/EquipoIzq/Jugadores/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="MenuTab/EquipoIzq/Jugadores/VBoxContainer2/HBoxContainer7"]
+custom_minimum_size = Vector2(165, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_k1fdc")
+text = "MILANESA DE POLLO"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MenuTab/EquipoIzq/Jugadores/VBoxContainer2/HBoxContainer7"]
+custom_minimum_size = Vector2(30, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_su4y3")
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer8" type="HBoxContainer" parent="MenuTab/EquipoIzq/Jugadores/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="MenuTab/EquipoIzq/Jugadores/VBoxContainer2/HBoxContainer8"]
+custom_minimum_size = Vector2(165, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_k1fdc")
+text = "MILANESA DE POLLO"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MenuTab/EquipoIzq/Jugadores/VBoxContainer2/HBoxContainer8"]
+custom_minimum_size = Vector2(30, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_su4y3")
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer9" type="HBoxContainer" parent="MenuTab/EquipoIzq/Jugadores/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="MenuTab/EquipoIzq/Jugadores/VBoxContainer2/HBoxContainer9"]
+custom_minimum_size = Vector2(165, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_k1fdc")
+text = "MILANESA DE POLLO"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MenuTab/EquipoIzq/Jugadores/VBoxContainer2/HBoxContainer9"]
+custom_minimum_size = Vector2(30, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_su4y3")
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer10" type="HBoxContainer" parent="MenuTab/EquipoIzq/Jugadores/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="MenuTab/EquipoIzq/Jugadores/VBoxContainer2/HBoxContainer10"]
+custom_minimum_size = Vector2(165, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_k1fdc")
+text = "MILANESA DE POLLO"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MenuTab/EquipoIzq/Jugadores/VBoxContainer2/HBoxContainer10"]
+custom_minimum_size = Vector2(30, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_su4y3")
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer11" type="HBoxContainer" parent="MenuTab/EquipoIzq/Jugadores/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="MenuTab/EquipoIzq/Jugadores/VBoxContainer2/HBoxContainer11"]
+custom_minimum_size = Vector2(165, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_k1fdc")
+text = "MILANESA DE POLLO"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MenuTab/EquipoIzq/Jugadores/VBoxContainer2/HBoxContainer11"]
+custom_minimum_size = Vector2(30, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_su4y3")
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EquipoDer" type="Control" parent="MenuTab"]
+anchors_preset = 0
+offset_left = 332.0
+offset_top = 8.0
+offset_right = 372.0
+offset_bottom = 48.0
+
+[node name="Label6" type="Label" parent="MenuTab/EquipoDer"]
+custom_minimum_size = Vector2(142.535, 0)
+layout_mode = 2
+offset_left = 431.0
+offset_top = 292.0
+offset_right = 619.625
+offset_bottom = 326.0
+theme_override_constants/line_spacing = -4
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 17
+text = "Club Atlético y Social Villa Calzada"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+clip_text = true
+
+[node name="Jugadores" type="Control" parent="MenuTab/EquipoDer"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label3" type="Label" parent="MenuTab/EquipoDer/Jugadores"]
+layout_mode = 2
+offset_left = 421.0
+offset_top = 335.0
+offset_right = 484.0
+offset_bottom = 355.0
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+text = "nombre"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="MenuTab/EquipoDer/Jugadores"]
+layout_mode = 2
+offset_left = 579.0
+offset_top = 335.0
+offset_right = 642.0
+offset_bottom = 355.0
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+text = "goles"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MenuTab/EquipoDer/Jugadores"]
+layout_mode = 0
+offset_left = 430.0
+offset_top = 353.0
+offset_right = 679.0
+offset_bottom = 393.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MenuTab/EquipoDer/Jugadores/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="MenuTab/EquipoDer/Jugadores/VBoxContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(165, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_k1fdc")
+text = "MILANESA DE POLLO"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MenuTab/EquipoDer/Jugadores/VBoxContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(30, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_su4y3")
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MenuTab/EquipoDer/Jugadores/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="MenuTab/EquipoDer/Jugadores/VBoxContainer2/HBoxContainer2"]
+custom_minimum_size = Vector2(165, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_k1fdc")
+text = "MILANESA DE POLLO"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MenuTab/EquipoDer/Jugadores/VBoxContainer2/HBoxContainer2"]
+custom_minimum_size = Vector2(30, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_su4y3")
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MenuTab/EquipoDer/Jugadores/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="MenuTab/EquipoDer/Jugadores/VBoxContainer2/HBoxContainer3"]
+custom_minimum_size = Vector2(165, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_k1fdc")
+text = "MILANESA DE POLLO"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MenuTab/EquipoDer/Jugadores/VBoxContainer2/HBoxContainer3"]
+custom_minimum_size = Vector2(30, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_su4y3")
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="MenuTab/EquipoDer/Jugadores/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="MenuTab/EquipoDer/Jugadores/VBoxContainer2/HBoxContainer4"]
+custom_minimum_size = Vector2(165, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_k1fdc")
+text = "MILANESA DE POLLO"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MenuTab/EquipoDer/Jugadores/VBoxContainer2/HBoxContainer4"]
+custom_minimum_size = Vector2(30, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_su4y3")
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="MenuTab/EquipoDer/Jugadores/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="MenuTab/EquipoDer/Jugadores/VBoxContainer2/HBoxContainer5"]
+custom_minimum_size = Vector2(165, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_k1fdc")
+text = "MILANESA DE POLLO"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MenuTab/EquipoDer/Jugadores/VBoxContainer2/HBoxContainer5"]
+custom_minimum_size = Vector2(30, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_su4y3")
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="MenuTab/EquipoDer/Jugadores/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="MenuTab/EquipoDer/Jugadores/VBoxContainer2/HBoxContainer6"]
+custom_minimum_size = Vector2(165, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_k1fdc")
+text = "MILANESA DE POLLO"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MenuTab/EquipoDer/Jugadores/VBoxContainer2/HBoxContainer6"]
+custom_minimum_size = Vector2(30, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_su4y3")
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="MenuTab/EquipoDer/Jugadores/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="MenuTab/EquipoDer/Jugadores/VBoxContainer2/HBoxContainer7"]
+custom_minimum_size = Vector2(165, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_k1fdc")
+text = "MILANESA DE POLLO"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MenuTab/EquipoDer/Jugadores/VBoxContainer2/HBoxContainer7"]
+custom_minimum_size = Vector2(30, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_su4y3")
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer8" type="HBoxContainer" parent="MenuTab/EquipoDer/Jugadores/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="MenuTab/EquipoDer/Jugadores/VBoxContainer2/HBoxContainer8"]
+custom_minimum_size = Vector2(165, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_k1fdc")
+text = "MILANESA DE POLLO"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MenuTab/EquipoDer/Jugadores/VBoxContainer2/HBoxContainer8"]
+custom_minimum_size = Vector2(30, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_su4y3")
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer9" type="HBoxContainer" parent="MenuTab/EquipoDer/Jugadores/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="MenuTab/EquipoDer/Jugadores/VBoxContainer2/HBoxContainer9"]
+custom_minimum_size = Vector2(165, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_k1fdc")
+text = "MILANESA DE POLLO"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MenuTab/EquipoDer/Jugadores/VBoxContainer2/HBoxContainer9"]
+custom_minimum_size = Vector2(30, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_su4y3")
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer10" type="HBoxContainer" parent="MenuTab/EquipoDer/Jugadores/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="MenuTab/EquipoDer/Jugadores/VBoxContainer2/HBoxContainer10"]
+custom_minimum_size = Vector2(165, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_k1fdc")
+text = "MILANESA DE POLLO"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MenuTab/EquipoDer/Jugadores/VBoxContainer2/HBoxContainer10"]
+custom_minimum_size = Vector2(30, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_su4y3")
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer11" type="HBoxContainer" parent="MenuTab/EquipoDer/Jugadores/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="MenuTab/EquipoDer/Jugadores/VBoxContainer2/HBoxContainer11"]
+custom_minimum_size = Vector2(165, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_k1fdc")
+text = "MILANESA DE POLLO"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MenuTab/EquipoDer/Jugadores/VBoxContainer2/HBoxContainer11"]
+custom_minimum_size = Vector2(30, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_su4y3")
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label7" type="Label" parent="MenuTab/EquipoDer"]
+custom_minimum_size = Vector2(142, 56)
+layout_mode = 0
+offset_left = 430.0
+offset_top = 241.0
+offset_right = 627.0
+offset_bottom = 297.333
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 50
+text = "MMMM"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="VBoxContainer" parent="MenuTab"]
+layout_mode = 0
+offset_left = 991.0
+offset_top = 143.0
+offset_right = 1131.0
+offset_bottom = 256.0
+
+[node name="Label3" type="Label" parent="MenuTab/HBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_kk3ma")
+theme_override_font_sizes/font_size = 12
+text = "elegir equipo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="MenuTab/HBoxContainer2"]
+custom_minimum_size = Vector2(110, 35)
+layout_mode = 2
+theme = ExtResource("2_nrnbx")
+text = "IZQUIERDA"
+
+[node name="Button3" type="Button" parent="MenuTab/HBoxContainer2"]
+custom_minimum_size = Vector2(110, 35)
+layout_mode = 2
+theme = ExtResource("2_nrnbx")
+text = "DERECHA"
+
+[node name="HSeparator" type="HSeparator" parent="MenuTab/HBoxContainer2"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_8tnp7")
+
+[node name="Button4" type="Button" parent="MenuTab/HBoxContainer2"]
+custom_minimum_size = Vector2(110, 35)
+layout_mode = 2
+theme = ExtResource("2_nrnbx")
+text = "EMPEZAR"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../MenuConfiguracion")
+libraries = {
+&"": SubResource("AnimationLibrary_xhgcl")
+}
+script = ExtResource("35_su4y3")
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+root_node = NodePath("../MenuConfiguracion")
+libraries = {
+&"": SubResource("AnimationLibrary_xhgcl")
+}
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -16.0
+offset_top = -32.0
+offset_right = 1272.0
+offset_bottom = 712.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_snj3a")
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="EquipoIzq" type="SubViewport" parent="Control"]
+transparent_bg = true
+
+[node name="EQUIPOS" parent="Control/EquipoIzq" instance=ExtResource("31_m2id3")]
+colores = Array[Color]([Color(0, 0, 0, 1), Color(1, 0.9, 0.4, 1), Color(0.8, 0.2, 0.2, 1), Color(0.2, 0.3, 0.9, 1), Color(0.9, 0.6, 0.2, 1), Color(0.2, 0.8, 0.3, 1)])
+
+[node name="EquipoDer" type="SubViewport" parent="Control"]
+transparent_bg = true
+
+[node name="EQUIPOS" parent="Control/EquipoDer" instance=ExtResource("31_m2id3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 0)
+
+[node name="Control" type="SubViewport" parent="Control"]
+transparent_bg = true
+
+[node name="EQUIPOS" parent="Control/Control" instance=ExtResource("31_m2id3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 0)
+colores = Array[Color]([Color(3.27289e-06, 0.634187, 0.627575, 1), Color(1, 0.9, 0.4, 1), Color(0.8, 0.2, 0.2, 1), Color(0.2, 0.3, 0.9, 1), Color(0.9, 0.6, 0.2, 1), Color(0.2, 0.8, 0.3, 1)])
+
+[connection signal="tree_exited" from="." to="MenuPrincipal/Menu" method="_on_menu_tree_exited"]
+[connection signal="pressed" from="MenuPrincipal/Menu/CrearPartida" to="MenuPrincipal/Menu" method="_on_crear_partida_pressed"]
+[connection signal="pressed" from="MenuPrincipal/Menu/CrearPartida" to="AnimationPlayer" method="_on_crear_partida_pressed"]
+[connection signal="pressed" from="MenuPrincipal/Menu/BuscarPartida" to="MenuPrincipal/Menu" method="_on_buscar_partida_pressed"]
+[connection signal="pressed" from="MenuPrincipal/Menu/BuscarPartida" to="AnimationPlayer" method="_on_buscar_partida_pressed"]
+[connection signal="pressed" from="MenuPrincipal/Menu/Opciones" to="MenuPrincipal/Menu" method="_on_opciones_pressed"]
+[connection signal="pressed" from="MenuPrincipal/Menu/Opciones" to="MenuConfiguracion" method="_on_opciones_pressed"]
+[connection signal="pressed" from="MenuPrincipal/Menu/Opciones" to="AnimationPlayer" method="_on_opciones_pressed"]
+[connection signal="pressed" from="MenuPrincipal/Menu/Salir" to="MenuPrincipal/Menu" method="_on_salir_pressed"]
+[connection signal="equipo_cambiado" from="MenuConfiguracion/Equipos/Equipos/Selector/ScrollColores" to="MenuConfiguracion/Equipos/Equipos/VBoxContainer/EquipoNombre" method="_on_scroll_colores_equipo_cambiado"]
+[connection signal="equipo_cambiado" from="MenuConfiguracion/Equipos/Equipos/Selector/ScrollColores" to="Control/Control/EQUIPOS" method="_on_scroll_colores_equipo_cambiado"]
+[connection signal="editing_toggled" from="MenuConfiguracion/Equipos/Equipos/VBoxContainer/EquipoNombre/Nombre" to="MenuConfiguracion/Equipos/Equipos/VBoxContainer/EquipoNombre" method="_on_nombre_editing_toggled"]
+[connection signal="editing_toggled" from="MenuConfiguracion/Equipos/Equipos/VBoxContainer/EquipoNombre/Abreviacion" to="MenuConfiguracion/Equipos/Equipos/VBoxContainer/EquipoNombre" method="_on_abreviacion_editing_toggled"]
+[connection signal="toggled" from="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer3/Button2" to="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer3/Button2" method="_on_toggled"]
+[connection signal="toggled" from="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer3/Button3" to="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer3/Button3" method="_on_toggled"]
+[connection signal="toggled" from="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer4/Button2" to="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer4/Button2" method="_on_toggled"]
+[connection signal="toggled" from="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer4/Button3" to="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer4/Button3" method="_on_toggled"]
+[connection signal="toggled" from="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer5/Button2" to="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer5/Button2" method="_on_toggled"]
+[connection signal="toggled" from="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer5/Button3" to="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer5/Button3" method="_on_toggled"]
+[connection signal="toggled" from="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer6/Button2" to="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer6/Button2" method="_on_toggled"]
+[connection signal="toggled" from="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer6/Button3" to="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer6/Button3" method="_on_toggled"]
+[connection signal="toggled" from="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer7/Button2" to="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer7/Button2" method="_on_toggled"]
+[connection signal="toggled" from="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer7/Button3" to="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer7/Button3" method="_on_toggled"]
+[connection signal="toggled" from="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer8/Button2" to="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer8/Button2" method="_on_toggled"]
+[connection signal="toggled" from="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer8/Button3" to="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer8/Button3" method="_on_toggled"]
+[connection signal="toggled" from="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer9/Button2" to="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer9/Button2" method="_on_toggled"]
+[connection signal="toggled" from="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer9/Button3" to="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer9/Button3" method="_on_toggled"]
+[connection signal="toggled" from="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer10/Button2" to="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer10/Button2" method="_on_toggled"]
+[connection signal="toggled" from="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer10/Button3" to="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer10/Button3" method="_on_toggled"]
+[connection signal="toggled" from="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer11/Button2" to="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer11/Button2" method="_on_toggled"]
+[connection signal="toggled" from="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer11/Button3" to="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer11/Button3" method="_on_toggled"]
+[connection signal="toggled" from="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer12/Button2" to="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer12/Button2" method="_on_toggled"]
+[connection signal="toggled" from="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer12/Button3" to="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer12/Button3" method="_on_toggled"]
+[connection signal="toggled" from="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer13/Button2" to="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer13/Button2" method="_on_toggled"]
+[connection signal="toggled" from="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer13/Button3" to="MenuConfiguracion/Controles/Controles/VBoxContainer/HBoxContainer13/Button3" method="_on_toggled"]
+[connection signal="pressed" from="MenuConfiguracion/Controles/Controles/Reestablecer" to="MenuConfiguracion/Controles/Controles/VBoxContainer" method="_on_reestablecer_pressed"]
+[connection signal="item_selected" from="MenuConfiguracion/Opciones/HBoxContainer/Opciones/ModoPantalla" to="MenuConfiguracion/Opciones/HBoxContainer/Opciones" method="_on_modo_pantalla_item_selected"]
+[connection signal="item_selected" from="MenuConfiguracion/Opciones/HBoxContainer/Opciones/Calidad" to="MenuConfiguracion/Opciones/HBoxContainer/Opciones" method="_on_calidad_item_selected"]
+[connection signal="item_selected" from="MenuConfiguracion/Opciones/HBoxContainer/Opciones/Resolucion" to="MenuConfiguracion/Opciones/HBoxContainer/Opciones" method="_on_resolucion_item_selected"]
+[connection signal="drag_ended" from="MenuConfiguracion/Opciones/HBoxContainer/Opciones/Musica" to="MenuConfiguracion/Opciones/HBoxContainer/Opciones" method="_on_musica_drag_ended"]
+[connection signal="drag_ended" from="MenuConfiguracion/Opciones/HBoxContainer/Opciones/Sonido" to="MenuConfiguracion/Opciones/HBoxContainer/Opciones" method="_on_sonido_drag_ended"]
+[connection signal="toggled" from="MenuConfiguracion/Opciones/HBoxContainer/Opciones/Controles" to="AnimationPlayer" method="_on_controles_toggled"]
+[connection signal="drag_ended" from="MenuConfiguracion/Opciones/HBoxContainer/Opciones/Sensibilidad" to="MenuConfiguracion/Opciones/HBoxContainer/Opciones" method="_on_sensibilidad_drag_ended"]
+[connection signal="text_changed" from="MenuConfiguracion/Opciones/HBoxContainer/Opciones/Nombre" to="MenuConfiguracion/Opciones/HBoxContainer/Opciones" method="_on_nombre_text_changed"]
+[connection signal="toggled" from="MenuConfiguracion/Opciones/HBoxContainer/Opciones/Equipos" to="MenuConfiguracion/Equipos/Equipos/Selector/ScrollColores" method="_on_equipos_toggled"]
+[connection signal="toggled" from="MenuConfiguracion/Opciones/HBoxContainer/Opciones/Equipos" to="AnimationPlayer" method="_on_equipos_toggled"]
+[connection signal="pressed" from="MenuCrearPartida1/BotonContinuarMenuCrearPartida" to="AnimationPlayer" method="_on_boton_continuar_menu_crear_partida_pressed"]
+[connection signal="pressed" from="MenuCrearPartida2/Volver" to="AnimationPlayer" method="_on_volver_pressed"]
+[connection signal="child_entered_tree" from="MenuSelectorPartida/VBoxContainer2/ScrollContainer/Servidores" to="MenuSelectorPartida/VBoxContainer2/ScrollContainer" method="_on_v_box_container_child_entered_tree"]
+[connection signal="child_exiting_tree" from="MenuSelectorPartida/VBoxContainer2/ScrollContainer/Servidores" to="MenuSelectorPartida/VBoxContainer2/ScrollContainer" method="_on_v_box_container_child_exiting_tree"]
+[connection signal="pressed" from="MenuSelectorPartida/NUEVA IP/BotonAñadirIP" to="MenuSelectorPartida/VBoxContainer2/ScrollContainer" method="_on_boton_añadir_ip_pressed"]
+[connection signal="pressed" from="MenuSelectorPartida/NUEVA IP/BotonAñadirIP" to="MenuSelectorPartida/NUEVA IP" method="_on_boton_añadir_ip_pressed"]
+[connection signal="pressed" from="MenuSelectorPartida/NUEVA IP/BotonCerrarMenuIP" to="MenuSelectorPartida/NUEVA IP" method="_on_boton_cerrar_menu_ip_pressed"]
+[connection signal="pressed" from="MenuSelectorPartida/HBoxContainer/BotonNuevoMenuBuscarServidores" to="MenuSelectorPartida/NUEVA IP" method="_on_boton_nuevo_menu_buscar_servidores_pressed"]
+[connection signal="pressed" from="MenuSelectorPartida/HBoxContainer/BotonBorrarMenuBuscarServidores" to="MenuSelectorPartida/VBoxContainer2/ScrollContainer" method="_on_boton_borrar_menu_buscar_servidores_pressed"]

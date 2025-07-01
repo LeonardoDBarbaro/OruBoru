@@ -1,0 +1,176 @@
+[gd_scene load_steps=10 format=3 uid="uid://ddt7vl5u2urrg"]
+
+[ext_resource type="PackedScene" uid="uid://cubtq7oigk8th" path="res://Scenes/ORUBURIN.tscn" id="2_a0tk4"]
+[ext_resource type="PackedScene" uid="uid://bcyicvsuibmqh" path="res://Scenes/menu.tscn" id="3_t3l2h"]
+[ext_resource type="Script" uid="uid://cpbg8g73lrkx0" path="res://Scripts/menu_principal.gd" id="4_i5arm"]
+[ext_resource type="Script" uid="uid://chjojvnmfbq32" path="res://Scripts/chat_box.gd" id="4_jka67"]
+[ext_resource type="FontFile" uid="uid://c4v3i7lvuuegf" path="res://Fonts/Poppins-Bold.ttf" id="4_r3fl7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a0tk4"]
+size = Vector3(1, 4.3689, 1)
+
+[sub_resource type="Animation" id="Animation_a8auw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CamaraGol:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 4.47181, -19.9555)]
+}
+
+[sub_resource type="Animation" id="Animation_t3l2h"]
+resource_name = "camaraGol1"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CamaraGol:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 4.47181, -19.9555), Vector3(0, 4.472, 18.744)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ifh66"]
+_data = {
+&"RESET": SubResource("Animation_a8auw"),
+&"camaraGol1": SubResource("Animation_t3l2h")
+}
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("4_i5arm")
+player_scene = ExtResource("2_a0tk4")
+
+[node name="Menu" parent="." instance=ExtResource("3_t3l2h")]
+
+[node name="Button" type="Button" parent="."]
+visible = false
+offset_left = 23.0
+offset_top = 445.0
+offset_right = 188.0
+offset_bottom = 511.0
+size_flags_vertical = 3
+text = "New Game
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button2" type="Button" parent="."]
+visible = false
+offset_left = 23.0
+offset_top = 515.0
+offset_right = 188.0
+offset_bottom = 581.0
+size_flags_vertical = 3
+text = "Find Game"
+metadata/_edit_use_anchors_ = true
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("uid://8k0m763blwjn", "uid://cubtq7oigk8th")
+spawn_path = NodePath("..")
+
+[node name="ChatBox" type="VBoxContainer" parent="."]
+offset_left = 830.0
+offset_top = 398.0
+offset_right = 1130.0
+offset_bottom = 637.0
+script = ExtResource("4_jka67")
+
+[node name="Historial" type="RichTextLabel" parent="ChatBox"]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+vertical_alignment = 2
+
+[node name="Chat" type="LineEdit" parent="ChatBox"]
+custom_minimum_size = Vector2(300, 35)
+layout_mode = 2
+
+[node name="Arco1" type="CSGBox3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 2, 0, 0, 0, 2, 0, 2.21385, -26.9326)
+use_collision = true
+collision_layer = 2
+collision_mask = 7
+
+[node name="Arco1" type="Area3D" parent="Arco1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Arco1/Arco1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.68445, 0)
+shape = SubResource("BoxShape3D_a0tk4")
+
+[node name="Arco2" type="CSGBox3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 2, 0, 0, 0, 2, 0, 2.21385, 29.2439)
+use_collision = true
+collision_layer = 2
+collision_mask = 7
+
+[node name="Arco2" type="Area3D" parent="Arco2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Arco2/Arco2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.68445, 0)
+shape = SubResource("BoxShape3D_a0tk4")
+
+[node name="CamaraGol" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.943223, 0.332161, 0, -0.332161, 0.943223, 0, 4.47181, -19.9555)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ifh66")
+}
+
+[node name="Control" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Linea" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 574.0
+offset_top = 149.0
+offset_right = 1267.0
+offset_bottom = 569.0
+theme_override_fonts/font = ExtResource("4_r3fl7")
+theme_override_font_sizes/font_size = 300
+text = "-"
+horizontal_alignment = 3
+justification_flags = 162
+
+[node name="E1" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = -180.0
+offset_top = 147.0
+offset_right = 513.0
+offset_bottom = 567.0
+theme_override_fonts/font = ExtResource("4_r3fl7")
+theme_override_font_sizes/font_size = 300
+text = "0"
+horizontal_alignment = 2
+justification_flags = 162
+
+[node name="E2" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 834.0
+offset_top = 147.0
+offset_right = 1527.0
+offset_bottom = 567.0
+theme_override_fonts/font = ExtResource("4_r3fl7")
+theme_override_font_sizes/font_size = 300
+text = "0"
+justification_flags = 162
+
+[connection signal="entrarPartida" from="Menu" to="." method="_on_menu_entrar_partida"]
+[connection signal="iniciarPartida" from="Menu" to="." method="_on_menu_iniciar_partida"]
+[connection signal="pressed" from="Button" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_join_pressed"]
+[connection signal="text_submitted" from="ChatBox/Chat" to="ChatBox" method="_on_chat_text_submitted"]
+[connection signal="body_entered" from="Arco1/Arco1" to="." method="_on_arco_1_body_entered"]
+[connection signal="body_entered" from="Arco2/Arco2" to="." method="_on_arco_2_body_entered"]

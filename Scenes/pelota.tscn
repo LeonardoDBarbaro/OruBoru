@@ -1,0 +1,53 @@
+[gd_scene load_steps=10 format=3 uid="uid://8k0m763blwjn"]
+
+[ext_resource type="Script" uid="uid://b8451nnq3ueh6" path="res://Scripts/pelota.gd" id="1_0okw3"]
+[ext_resource type="Shader" uid="uid://l1u8hm7bt1fe" path="res://Shaders/pelotaSIO.gdshader" id="1_sha3n"]
+[ext_resource type="Shader" uid="uid://3emr3mae2r5k" path="res://Shaders/pelota.gdshader" id="2_p7cd6"]
+[ext_resource type="Texture2D" uid="uid://cyuuc7bl7h8qt" path="res://Images/footballdiffusemap.jpg" id="3_mwsff"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_a0tk4"]
+friction = 0.5
+rough = true
+bounce = 0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p7cd6"]
+render_priority = 0
+shader = ExtResource("2_p7cd6")
+shader_parameter/albedo_texture = ExtResource("3_mwsff")
+shader_parameter/velocity = Vector3(0, 0, 0)
+shader_parameter/stretch_strength = 1.5
+shader_parameter/speed_min = 5.0
+shader_parameter/speed_max = 15.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r3fl7"]
+render_priority = 0
+shader = ExtResource("1_sha3n")
+shader_parameter/clay_color = Color(1, 0.5, 0.3, 1)
+shader_parameter/bump_strength = 0.2
+shader_parameter/noise_scale = 3.0
+shader_parameter/roughness = 0.8
+shader_parameter/metallic = 0.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_noarx"]
+material = SubResource("ShaderMaterial_r3fl7")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_a0tk4"]
+
+[node name="Pelota" type="RigidBody3D" groups=["pelota"]]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 4.20156, 0)
+collision_layer = 7
+collision_mask = 7
+physics_material_override = SubResource("PhysicsMaterial_a0tk4")
+gravity_scale = 1.5
+script = ExtResource("1_0okw3")
+interpolation_speed = 5.0
+max_speed = 35.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+material_override = SubResource("ShaderMaterial_p7cd6")
+mesh = SubResource("SphereMesh_noarx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+shape = SubResource("SphereShape3D_a0tk4")

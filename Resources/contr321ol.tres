@@ -1,0 +1,27 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://dkfgk2kpyvqk7"]
+
+[ext_resource type="StyleBox" uid="uid://baek4ds54s2lt" path="res://Resources/stilo2.tres" id="1_t1x6m"]
+[ext_resource type="StyleBox" uid="uid://dja5xdcnif06c" path="res://Resources/stilo.tres" id="2_smh4w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bwaoi"]
+bg_color = Color(1, 1, 1, 1)
+border_color = Color(0.362829, 0.36283, 0.362829, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t1x6m"]
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[resource]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/styles/focus = ExtResource("1_t1x6m")
+Button/styles/hover = ExtResource("1_t1x6m")
+Button/styles/normal = SubResource("StyleBoxFlat_bwaoi")
+Button/styles/pressed = ExtResource("2_smh4w")
+Label/colors/font_color = Color(0.2, 0.2, 0.2, 1)
+Label/styles/normal = SubResource("StyleBoxFlat_t1x6m")
