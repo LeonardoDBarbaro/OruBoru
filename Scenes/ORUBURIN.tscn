@@ -2784,7 +2784,7 @@ shape = SubResource("SphereShape3D_s4nmp")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00750089, 1.78714, -0.107634)
-cull_mask = 1047553
+cull_mask = 1047559
 compositor = SubResource("Compositor_68irb")
 near = 1.0
 

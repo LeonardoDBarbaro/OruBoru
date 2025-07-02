@@ -43,7 +43,7 @@ func _enter_tree():
 	set_multiplayer_authority(name.to_int())
 
 func _ready():
-	#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	animTimer.set_wait_time(0.2)
 	animTimer.set_one_shot(true)
 	animTimer.start()
@@ -61,7 +61,6 @@ func _ready():
 			})
 	
 func _physics_process(delta):
-	print(position)
 	if is_multiplayer_authority():
 		send_timer += delta
 		if send_timer >= SNAPSHOT_INTERVAL:
@@ -180,7 +179,7 @@ func _unhandled_input(event):
 						rpc_id(1, "_patear_pelota", body.get_path(), impulse)
 						if not multiplayer.is_server():
 							body.apply_central_impulse(impulse) 
-	
+		
 func camera_movement(event):
 	rotate_y(-event.relative.x * SENSITIVTY)
 	camera.rotate_x(-event.relative.y * SENSITIVTY)

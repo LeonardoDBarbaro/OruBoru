@@ -7,6 +7,7 @@ var golEquipo2 = 0
 var EquipoIzq
 var EquipoDer
 var en_partida = false
+var FinDelJuego = false
 var espectadores = []
 var JugadoresEquipo1 = []
 var JugadoresEquipo2 = []
@@ -105,10 +106,14 @@ func _unhandled_input(event):
 	if event is InputEventKey and event.keycode == KEY_TAB:
 		if event.pressed and not event.echo:
 			alternarEstadisticas()
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		elif not event.pressed:
 			alternarEstadisticas()
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) 
 	if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
 		abrirMenu()
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		
 
 func abrir_chat():
 	get_node("ChatBox").visible = not get_node("ChatBox").visible
@@ -121,7 +126,7 @@ func _on_arco_1_body_entered(body: Node3D) -> void:
 	puede_marcar = false
 
 	_on_goal_scored(0)
-	golEquipo1 += 1
+	golEquipo2 += 1
 	sync_score(golEquipo1, golEquipo2)
 	sync_score.rpc(golEquipo1, golEquipo2)
 	puede_marcar = true
@@ -131,7 +136,7 @@ func _on_arco_2_body_entered(body: Node3D) -> void:
 		return
 	puede_marcar = false
 	_on_goal_scored(1)
-	golEquipo2 += 1
+	golEquipo1 += 1
 	sync_score(golEquipo1, golEquipo2)
 	sync_score.rpc(golEquipo1, golEquipo2)
 
@@ -209,7 +214,7 @@ func reset(equipoGol):
 
 	for child in get_children():
 		if child.name.begins_with("Jugador"):
-			if child.team_sync:
+			if child.team_sync == equipoGol:
 				child.ponerse_triste()
 				child.rpc("ponerse_triste")
 			else:
@@ -228,6 +233,8 @@ func reset(equipoGol):
 	volver_a_camara_jugador()
 	
 	reposicionarPelota()
+	if FinDelJuego == true:
+		return
 	reproducir_cuenta_regresiva()
 	reproducir_cuenta_regresiva.rpc()
 	await get_tree().create_timer(3.533).timeout
@@ -241,8 +248,6 @@ func comenzar_partido():
 	pausarPelota()
 	pausar_todos_jugadores()
 
-	transicion_y_threshold()
-	transicion_y_threshold.rpc()
 	await get_tree().create_timer(0.6).timeout
 
 	_instanciar_pendientes()
@@ -386,6 +391,9 @@ func moverAPosicionInicial():
 func cambiarMostrarGoles(estado):
 	get_node("Control").visible = estado
 
+@rpc("authority", "call_local")
+func TiempoFuera():
+	get_node("AnimationPlayer").play("TIEMPO")
 
 @rpc("authority", "call_local")
 func reproducir_cuenta_regresiva():
@@ -647,7 +655,9 @@ func instanciar_jugador(id: int, nombre: String, team: int, datosEquipo: Diction
 		jugador.nombre = nombre
 		jugador.global_position = Vector3(0, 0, 0)
 		add_child(jugador)
-
+	var cam = jugador.get_node_or_null("Camera3D")
+	if cam:
+		cam.current = (id == multiplayer.get_unique_id())
 	jugador.get_node("Armature")._asignarColores_desde_dato(datosEquipo)
 
 	if not jugador.is_in_group("players"):
@@ -656,28 +666,32 @@ func instanciar_jugador(id: int, nombre: String, team: int, datosEquipo: Diction
 	if id == multiplayer.get_unique_id():
 		volver_a_camara_jugador()
 		
+		
+@onready var timer := $"Timer"
+var t := 300        
+		
 func _on_menu_empezar() -> void:
-	comenzar_partido()
-	_instanciar_pendientes()
-	var timer = get_node("Timer")
-	timer.wait_time = 300
-	timer.one_shot = false
-	timer.start()
-
+	if multiplayer.is_server():
+		comenzar_partido()
+		_instanciar_pendientes()
+		var timer = get_node("Timer")
+		t = 15
+		timer.wait_time = 1       
+		timer.start()
 
 @rpc("call_remote")
-func actualizar_tiempo_label(segundos: int):
-	var tiempo = get_node_or_null("Tiempo")
-	if tiempo:
-		tiempo.text = "%02d:%02d" % [segundos / 60, segundos % 60]
-		tiempo.visible = true
+func actualizar_tiempo_label(s:int):
+	get_node("Tiempo").text = "%02d:%02d" % [s/60, s%60]
+	get_node("Tiempo").visible = true
 
-
-func _on_timer_timeout() -> void:
-	pausar_todos_jugadores()
-
-func _on_tick_timer():
-	actualizar_tiempo_label.rpc(get_node("Timer").time_left)
-	actualizar_tiempo_label(get_node("Timer").time_left)
-	print(get_node("Timer").time_left)
-	print("TICK")
+func _on_timer_timeout() -> void:    
+	if multiplayer.is_server():
+		t -= 1
+		actualizar_tiempo_label.rpc(t)
+		actualizar_tiempo_label(t)
+		if t == 0:
+			timer.stop()
+			pausar_todos_jugadores()
+			FinDelJuego = true
+			TiempoFuera()
+			TiempoFuera.rpc()

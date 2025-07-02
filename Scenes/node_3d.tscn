@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://ddt7vl5u2urrg"]
+[gd_scene load_steps=20 format=3 uid="uid://ddt7vl5u2urrg"]
 
 [ext_resource type="PackedScene" uid="uid://cubtq7oigk8th" path="res://Scenes/ORUBURIN.tscn" id="2_a0tk4"]
 [ext_resource type="PackedScene" uid="uid://bcyicvsuibmqh" path="res://Scenes/menu.tscn" id="3_t3l2h"]
@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bfc04aevn37hu" path="res://Scenes/mapa.tscn" id="8_aeo3b"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a0tk4"]
-size = Vector3(2.41367, 4.95983, 2.44879)
+size = Vector3(2.41367, 4.95983, 12.0017)
 
 [sub_resource type="Shader" id="Shader_t3l2h"]
 code = "shader_type canvas_item;
@@ -46,6 +46,47 @@ shader_parameter/num_lines = 20.0
 shader_parameter/y_threshold = 0.0
 shader_parameter/line_color_a = Vector4(0.125, 0.6, 0.984, 1)
 shader_parameter/line_color_b = Vector4(0.082, 0.573, 0.949, 1)
+
+[sub_resource type="Animation" id="Animation_rvjhm"]
+resource_name = "Gol"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GOL:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(343, 734), Vector2(343, -130.69)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GOL:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0333333, 0.466667, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.25, 1.25), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GOL:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0333333, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["GOOOOOL
+", "GOOOOOL
+"]
+}
 
 [sub_resource type="Animation" id="Animation_a8auw"]
 length = 0.001
@@ -205,6 +246,48 @@ tracks/12/keys = {
 "update": 0,
 "values": [Vector2(1, 1)]
 }
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("GOL:text")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["GOOOOOL
+"]
+}
+
+[sub_resource type="Animation" id="Animation_worak"]
+resource_name = "camaraEspectador"
+length = 50.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CamaraEspectador:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(21.5554, 15.5513, 22.7136)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CamaraEspectador:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 50),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.621337, 1.23046, 0), Vector3(-0.621337, 0.830777, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_t3l2h"]
 resource_name = "camaraGol1"
@@ -350,37 +433,8 @@ tracks/6/keys = {
 "values": [Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1), Vector2(1.25, 1.25), Vector2(1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_worak"]
-resource_name = "camaraEspectador"
-length = 50.0
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CamaraEspectador:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(21.5554, 15.5513, 22.7136)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CamaraEspectador:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 50),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-0.621337, 1.23046, 0), Vector3(-0.621337, 0.830777, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_rvjhm"]
-resource_name = "Gol"
+[sub_resource type="Animation" id="Animation_cb6ip"]
+resource_name = "TIEMPO"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -391,7 +445,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(343, 734), Vector2(343, -130.69)]
+"values": [Vector2(403.63, 734), Vector2(403.63, -130.69)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -405,11 +459,24 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(1, 1), Vector2(1.25, 1.25), Vector2(1, 1)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GOL:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0333333, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["TIEMPO", "TIEMPO"]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ifh66"]
 _data = {
 &"Gol": SubResource("Animation_rvjhm"),
 &"RESET": SubResource("Animation_a8auw"),
+&"TIEMPO": SubResource("Animation_cb6ip"),
 &"camaraEspectador": SubResource("Animation_worak"),
 &"camaraGol1": SubResource("Animation_t3l2h"),
 &"camaraGol2": SubResource("Animation_ifh66"),
@@ -473,7 +540,7 @@ size = Vector3(0, 1, 1)
 [node name="Arco1" type="Area3D" parent="Arco1"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Arco1/Arco1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29061, -5.41398, -21.6001)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29061, -5.41398, -26.6402)
 shape = SubResource("BoxShape3D_a0tk4")
 
 [node name="Arco2" type="CSGBox3D" parent="."]
@@ -486,14 +553,14 @@ size = Vector3(1, 1, 0)
 [node name="Arco2" type="Area3D" parent="Arco2"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Arco2/Arco2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00829589, -3.33414, 16.5166)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00829589, -3.33414, 21.3949)
 shape = SubResource("BoxShape3D_a0tk4")
 
 [node name="CamaraGol" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.47181, -19.9555)
 
 [node name="CamaraEspectador" type="Camera3D" parent="."]
-transform = Transform3D(0.398749, -0.533842, 0.745662, 0, 0.813101, 0.582123, -0.91706, -0.232121, 0.324223, 21.5554, 13.8949, 14.2776)
+transform = Transform3D(0.398753, -0.533841, 0.745661, 0, 0.813101, 0.582123, -0.917058, -0.232123, 0.324226, 21.5554, 13.8949, 14.2776)
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_ifh66")
@@ -579,11 +646,18 @@ texture = ExtResource("6_a8auw")
 [node name="Mapa" parent="." instance=ExtResource("8_aeo3b")]
 
 [node name="Tiempo" type="Label" parent="."]
-offset_left = 582.0
-offset_top = 15.0
-offset_right = 622.0
-offset_bottom = 38.0
-scale = Vector2(2.61786, 2.61786)
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -77.5
+offset_right = 77.5
+offset_bottom = 113.0
+grow_horizontal = 2
+pivot_offset = Vector2(67.22, 46.225)
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("6_ifh66")
+theme_override_font_sizes/font_size = 100
 text = "100"
 horizontal_alignment = 1
 
@@ -600,7 +674,6 @@ text = "GOOOOOL
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 300.0
-one_shot = true
 
 [connection signal="empezar" from="Menu" to="." method="_on_menu_empezar"]
 [connection signal="entrarPartida" from="Menu" to="." method="_on_menu_entrar_partida"]
