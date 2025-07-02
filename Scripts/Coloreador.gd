@@ -53,7 +53,7 @@ func _crear_material(color: Color) -> StandardMaterial3D:
 	m.transparency = BaseMaterial3D.TRANSPARENCY_DISABLED
 	return m
 	
-func _jaja(equipo):
+func _asignarColores(equipo):
 	var palette = equipo.colores
 	var tablas := [
 		{ "paths": cabeza,  "color_index": 0 },
@@ -76,5 +76,37 @@ func _jaja(equipo):
 			var mat = nodo.get_active_material(0)
 			mat.albedo_color = palette[idx]
 			
+func _asignarColores_desde_dato(equipo_dict: Dictionary):
+	if not equipo_dict.has("colores"):
+		push_warning("No se encontró la clave 'colores' en el equipo.")
+		return
+	
+	var palette = equipo_dict["colores"]
+	var tablas := [
+		{ "paths": cabeza,  "color_index": 0 },
+		{ "paths": anillos, "color_index": 1 },
+		{ "paths": brazos,  "color_index": 2 },
+		{ "paths": piernas, "color_index": 3 },
+		{ "paths": manos,   "color_index": 4 },
+		{ "paths": pies,    "color_index": 5 }
+	]
+
+	for entrada in tablas:
+		var idx: int = entrada["color_index"]
+		if idx >= palette.size():
+			push_warning("Faltan colores en la paleta del equipo.")
+			continue
+
+		var lista_paths: Array = entrada["paths"]
+		for path: NodePath in lista_paths:
+			var nodo := get_node_or_null(path)
+			if nodo == null:
+				push_warning("No se encontró el nodo %s" % path)
+				continue
+			var mat = nodo.get_active_material(0)
+			if mat:
+				mat.albedo_color = palette[idx]
+
+			
 func _on_scroll_colores_equipo_cambiado(equipo_node: Variant,value) -> void:
-	_jaja(equipo_node)
+	_asignarColores(equipo_node)

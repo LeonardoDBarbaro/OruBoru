@@ -1,6 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://bfc04aevn37hu"]
+[gd_scene load_steps=11 format=3 uid="uid://bfc04aevn37hu"]
 
-[ext_resource type="Script" uid="uid://bkwk15en7r2j1" path="res://Scripts/mapa.gd" id="1_q8ihy"]
+[ext_resource type="Texture2D" uid="uid://bekisgqef2jmi" path="res://Images/canchaLayout.png" id="2_p41nb"]
 [ext_resource type="Texture2D" uid="uid://c4wkxtrp88vrr" path="res://Images/TEXT.png" id="2_q8ihy"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_a202f"]
@@ -16,12 +16,12 @@ uv1_triplanar = true
 sky_top_color = Color(0.431373, 0.721569, 0.933333, 1)
 sky_horizon_color = Color(0.937255, 0.529412, 0.388235, 1)
 
-[sub_resource type="Sky" id="Sky_sn0nk"]
+[sub_resource type="Sky" id="Sky_p41nb"]
 sky_material = SubResource("ProceduralSkyMaterial_q8ihy")
 
 [sub_resource type="Environment" id="Environment_lrjei"]
 background_mode = 2
-sky = SubResource("Sky_sn0nk")
+sky = SubResource("Sky_p41nb")
 ambient_light_color = Color(0.341176, 0.694118, 0.847059, 1)
 fog_light_energy = 0.46
 fog_density = 0.0681
@@ -29,23 +29,79 @@ volumetric_fog_density = 0.0242
 volumetric_fog_albedo = Color(0.964706, 0.698039, 0.431373, 1)
 volumetric_fog_length = 50.0
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vm3su"]
+albedo_texture = ExtResource("2_p41nb")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_u55js"]
+
 [node name="Mapa" type="Node3D"]
-script = ExtResource("1_q8ihy")
+transform = Transform3D(0.735775, 0, 0, 0, 0.62, 0, 0, 0, 1.08313, 0, 0, 0)
 
 [node name="CSGMesh3D2" type="CSGMesh3D" parent="."]
-transform = Transform3D(-9.72097e-07, -9.30302, 0, 22.239, -4.06648e-07, 0, 0, 0, 79.7935, 27.5536, 6.66359, 0)
+transform = Transform3D(-7.33408e-06, -9.30302, 0, 167.784, -4.06648e-07, 0, 0, 0, 218.076, 94.4391, 6.66359, 0)
+visible = false
 use_collision = true
 collision_priority = 0.0
 mesh = SubResource("BoxMesh_a202f")
 
 [node name="CSGMesh3D3" type="CSGMesh3D" parent="."]
-transform = Transform3D(-9.72097e-07, -5.00253, 0, 22.239, -2.18667e-07, 0, 0, 0, 79.7935, -27.3085, 6.66359, 0)
+transform = Transform3D(-7.52061e-06, -5.00253, 0, 172.052, -2.18667e-07, 0, 0, 0, 213.233, -91.4596, 6.66359, 0)
+visible = false
 use_collision = true
 collision_priority = 0.0
 mesh = SubResource("BoxMesh_a202f")
 
 [node name="CSGMesh3D4" type="CSGMesh3D" parent="."]
-transform = Transform3D(4.24917e-14, 1.84987e-07, 79.7935, 22.239, -1.84987e-07, 0, 9.72097e-07, 4.23201, -3.48788e-06, 1.94384, 5.93473, 35.0244)
+transform = Transform3D(2.65051e-13, 1.84987e-07, 196.469, 138.72, -1.84987e-07, 0, 6.06366e-06, 4.23201, -8.58794e-06, 1.94384, 5.93473, 108.469)
+visible = false
+use_collision = true
+collision_priority = 0.0
+mesh = SubResource("BoxMesh_a202f")
+
+[node name="CSGMesh3D8" type="CSGMesh3D" parent="."]
+transform = Transform3D(9.0338e-14, 1.84987e-07, 86.1402, 47.2805, -1.84987e-07, 0, 2.06669e-06, 4.23201, -3.7653e-06, -60.3696, 5.93473, 92.7083)
+visible = false
+use_collision = true
+collision_priority = 0.0
+mesh = SubResource("BoxMesh_a202f")
+
+[node name="CSGMesh3D10" type="CSGMesh3D" parent="."]
+transform = Transform3D(9.0338e-14, 1.84987e-07, 86.1402, 47.2805, -1.84987e-07, 0, 2.06669e-06, 4.23201, -3.7653e-06, 60.6458, 5.93473, 92.7083)
+visible = false
+use_collision = true
+collision_priority = 0.0
+mesh = SubResource("BoxMesh_a202f")
+
+[node name="CSGMesh3D11" type="CSGMesh3D" parent="."]
+transform = Transform3D(9.0338e-14, 1.84987e-07, 86.1402, 47.2805, -1.84987e-07, 0, 2.06669e-06, 4.23201, -3.7653e-06, -0.378365, 32.2483, 92.7083)
+visible = false
+use_collision = true
+collision_priority = 0.0
+mesh = SubResource("BoxMesh_a202f")
+
+[node name="CSGMesh3D12" type="CSGMesh3D" parent="."]
+transform = Transform3D(9.0338e-14, 1.84987e-07, 86.1402, 47.2805, -1.84987e-07, 0, 2.06669e-06, 4.23201, -3.7653e-06, -60.3696, 5.93473, -93.5269)
+visible = false
+use_collision = true
+collision_priority = 0.0
+mesh = SubResource("BoxMesh_a202f")
+
+[node name="CSGMesh3D13" type="CSGMesh3D" parent="."]
+transform = Transform3D(9.0338e-14, 1.84987e-07, 86.1402, 47.2805, -1.84987e-07, 0, 2.06669e-06, 4.23201, -3.7653e-06, 60.6458, 5.93473, -93.5269)
+visible = false
+use_collision = true
+collision_priority = 0.0
+mesh = SubResource("BoxMesh_a202f")
+
+[node name="CSGMesh3D14" type="CSGMesh3D" parent="."]
+transform = Transform3D(9.0338e-14, 1.84987e-07, 86.1402, 47.2805, -1.84987e-07, 0, 2.06669e-06, 4.23201, -3.7653e-06, -0.378365, 32.2483, -93.5269)
+visible = false
+use_collision = true
+collision_priority = 0.0
+mesh = SubResource("BoxMesh_a202f")
+
+[node name="CSGMesh3D9" type="CSGMesh3D" parent="."]
+transform = Transform3D(9.0338e-14, 1.84987e-07, 86.1402, 47.2805, -1.84987e-07, 0, 2.06669e-06, 4.23201, -3.7653e-06, -60.3696, 5.93473, 92.7083)
 visible = false
 use_collision = true
 collision_priority = 0.0
@@ -59,14 +115,14 @@ collision_priority = 0.0
 mesh = SubResource("BoxMesh_a202f")
 
 [node name="CSGMesh3D5" type="CSGMesh3D" parent="."]
-transform = Transform3D(0.0679245, -0.0401952, 79.7923, 22.2386, -0.0473294, -0.245759, 0.122556, 8.61049, 0.371133, -1.68855, 6.66359, -38.2524)
+transform = Transform3D(0.327316, -0.0391644, 291.909, 107.164, -0.0461156, -0.899075, 0.590576, 8.38967, 1.35774, -1.68855, 6.66359, -103.191)
 visible = false
 use_collision = true
 collision_priority = 0.0
 mesh = SubResource("BoxMesh_a202f")
 
 [node name="Suelo" type="CSGMesh3D" parent="."]
-transform = Transform3D(54.7774, 0, 0, 0, -6.19351, 0, 0, 0, 66.8783, 0, -7.82423, 0)
+transform = Transform3D(183.125, 0, -1.82566e-05, 0, -6.19351, 0, 1.60093e-05, 0, 208.831, 0, -7.82423, 0)
 material_override = SubResource("StandardMaterial3D_lrjei")
 use_collision = true
 mesh = SubResource("BoxMesh_4xowi")
@@ -76,7 +132,41 @@ mesh = SubResource("BoxMesh_4xowi")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Atmosphere"]
 transform = Transform3D(1, 0, 0, 0, 0.696001, 0.718041, 0, -0.718041, 0.696001, 0, 11.4862, 6.19946)
 light_color = Color(0.9457, 0.882, 0.98, 1)
-shadow_enabled = true
+directional_shadow_mode = 0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Atmosphere"]
 environment = SubResource("Environment_lrjei")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-5.92156e-06, 0, 79.9719, 0, 2.635, 0, -135.47, 0, -3.49568e-06, 0, -4.47384, 0)
+material_override = SubResource("StandardMaterial3D_vm3su")
+transparency = 0.61
+mesh = SubResource("PlaneMesh_u55js")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(34.3461, 0, 0, 0, 1.24569, 0, 0, 0, 1, -0.272053, 8.78752, 90.3225)
+use_collision = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(-1.50131e-06, -1.24569, 0, 34.3461, -5.4451e-08, 0, 0, 0, 1, 16.2665, 0.106611, 90.3231)
+use_collision = true
+size = Vector3(0.536621, 1, 1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(-1.50131e-06, -1.24569, 0, 34.3461, -5.4451e-08, 0, 0, 0, 1, -16.78, 0.106611, 90.3231)
+use_collision = true
+size = Vector3(0.536621, 1, 1)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(34.3461, 0, 0, 0, 1.24569, 0, 0, 0, 1, -0.272053, 8.78752, -91.3743)
+use_collision = true
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+transform = Transform3D(-1.50131e-06, -1.24569, 0, 34.3461, -5.4451e-08, 0, 0, 0, 1, 16.2665, 0.106611, -91.3737)
+use_collision = true
+size = Vector3(0.536621, 1, 1)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="."]
+transform = Transform3D(-1.50131e-06, -1.24569, 0, 34.3461, -5.4451e-08, 0, 0, 0, 1, -16.78, 0.106611, -91.3737)
+use_collision = true
+size = Vector3(0.536621, 1, 1)

@@ -17,6 +17,7 @@ func _ready():
 	player.connect("kickL", Callable(self, "_on_KickingL"))
 	player.connect("kickR", Callable(self, "_on_KickingR"))
 	player.connect("Triste", Callable(self, "_on_Triste"))
+	player.connect("Gol", Callable(self, "_on_Gol"))
 	anim_tree.active = true
 
 # Función RPC que ejecutan todos los jugadores
@@ -54,6 +55,9 @@ func _on_KickingR():
 	
 func _on_Triste():
 	_send_anim("Triste")
+
+func _on_Gol():
+	_send_anim("Gol")
 
 # Envía animación si es el jugador dueño
 func _send_anim(anim_name: String):

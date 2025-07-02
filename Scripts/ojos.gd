@@ -61,14 +61,14 @@ func input():
 	if Input.is_key_pressed(KEY_1):
 		set_frame_and_progress(0,1)
 
-	if Input.is_key_pressed(KEY_2):
-		set_frame_and_progress(1,2)		
-		
-	if Input.is_key_pressed(KEY_3):
-		set_frame_and_progress(2,0)
-		
-	if Input.is_key_pressed(KEY_4):
-		set_frame_and_progress(4,0)
+	#if Input.is_key_pressed(KEY_2):
+		#set_frame_and_progress(1,2)
+		#
+	#if Input.is_key_pressed(KEY_3):
+		#set_frame_and_progress(2,0)
+		#
+	#if Input.is_key_pressed(KEY_4):
+		#set_frame_and_progress(4,0)
 
 func get_camera_node() -> Camera3D:
 	var node = get_parent().get_node("Ojos") 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=109 format=4 uid="uid://cubtq7oigk8th"]
+[gd_scene load_steps=116 format=4 uid="uid://cubtq7oigk8th"]
 
 [ext_resource type="Script" uid="uid://blnyw4enjtrdh" path="res://Scripts/movement.gd" id="1_68irb"]
 [ext_resource type="Texture2D" uid="uid://dn6vb1fb3f2iq" path="res://Images/PelotaFinal_Image.png" id="1_s4nmp"]
@@ -949,6 +949,14 @@ shadow_mesh = SubResource("ArrayMesh_b7wtm")
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7q3l5"]
 animation = &"z_073"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cqvua"]
+animation = &"Salto"
+use_custom_timeline = true
+timeline_length = 1.0
+stretch_time_scale = false
+start_offset = 0.0
+loop_mode = 0
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_f82hg"]
 animation = &"Cabezazo(Aire)"
 
@@ -972,6 +980,22 @@ animation = &"PatadaDer(Piso)"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qcwtr"]
 animation = &"Correr"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_un85o"]
+animation = &"Salto"
+use_custom_timeline = true
+timeline_length = 1.0
+stretch_time_scale = false
+start_offset = 0.0
+loop_mode = 0
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7w7ml"]
+animation = &"Salto"
+use_custom_timeline = true
+timeline_length = 1.0
+stretch_time_scale = false
+start_offset = 0.0
+loop_mode = 0
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_w3o1j"]
 animation = &"Triste"
@@ -1100,14 +1124,36 @@ reset = false
 advance_mode = 2
 advance_condition = &"Triston"
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qlfd2"]
+xfade_time = 0.1
+reset = false
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ufabc"]
+xfade_time = 0.1
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xexd0"]
+xfade_time = 0.1
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_w3o1j"]
+advance_mode = 2
+advance_condition = &"Gol"
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_bdfxp"]
 states/DobleSalto/node = SubResource("AnimationNodeAnimation_7q3l5")
 states/DobleSalto/position = Vector2(706, 283)
 states/End/position = Vector2(1156, 82)
+states/Gol/node = SubResource("AnimationNodeAnimation_cqvua")
+states/Gol/position = Vector2(193, 244)
 states/Headbutt/node = SubResource("AnimationNodeAnimation_f82hg")
 states/Headbutt/position = Vector2(260, 316)
 states/Idle/node = SubResource("AnimationNodeAnimation_c124e")
-states/Idle/position = Vector2(340, 120)
+states/Idle/position = Vector2(357, 120)
 states/JumpKickL/node = SubResource("AnimationNodeAnimation_hwfr4")
 states/JumpKickL/position = Vector2(386, 381)
 states/JumpKickR/node = SubResource("AnimationNodeAnimation_sfmij")
@@ -1120,11 +1166,15 @@ states/KickR/node = SubResource("AnimationNodeAnimation_fhoh4")
 states/KickR/position = Vector2(629, -29)
 states/Run/node = SubResource("AnimationNodeAnimation_qcwtr")
 states/Run/position = Vector2(629, 120)
+"states/Salto 2/node" = SubResource("AnimationNodeAnimation_un85o")
+"states/Salto 2/position" = Vector2(95, 373)
+"states/Salto 3/node" = SubResource("AnimationNodeAnimation_7w7ml")
+"states/Salto 3/position" = Vector2(-66, 334)
 states/Start/position = Vector2(193, 120)
 states/Triste/node = SubResource("AnimationNodeAnimation_w3o1j")
-states/Triste/position = Vector2(253, 216)
-transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_cdao0"), "Idle", "JumpStart", SubResource("AnimationNodeStateMachineTransition_3r5ss"), "Run", "JumpStart", SubResource("AnimationNodeStateMachineTransition_6mrjr"), "JumpStart", "Run", SubResource("AnimationNodeStateMachineTransition_s21cu"), "JumpStart", "Idle", SubResource("AnimationNodeStateMachineTransition_uyoe4"), "JumpStart", "JumpKickL", SubResource("AnimationNodeStateMachineTransition_ppfau"), "JumpStart", "JumpKickR", SubResource("AnimationNodeStateMachineTransition_n4jny"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_7q3l5"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_c124e"), "JumpStart", "DobleSalto", SubResource("AnimationNodeStateMachineTransition_qcwtr"), "DobleSalto", "JumpStart", SubResource("AnimationNodeStateMachineTransition_f82hg"), "Idle", "KickR", SubResource("AnimationNodeStateMachineTransition_kx4i8"), "KickR", "Idle", SubResource("AnimationNodeStateMachineTransition_ad8gq"), "Run", "KickR", SubResource("AnimationNodeStateMachineTransition_7kbhu"), "KickR", "Run", SubResource("AnimationNodeStateMachineTransition_de6su"), "JumpStart", "Headbutt", SubResource("AnimationNodeStateMachineTransition_y3hlu"), "Headbutt", "JumpStart", SubResource("AnimationNodeStateMachineTransition_bejf8"), "JumpKickL", "JumpStart", SubResource("AnimationNodeStateMachineTransition_h6vl6"), "JumpKickR", "JumpStart", SubResource("AnimationNodeStateMachineTransition_i3a8m"), "Idle", "KickL", SubResource("AnimationNodeStateMachineTransition_bdfxp"), "KickL", "Idle", SubResource("AnimationNodeStateMachineTransition_7s0qr"), "Run", "KickL", SubResource("AnimationNodeStateMachineTransition_6yymo"), "KickL", "Run", SubResource("AnimationNodeStateMachineTransition_6u70u"), "Idle", "Triste", SubResource("AnimationNodeStateMachineTransition_un85o")]
-graph_offset = Vector2(-107, 73)
+states/Triste/position = Vector2(123, 188)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_cdao0"), "Idle", "JumpStart", SubResource("AnimationNodeStateMachineTransition_3r5ss"), "Run", "JumpStart", SubResource("AnimationNodeStateMachineTransition_6mrjr"), "JumpStart", "Run", SubResource("AnimationNodeStateMachineTransition_s21cu"), "JumpStart", "Idle", SubResource("AnimationNodeStateMachineTransition_uyoe4"), "JumpStart", "JumpKickL", SubResource("AnimationNodeStateMachineTransition_ppfau"), "JumpStart", "JumpKickR", SubResource("AnimationNodeStateMachineTransition_n4jny"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_7q3l5"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_c124e"), "JumpStart", "DobleSalto", SubResource("AnimationNodeStateMachineTransition_qcwtr"), "DobleSalto", "JumpStart", SubResource("AnimationNodeStateMachineTransition_f82hg"), "Idle", "KickR", SubResource("AnimationNodeStateMachineTransition_kx4i8"), "KickR", "Idle", SubResource("AnimationNodeStateMachineTransition_ad8gq"), "Run", "KickR", SubResource("AnimationNodeStateMachineTransition_7kbhu"), "KickR", "Run", SubResource("AnimationNodeStateMachineTransition_de6su"), "JumpStart", "Headbutt", SubResource("AnimationNodeStateMachineTransition_y3hlu"), "Headbutt", "JumpStart", SubResource("AnimationNodeStateMachineTransition_bejf8"), "JumpKickL", "JumpStart", SubResource("AnimationNodeStateMachineTransition_h6vl6"), "JumpKickR", "JumpStart", SubResource("AnimationNodeStateMachineTransition_i3a8m"), "Idle", "KickL", SubResource("AnimationNodeStateMachineTransition_bdfxp"), "KickL", "Idle", SubResource("AnimationNodeStateMachineTransition_7s0qr"), "Run", "KickL", SubResource("AnimationNodeStateMachineTransition_6yymo"), "KickL", "Run", SubResource("AnimationNodeStateMachineTransition_6u70u"), "Idle", "Triste", SubResource("AnimationNodeStateMachineTransition_un85o"), "Gol", "Salto 2", SubResource("AnimationNodeStateMachineTransition_qlfd2"), "Salto 2", "Salto 3", SubResource("AnimationNodeStateMachineTransition_ufabc"), "Salto 3", "Gol", SubResource("AnimationNodeStateMachineTransition_xexd0"), "Idle", "Gol", SubResource("AnimationNodeStateMachineTransition_w3o1j")]
+graph_offset = Vector2(-196, 99)
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_7s0qr"]
 properties/0/path = NodePath(".:position")
@@ -2393,16 +2443,24 @@ height = 3.275
 radius = 2.496
 
 [node name="ORUBURIN" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.5252, 0)
 collision_layer = 4
 collision_mask = 5
 slide_on_ceiling = false
 platform_on_leave = 2
 platform_floor_layers = 4294967293
+platform_wall_layers = 2
 script = ExtResource("1_68irb")
 
 [node name="Armature" type="Node3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.20023, 1.16933, -0.270906)
 script = ExtResource("2_w3o1j")
+cabeza = Array[NodePath]([NodePath("Skeleton3D/Nariz/Nariz"), NodePath("Skeleton3D/Cabeza/Cabeza")])
+anillos = Array[NodePath]([NodePath("Skeleton3D/AnilloIzquierdo/AnilloIzquierdo"), NodePath("Skeleton3D/AnilloDerecho/AnilloDerecho"), NodePath("Skeleton3D/AnilloDerecho2/AnilloDerecho2"), NodePath("Skeleton3D/AnilloIzquierdo2/AnilloIzquierdo2")])
+brazos = Array[NodePath]([NodePath("Skeleton3D/BrazoIzquierdo/BrazoIzquierdo"), NodePath("Skeleton3D/BrazoDerecho/BrazoDerecho")])
+piernas = Array[NodePath]([NodePath("Skeleton3D/PiernaDerecha/PiernaDerecha"), NodePath("Skeleton3D/PiernaIzquierda/PiernaIzquierda")])
+manos = Array[NodePath]([NodePath("Skeleton3D/ManoIzquierda/ManoIzquierda"), NodePath("Skeleton3D/ManoDerecha/ManoDerecha")])
+pies = Array[NodePath]([NodePath("Skeleton3D/PieDerecho/PieDerecho"), NodePath("Skeleton3D/PieIzquierdo/PieIzquierdo")])
 
 [node name="Skeleton3D" type="Skeleton3D" parent="Armature"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.16584, 0)
@@ -2411,7 +2469,7 @@ bones/0/parent = -1
 bones/0/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.271583, 1.1722)
 bones/0/enabled = true
 bones/0/position = Vector3(0, -0.271583, 1.1722)
-bones/0/rotation = Quaternion(0, 0, -0.271535, 0.962429)
+bones/0/rotation = Quaternion(0, 0, 0, 1)
 bones/0/scale = Vector3(1, 1, 1)
 bones/1/name = "Cabeza"
 bones/1/parent = 0
@@ -2431,8 +2489,8 @@ bones/3/name = "Bone.002"
 bones/3/parent = -1
 bones/3/rest = Transform3D(1, 3.45796e-13, -1.34309e-06, -1.34309e-06, 5.96046e-07, -1, 4.54747e-13, 1, 5.96046e-07, -0.226954, -0.0014174, 1.95755)
 bones/3/enabled = true
-bones/3/position = Vector3(-0.226954, -0.00141741, 1.95755)
-bones/3/rotation = Quaternion(0.779638, 0.0490067, -0.508423, 0.36231)
+bones/3/position = Vector3(-0.226954, -0.0014174, 1.95755)
+bones/3/rotation = Quaternion(0.707107, -4.74854e-07, -4.74854e-07, 0.707107)
 bones/3/scale = Vector3(1, 1, 1)
 bones/4/name = "AnilloIzquierdo"
 bones/4/parent = 3
@@ -2460,7 +2518,7 @@ bones/7/parent = -1
 bones/7/rest = Transform3D(1, 0, -1.60933e-06, 1.6032e-06, -0.0871561, 0.996195, -1.40262e-07, -0.996195, -0.0871561, -0.226954, 0.0421607, 0.330052)
 bones/7/enabled = true
 bones/7/position = Vector3(-0.226954, 0.0421607, 0.330052)
-bones/7/rotation = Quaternion(-0.836132, -0.0363566, -0.437368, 0.329044)
+bones/7/rotation = Quaternion(-0.737277, -5.43622e-07, 5.93259e-07, 0.67559)
 bones/7/scale = Vector3(1, 1, 1)
 bones/8/name = "AnilloDerecho"
 bones/8/parent = 7
@@ -2541,11 +2599,12 @@ bones/18/rotation = Quaternion(-0.696707, -9.35824e-08, -6.6348e-08, 0.717356)
 bones/18/scale = Vector3(1, 1, 1)
 
 [node name="Cabeza" type="BoneAttachment3D" parent="Armature/Skeleton3D"]
-transform = Transform3D(0.852538, 0, 0.565551, -0.522666, 0, 0.922488, 0, -1.13356, 0, -0.000536442, 0.145327, 1.18379)
+transform = Transform3D(1, 0, 0, 0, 0, 1.08205, 0, -1.13356, 0, -0.218362, 0.083568, 1.18379)
 bone_name = "Cabeza"
 bone_idx = 1
 
 [node name="Cabeza" type="MeshInstance3D" parent="Armature/Skeleton3D/Cabeza"]
+layers = 2
 mesh = SubResource("ArrayMesh_iwx13")
 skeleton = NodePath("")
 
@@ -2592,67 +2651,74 @@ libraries = {
 autoplay = "idle"
 
 [node name="Nariz" type="BoneAttachment3D" parent="Armature/Skeleton3D"]
-transform = Transform3D(-0.042946, 0, -0.0284892, 0.0263289, 0, -0.0464697, 0, 0.0527244, 0, 0.71344, -0.294988, 1.17959)
+transform = Transform3D(-0.0503743, 0, 0, 0, 0, -0.0545075, 0, 0.0527244, 0, 0.620468, 0.0813541, 1.17959)
 bone_name = "Cube.004"
 bone_idx = 2
 
 [node name="Nariz" type="MeshInstance3D" parent="Armature/Skeleton3D/Nariz"]
 transform = Transform3D(1, -1.42109e-14, -6.77626e-21, -2.13163e-14, 1, 7.06423e-22, -1.69407e-21, -5.68434e-14, 1, 0, -0.12569, -0.821413)
+layers = 2
 mesh = SubResource("ArrayMesh_hv6c2")
 skeleton = NodePath("")
 
 [node name="AnilloIzquierdo" type="BoneAttachment3D" parent="Armature/Skeleton3D"]
-transform = Transform3D(0.125914, 0.208759, -0.153848, -0.0768839, -0.34384, -0.1249, -0.218089, 0.241742, -0.0447928, 0.150663, -0.669023, 2.40317)
+transform = Transform3D(0.263303, 5.1651e-14, -4.54747e-13, -5.68434e-13, 4.86482e-08, -0.203164, -2.91786e-16, 0.469303, 2.10601e-08, -0.220532, -0.0276408, 2.84419)
 bone_name = "AnilloIzquierdo"
 bone_idx = 4
 
 [node name="AnilloIzquierdo" type="MeshInstance3D" parent="Armature/Skeleton3D/AnilloIzquierdo"]
+layers = 2
 mesh = SubResource("ArrayMesh_h478t")
 skeleton = NodePath("")
 
 [node name="BrazoIzquierdo" type="BoneAttachment3D" parent="Armature/Skeleton3D"]
-transform = Transform3D(0.125914, 0.208759, -0.153848, -0.0768839, -0.34384, -0.1249, -0.218089, 0.241742, -0.0447928, 0.150663, -0.669023, 2.40317)
+transform = Transform3D(0.263303, 5.1651e-14, -4.54747e-13, -5.68434e-13, 4.86482e-08, -0.203164, -2.91786e-16, 0.469303, 2.10601e-08, -0.220532, -0.0276408, 2.84419)
 bone_name = "BrazoIzquierdo"
 bone_idx = 5
 
 [node name="BrazoIzquierdo" type="MeshInstance3D" parent="Armature/Skeleton3D/BrazoIzquierdo"]
+layers = 2
 mesh = SubResource("ArrayMesh_ebfpl")
 skeleton = NodePath("")
 
 [node name="ManoIzquierda" type="BoneAttachment3D" parent="Armature/Skeleton3D"]
-transform = Transform3D(0.125914, 0.208759, -0.153848, -0.0768839, -0.34384, -0.1249, -0.218089, 0.241742, -0.0447928, 0.150663, -0.669023, 2.40317)
+transform = Transform3D(0.263303, 5.1651e-14, -4.54747e-13, -5.68434e-13, 4.86482e-08, -0.203164, -2.91786e-16, 0.469303, 2.10601e-08, -0.220532, -0.0276408, 2.84419)
 bone_name = "ManoIzquierda"
 bone_idx = 6
 
 [node name="ManoIzquierda" type="MeshInstance3D" parent="Armature/Skeleton3D/ManoIzquierda"]
+layers = 2
 mesh = SubResource("ArrayMesh_44sij")
 skeleton = NodePath("")
 
 [node name="AnilloDerecho" type="BoneAttachment3D" parent="Armature/Skeleton3D"]
-transform = Transform3D(-0.173915, 0.191207, 0.11653, 0.0636804, 0.183692, -0.206368, -0.214672, -0.100414, -0.155623, 0.128585, -0.713065, -0.177416)
+transform = Transform3D(-0.283522, -1.762e-09, 0.000945863, -1.97906e-09, 0.283524, -8.19564e-08, -0.000945866, -6.89179e-08, -0.283521, -0.220221, -0.0276409, -0.644309)
 bone_name = "AnilloDerecho"
 bone_idx = 8
 
 [node name="AnilloDerecho" type="MeshInstance3D" parent="Armature/Skeleton3D/AnilloDerecho"]
+layers = 2
 mesh = SubResource("ArrayMesh_fwfhe")
 skeleton = NodePath("")
 
 [node name="BrazoDerecho" type="BoneAttachment3D" parent="Armature/Skeleton3D"]
-transform = Transform3D(-0.173915, 0.191207, 0.11653, 0.0636804, 0.183692, -0.206368, -0.214672, -0.100414, -0.155623, 0.128585, -0.713065, -0.177416)
+transform = Transform3D(-0.283522, -1.762e-09, 0.000945863, -1.97906e-09, 0.283524, -8.19564e-08, -0.000945866, -6.89179e-08, -0.283521, -0.220221, -0.0276409, -0.644309)
 bone_name = "BrazoDerecho"
 bone_idx = 9
 
 [node name="BrazoDerecho" type="MeshInstance3D" parent="Armature/Skeleton3D/BrazoDerecho"]
 transform = Transform3D(1, -2.60507e-09, 1.39698e-09, 3.18216e-09, 1, 3.6133e-07, -1.62981e-09, -1.31306e-08, 1, 0, -0.00410914, -9.53674e-07)
+layers = 2
 mesh = SubResource("ArrayMesh_mrg1y")
 skeleton = NodePath("")
 
 [node name="ManoDerecha" type="BoneAttachment3D" parent="Armature/Skeleton3D"]
-transform = Transform3D(-0.173915, 0.191207, 0.11653, 0.0636804, 0.183692, -0.206368, -0.214672, -0.100414, -0.155623, 0.128585, -0.713065, -0.177416)
+transform = Transform3D(-0.283522, -1.762e-09, 0.000945863, -1.97906e-09, 0.283524, -8.19564e-08, -0.000945866, -6.89179e-08, -0.283521, -0.220221, -0.0276409, -0.644309)
 bone_name = "ManoDerecha"
 bone_idx = 10
 
 [node name="ManoDerecha" type="MeshInstance3D" parent="Armature/Skeleton3D/ManoDerecha"]
+layers = 2
 mesh = SubResource("ArrayMesh_2w7mt")
 skeleton = NodePath("")
 
@@ -2680,11 +2746,12 @@ bone_name = "PiernaDerecha"
 bone_idx = 14
 
 [node name="PiernaDerecha" type="MeshInstance3D" parent="Armature/Skeleton3D/PiernaDerecha"]
+layers = 2
 mesh = SubResource("ArrayMesh_8ayw3")
 skeleton = NodePath("")
 
 [node name="AnilloIzquierdo2" type="BoneAttachment3D" parent="Armature/Skeleton3D"]
-transform = Transform3D(1, -1.47463e-08, -3.4793e-08, -3.52087e-08, -0.0291994, -0.999574, 1.3724e-08, 0.999574, -0.0291994, -0.08392, -1.45665, 1.68927)
+transform = Transform3D(1, -1.47473e-08, -3.4793e-08, -3.52087e-08, -0.0291994, -0.999574, 1.3725e-08, 0.999574, -0.0291994, -0.08392, -1.45665, 1.68927)
 bone_name = "AnilloIzquierdo2"
 bone_idx = 16
 
@@ -2693,7 +2760,7 @@ mesh = SubResource("ArrayMesh_o8ouy")
 skeleton = NodePath("")
 
 [node name="PieIzquierdo" type="BoneAttachment3D" parent="Armature/Skeleton3D"]
-transform = Transform3D(1, -1.47463e-08, -3.4793e-08, -3.52087e-08, -0.0291994, -0.999574, 1.3724e-08, 0.999574, -0.0291994, -0.08392, -1.45665, 1.68927)
+transform = Transform3D(1, -1.47473e-08, -3.4793e-08, -3.52087e-08, -0.0291994, -0.999574, 1.3725e-08, 0.999574, -0.0291994, -0.08392, -1.45665, 1.68927)
 bone_name = "PieIzquierdo"
 bone_idx = 17
 
@@ -2702,11 +2769,12 @@ mesh = SubResource("ArrayMesh_m1jpr")
 skeleton = NodePath("")
 
 [node name="PiernaIzquierda" type="BoneAttachment3D" parent="Armature/Skeleton3D"]
-transform = Transform3D(1, -1.47463e-08, -3.4793e-08, -3.52087e-08, -0.0291994, -0.999574, 1.3724e-08, 0.999574, -0.0291994, -0.08392, -1.45665, 1.68927)
+transform = Transform3D(1, -1.47473e-08, -3.4793e-08, -3.52087e-08, -0.0291994, -0.999574, 1.3725e-08, 0.999574, -0.0291994, -0.08392, -1.45665, 1.68927)
 bone_name = "PiernaIzquierda"
 bone_idx = 18
 
 [node name="PiernaIzquierda" type="MeshInstance3D" parent="Armature/Skeleton3D/PiernaIzquierda"]
+layers = 2
 mesh = SubResource("ArrayMesh_gewvt")
 skeleton = NodePath("")
 
@@ -2716,7 +2784,7 @@ shape = SubResource("SphereShape3D_s4nmp")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00750089, 1.78714, -0.107634)
-cull_mask = 1048571
+cull_mask = 1047553
 compositor = SubResource("Compositor_68irb")
 near = 1.0
 
@@ -2725,6 +2793,7 @@ near = 1.0
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_bdfxp")
 anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/Gol = false
 parameters/conditions/IKickR = false
 parameters/conditions/JtoIdle = false
 parameters/conditions/JtoRun = false

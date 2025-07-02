@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://hu1fwa7sf5n7"]
+
+[ext_resource type="PackedScene" uid="uid://dd2iban62tyb6" path="res://Images/suelo.glb" id="1_qdjju"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_xq07r"]
+noise_type = 0
+seed = -540
+frequency = 0.0105
+fractal_lacunarity = 6.6
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_8n0vj"]
+noise = SubResource("FastNoiseLite_xq07r")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nvksv"]
+albedo_color = Color(2.64719e-06, 0.665924, 0.361219, 1)
+albedo_texture = SubResource("NoiseTexture2D_8n0vj")
+
+[node name="suelo" instance=ExtResource("1_qdjju")]
+
+[node name="Cube_003" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_nvksv")

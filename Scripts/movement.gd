@@ -4,7 +4,7 @@ extends CharacterBody3D
 @onready var animation = $AnimationPlayer
 @onready var animTimer = $AnimTimer
 var team_sync
-
+var nombre
 signal jumped
 signal jumped2
 signal landed
@@ -13,6 +13,7 @@ signal cameraMov
 signal kickL
 signal kickR
 signal Triste
+signal Gol
 
 const SPEED = 16
 var destino = null
@@ -27,7 +28,7 @@ var jumps_left = 2
 var camMov = 0
 var tiene_pelota = false
 var ball
-var triste = false
+var pausado = false
 
 const MAX_SNAPSHOTS = 3
 const SNAPSHOT_INTERVAL := 0.05
@@ -60,6 +61,7 @@ func _ready():
 			})
 	
 func _physics_process(delta):
+	print(position)
 	if is_multiplayer_authority():
 		send_timer += delta
 		if send_timer >= SNAPSHOT_INTERVAL:
@@ -68,7 +70,8 @@ func _physics_process(delta):
 	else:
 		interpolate_snapshots(delta)
 		return
-		
+	if pausado:
+		return
 	if destino != null and global_position.distance_to(destino) > 0.2:
 		var dir = (destino - global_position)
 		dir.y = 0
@@ -92,7 +95,7 @@ func _physics_process(delta):
 			destino = null
 			_mirar_al_centro()
 		return
-			
+
 	if ball != null:
 		var raycast = get_node("RayCast3D")
 		var target = ball.global_transform.origin
@@ -143,10 +146,7 @@ func update_animation():
 		if camMov > 15:
 			emit_signal("cameraMov")
 		else:
-			if triste:
-				emit_signal("Triste")
-			else:
-				emit_signal("landed")
+			emit_signal("landed")
 		camMov = 0
 
 	else:
@@ -261,15 +261,19 @@ func _mirar_al_centro():
 	if is_multiplayer_authority() and camera:
 		camera.rotation.x = deg_to_rad(-10)
 		camera.rotation.y = 0
-	triste = false
 
-@rpc
+@rpc("any_peer", "call_local")
 func saltar():
-	velocity.y = 10
-	emit_signal("jumped")
+	emit_signal("Gol")
 	
-@rpc
+@rpc("any_peer", "call_local")
 func ponerse_triste():
-	triste = true
-
+	emit_signal("Triste")
 	
+@rpc("any_peer", "call_local")
+func pausar():
+	pausado = true
+	
+@rpc("any_peer", "call_local")
+func despausar():
+	pausado = false

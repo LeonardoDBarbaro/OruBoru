@@ -1,13 +1,51 @@
-[gd_scene load_steps=10 format=3 uid="uid://ddt7vl5u2urrg"]
+[gd_scene load_steps=19 format=3 uid="uid://ddt7vl5u2urrg"]
 
 [ext_resource type="PackedScene" uid="uid://cubtq7oigk8th" path="res://Scenes/ORUBURIN.tscn" id="2_a0tk4"]
 [ext_resource type="PackedScene" uid="uid://bcyicvsuibmqh" path="res://Scenes/menu.tscn" id="3_t3l2h"]
 [ext_resource type="Script" uid="uid://cpbg8g73lrkx0" path="res://Scripts/menu_principal.gd" id="4_i5arm"]
 [ext_resource type="Script" uid="uid://chjojvnmfbq32" path="res://Scripts/chat_box.gd" id="4_jka67"]
 [ext_resource type="FontFile" uid="uid://c4v3i7lvuuegf" path="res://Fonts/Poppins-Bold.ttf" id="4_r3fl7"]
+[ext_resource type="Texture2D" uid="uid://dpcekykbx33jy" path="res://Images/silbato.png" id="6_a8auw"]
+[ext_resource type="FontVariation" uid="uid://byx5tb525k0mb" path="res://Fonts/FONT2.tres" id="6_ifh66"]
+[ext_resource type="PackedScene" uid="uid://bfc04aevn37hu" path="res://Scenes/mapa.tscn" id="8_aeo3b"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a0tk4"]
-size = Vector3(1, 4.3689, 1)
+size = Vector3(2.41367, 4.95983, 2.44879)
+
+[sub_resource type="Shader" id="Shader_t3l2h"]
+code = "shader_type canvas_item;
+render_mode unshaded, blend_mix, skip_vertex_transform;
+
+uniform float num_lines = 20.0;
+uniform float y_threshold = 0.5; // hint_range(0.0, 1.0)
+uniform vec4 line_color_a = vec4(1.0); // hint_color
+uniform vec4 line_color_b = vec4(0.0, 0.0, 0.0, 1.0); // hint_color
+
+void fragment() {
+	vec2 tiled_uv = vec2(fract(UV.x * num_lines / 2.0), UV.y);
+
+	if (tiled_uv.x < 0.5) {
+		if (tiled_uv.y < y_threshold) {
+			COLOR = line_color_a;
+		} else {
+			COLOR = vec4(0.0);
+		}
+	} else {
+		if (tiled_uv.y > 1.0 - y_threshold) {
+			COLOR = line_color_b;
+		} else {
+			COLOR = vec4(0.0);
+		}
+	}
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ifh66"]
+shader = SubResource("Shader_t3l2h")
+shader_parameter/num_lines = 20.0
+shader_parameter/y_threshold = 0.0
+shader_parameter/line_color_a = Vector4(0.125, 0.6, 0.984, 1)
+shader_parameter/line_color_b = Vector4(0.082, 0.573, 0.949, 1)
 
 [sub_resource type="Animation" id="Animation_a8auw"]
 length = 0.001
@@ -23,6 +61,150 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(0, 4.47181, -19.9555)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CamaraGol:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Silbato:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("cuentaRegresiva:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("cuentaRegresiva:text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["2"]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Silbato:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Silbato:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.20463, 0.20463)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Silbato:self_modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("cuentaRegresiva:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("CamaraEspectador:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(21.5554, 13.8949, 14.2776)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("CamaraEspectador:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.621337, 1.16064, 0)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("GOL:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(343, 734)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("GOL:scale")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_t3l2h"]
 resource_name = "camaraGol1"
@@ -34,16 +216,204 @@ tracks/0/path = NodePath("CamaraGol:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.533333, 3.03333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 4.47181, -19.9555), Vector3(0, 4.47181, -19.9555), Vector3(0, 4.472, 18.744)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CamaraGol:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.533333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ifh66"]
+resource_name = "camaraGol2"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CamaraGol:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
 "times": PackedFloat32Array(0, 2.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0, 4.47181, -19.9555), Vector3(0, 4.472, 18.744)]
+"values": [Vector3(0, 4.472, 18.744), Vector3(0, 4.472, -19.955)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CamaraGol:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.00596365),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 3.14159, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_aeo3b"]
+resource_name = "cuenta_regresiva"
+length = 4.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("cuentaRegresiva:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5, 1.5, 2.5),
+"transitions": PackedFloat32Array(10.5561, 1, 1),
+"update": 1,
+"values": ["3", "2", "1"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("cuentaRegresiva:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Silbato:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3.5, 3.533),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Silbato:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(3.53333, 3.7, 3.85, 4.01667, 4.15, 4.31667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [-0.165806, 0.165806, -0.165806, 0.165806, -0.165806, 0.165806]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Silbato:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(3.53333, 3.96667, 4.36667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.20463, 0.20463), Vector2(0.35, 0.35), Vector2(0.2, 0.2)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Silbato:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(4.03333, 4.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("cuentaRegresiva:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.433333, 0.5, 0.633333, 1.5, 1.63333, 2.50338, 2.63671, 3.36667, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1), Vector2(1.25, 1.25), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_worak"]
+resource_name = "camaraEspectador"
+length = 50.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CamaraEspectador:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(21.5554, 15.5513, 22.7136)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CamaraEspectador:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 50),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.621337, 1.23046, 0), Vector3(-0.621337, 0.830777, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_rvjhm"]
+resource_name = "Gol"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GOL:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(343, 734), Vector2(343, -130.69)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GOL:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0333333, 0.466667, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.25, 1.25), Vector2(1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ifh66"]
 _data = {
+&"Gol": SubResource("Animation_rvjhm"),
 &"RESET": SubResource("Animation_a8auw"),
-&"camaraGol1": SubResource("Animation_t3l2h")
+&"camaraEspectador": SubResource("Animation_worak"),
+&"camaraGol1": SubResource("Animation_t3l2h"),
+&"camaraGol2": SubResource("Animation_ifh66"),
+&"cuenta_regresiva": SubResource("Animation_aeo3b")
 }
 
 [node name="Node3D" type="Node3D"]
@@ -78,6 +448,7 @@ _spawnable_scenes = PackedStringArray("uid://8k0m763blwjn", "uid://cubtq7oigk8th
 spawn_path = NodePath("..")
 
 [node name="ChatBox" type="VBoxContainer" parent="."]
+visible = false
 offset_left = 830.0
 offset_top = 398.0
 offset_right = 1130.0
@@ -94,31 +465,41 @@ custom_minimum_size = Vector2(300, 35)
 layout_mode = 2
 
 [node name="Arco1" type="CSGBox3D" parent="."]
-transform = Transform3D(10, 0, 0, 0, 2, 0, 0, 0, 2, 0, 2.21385, -26.9326)
-use_collision = true
+transform = Transform3D(10, 0, 0, 0, 2, 0, 0, 0, 2, -3.03711, 10.8446, -58.1485)
 collision_layer = 2
 collision_mask = 7
+size = Vector3(0, 1, 1)
 
 [node name="Arco1" type="Area3D" parent="Arco1"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Arco1/Arco1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.68445, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29061, -5.41398, -21.6001)
 shape = SubResource("BoxShape3D_a0tk4")
 
 [node name="Arco2" type="CSGBox3D" parent="."]
-transform = Transform3D(10, 0, 0, 0, 2, 0, 0, 0, 2, 0, 2.21385, 29.2439)
+transform = Transform3D(10, 0, 0, 0, 2, 0, 0, 0, 2, 0, 7.21385, 67.4123)
 use_collision = true
 collision_layer = 2
 collision_mask = 7
+size = Vector3(1, 1, 0)
 
 [node name="Arco2" type="Area3D" parent="Arco2"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Arco2/Arco2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.68445, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00829589, -3.33414, 16.5166)
 shape = SubResource("BoxShape3D_a0tk4")
 
 [node name="CamaraGol" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.943223, 0.332161, 0, -0.332161, 0.943223, 0, 4.47181, -19.9555)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.47181, -19.9555)
+
+[node name="CamaraEspectador" type="Camera3D" parent="."]
+transform = Transform3D(0.398749, -0.533842, 0.745662, 0, 0.813101, 0.582123, -0.91706, -0.232121, 0.324223, 21.5554, 13.8949, 14.2776)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_ifh66")
+offset_right = 1283.0
+offset_bottom = 724.0
+mouse_filter = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -167,10 +548,69 @@ theme_override_font_sizes/font_size = 300
 text = "0"
 justification_flags = 162
 
+[node name="cuentaRegresiva" type="Label" parent="."]
+visible = false
+anchors_preset = -1
+anchor_left = 0.477
+anchor_top = 0.422
+anchor_right = 0.531
+anchor_bottom = 0.604
+offset_left = 9.93994
+offset_top = -0.340027
+offset_right = -20.1801
+offset_bottom = -18.38
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(30.545, 58.12)
+size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 23
+theme_override_fonts/font = ExtResource("6_ifh66")
+theme_override_font_sizes/font_size = 100
+text = "2"
+horizontal_alignment = 1
+
+[node name="Silbato" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(637, 351)
+scale = Vector2(0.20463, 0.20463)
+texture = ExtResource("6_a8auw")
+
+[node name="Mapa" parent="." instance=ExtResource("8_aeo3b")]
+
+[node name="Tiempo" type="Label" parent="."]
+offset_left = 582.0
+offset_top = 15.0
+offset_right = 622.0
+offset_bottom = 38.0
+scale = Vector2(2.61786, 2.61786)
+text = "100"
+horizontal_alignment = 1
+
+[node name="GOL" type="Label" parent="."]
+offset_left = 343.0
+offset_top = 734.0
+offset_right = 973.0
+offset_bottom = 975.0
+pivot_offset = Vector2(313.235, 55.8)
+theme_override_fonts/font = ExtResource("6_ifh66")
+theme_override_font_sizes/font_size = 106
+text = "GOOOOOL
+"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 300.0
+one_shot = true
+
+[connection signal="empezar" from="Menu" to="." method="_on_menu_empezar"]
 [connection signal="entrarPartida" from="Menu" to="." method="_on_menu_entrar_partida"]
 [connection signal="iniciarPartida" from="Menu" to="." method="_on_menu_iniciar_partida"]
+[connection signal="solicitarDer" from="Menu" to="." method="_on_menu_solicitar_der"]
+[connection signal="solicitarEspectador" from="Menu" to="." method="_on_menu_solicitar_espectador"]
+[connection signal="solicitarIzq" from="Menu" to="." method="_on_menu_solicitar_izq"]
 [connection signal="pressed" from="Button" to="." method="_on_host_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_join_pressed"]
 [connection signal="text_submitted" from="ChatBox/Chat" to="ChatBox" method="_on_chat_text_submitted"]
 [connection signal="body_entered" from="Arco1/Arco1" to="." method="_on_arco_1_body_entered"]
 [connection signal="body_entered" from="Arco2/Arco2" to="." method="_on_arco_2_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

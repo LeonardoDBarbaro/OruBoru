@@ -18,11 +18,12 @@ extends Control
 const ENDPOINT    := "/servidor.json"
 
 func _ready() -> void:
+	SERVER_IP   = get_parent().get_parent().get_parent().get_parent().get_node("NUEVA IP/DirIP").get_text()
+	SERVER_PORT = get_parent().get_parent().get_parent().get_parent().get_node("NUEVA IP/PUERTO").get_text()
 	get_node("data").visible = false
 	get_node("nodata").visible = true
 	get_node("nodata/AnimationPlayer").play("giro")
 	add_child(http)
-	# Configurar timeout
 	http.timeout = 3.0  # tiempo máximo de espera en segundos
 
 	# Conectar el HTTPRequest
@@ -34,10 +35,11 @@ func _ready() -> void:
 	refresher_timer.timeout.connect(_request_server)
 	add_child(refresher_timer)
 	refresher_timer.start()
-
+	await get_tree().process_frame 
 	_request_server()
 
 func _request_server() -> void:
+
 	if not is_visible_in_tree(): return
 	if http.get_http_client_status() == HTTPClient.STATUS_REQUESTING:
 		return
