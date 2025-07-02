@@ -243,14 +243,14 @@ func reset(equipoGol):
 
 @rpc("call_remote")
 func comenzar_partido():
-
+	FinDelJuego = false
 	await get_tree().create_timer(1).timeout
 	pausarPelota()
 	pausar_todos_jugadores()
 
 	await get_tree().create_timer(0.6).timeout
 
-	_instanciar_pendientes()
+	_instanciar_pendientes()		
 	moverAPosicionInicial()
 	reposicionarPelota()
 
@@ -675,7 +675,7 @@ func _on_menu_empezar() -> void:
 		comenzar_partido()
 		_instanciar_pendientes()
 		var timer = get_node("Timer")
-		t = 15
+		t = int(get_node("Menu/MenuCrearPartida1/VBoxContainer/HBox4/TiempoJuego").text)
 		timer.wait_time = 1       
 		timer.start()
 

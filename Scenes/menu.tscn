@@ -2765,7 +2765,7 @@ theme_override_font_sizes/font_size = 29
 text = "Tiempo de mitad"
 horizontal_alignment = 2
 
-[node name="Modo de pantalla" type="OptionButton" parent="MenuCrearPartida1/VBoxContainer/HBox4"]
+[node name="TiempoJuego" type="OptionButton" parent="MenuCrearPartida1/VBoxContainer/HBox4"]
 custom_minimum_size = Vector2(120, 40)
 layout_mode = 2
 size_flags_vertical = 0
@@ -2784,11 +2784,15 @@ theme_override_icons/arrow = ExtResource("6_l48gv")
 alignment = 1
 selected = 1
 fit_to_longest_item = false
-item_count = 2
-popup/item_0/text = "123123"
+item_count = 4
+popup/item_0/text = "300"
 popup/item_0/id = 0
-popup/item_1/text = "00:00"
+popup/item_1/text = "400"
 popup/item_1/id = 1
+popup/item_2/text = "500"
+popup/item_2/id = 2
+popup/item_3/text = "600"
+popup/item_3/id = 3
 
 [node name="Label" type="Label" parent="MenuCrearPartida1/VBoxContainer/HBox4"]
 layout_mode = 2
